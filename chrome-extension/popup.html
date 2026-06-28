@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fantasy MLB AI</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Fantasy MLB AI</h1>
+        <button id="refresh" type="button">Extract</button>
+      </header>
+
+      <section id="status">Open a Yahoo Fantasy MLB page, then extract.</section>
+
+      <nav>
+        <button id="copy" type="button" disabled>Copy JSON</button>
+        <button id="download" type="button" disabled>Download</button>
+      </nav>
+
+      <pre id="output" aria-label="Extracted JSON"></pre>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

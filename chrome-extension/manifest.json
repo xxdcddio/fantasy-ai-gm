@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Fantasy MLB AI Yahoo Extractor",
+  "version": "0.1.0",
+  "description": "Extract roster, matchup, and free agent data from Yahoo Fantasy MLB pages as JSON.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": [
+    "https://baseball.fantasysports.yahoo.com/*",
+    "https://*.fantasysports.yahoo.com/*"
+  ],
+  "action": {
+    "default_title": "Fantasy MLB AI",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://baseball.fantasysports.yahoo.com/*",
+        "https://*.fantasysports.yahoo.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
