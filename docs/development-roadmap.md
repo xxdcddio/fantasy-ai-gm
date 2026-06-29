@@ -67,16 +67,13 @@ Enabled by two extension fixes:
 Deferred: per-day starters and parsing the two players per row into Team models
 (not needed for the Category → Streaming → Decision path).
 
-### Sprint 8 — Category Analyzer ⭐⭐⭐⭐⭐
-The core of every later decision. From the matchup standings, compute per-category
-status and priority:
-```
-HR  behind 2     → Priority High
-SB  ahead 5      → Priority Low
-AVG ahead a lot  → Priority Ignore
-OPS tied         → Priority High
-```
-Output: a category-priority map consumed by Streaming and Decision engines.
+### ✅ Sprint 8 — Category Analyzer (done)
+`analyzer/categoryAnalyzer.js` (+ test). `analyzeCategories(parseMatchup(...))`
+adds per-category `margin` / `status` (ahead|behind|tied|unknown) / `priority`
+(high|medium|low|ignore), then buckets into `strategy { attack, protect, ignore }`
++ `notes`. Deterministic, lower-is-better aware (ERA/WHIP). Closeness uses crude
+fixed per-stat thresholds (a `ponytail:` heuristic to refine with remaining games
+/ projections). Consumed by the Streaming + Decision engines.
 
 ### Sprint 9 — Streaming Engine ⭐⭐⭐⭐⭐
 Rank FA pickups by **category priority**, not Yahoo rank (supersedes the current
