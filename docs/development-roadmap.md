@@ -112,9 +112,12 @@ knows the Provider interface, not the source — so Streaming / Decision are
 unchanged and just rank on the stronger score. ponytail: fixture-backed players
 get a data-availability nudge; revisit if it skews.
 
-### Sprint 12 — Weekly Report Generator
-Deterministic structured report: team strengths, weaknesses, best adds, worst
-roster spots, category outlook.
+### ✅ Sprint 12 — Weekly Report Generator
+`analyzer/weeklyReport.js` (+ test). `generateWeeklyReport({ team, matchup,
+strategy, recommendations })` → `{ summary, strengths, weaknesses,
+categoryOutlook, rosterAnalysis, recommendations, notes }`, plus
+`renderWeeklyReport(report)` for a plain-text view. Pure aggregation of the
+existing analyzers + GM Decision Engine — deterministic, no GPT.
 
 ### Sprint 13 — LLM Coach
 GPT as a **presentation layer only** — explain recommendations, compare players,
