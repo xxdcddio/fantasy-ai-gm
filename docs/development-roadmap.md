@@ -33,10 +33,12 @@ Rewrote the parser against real `team.json`. Link-driven extraction (clean name 
 
 ---
 
-## Upcoming Sprints
+### ✅ Sprint 6 — Lineup Analyzer
+`analyzer/lineupAnalyzer.js` (+ test). Deterministic roster-construction analysis on the Team Model: `getPositionDepth` (depth chart by eligible position, multi-position players counted in every slot), `getBenchCandidates`, `getILSummary`, `findEmptyOrWeakSlots` (thin defensive positions), and `analyzeLineup` → `{ positionDepth, bench, IL, weakSlots, notes }`. No scoring / AI yet.
 
-### Sprint 6 — Lineup Analyzer ⭐⭐⭐⭐
-Roster construction: position depth, bench depth, IL analysis, multi-position eligibility.
+---
+
+## Upcoming Sprints
 
 ### Sprint 7 — Category Analyzer ⭐⭐⭐⭐⭐
 Analyze the current matchup (needs matchup-page parsing: 2 players/row, category columns). Output category needs: attack / protect / safe.
