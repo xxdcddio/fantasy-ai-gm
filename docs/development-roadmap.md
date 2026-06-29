@@ -119,10 +119,16 @@ categoryOutlook, rosterAnalysis, recommendations, notes }`, plus
 `renderWeeklyReport(report)` for a plain-text view. Pure aggregation of the
 existing analyzers + GM Decision Engine — deterministic, no GPT.
 
-### Sprint 13 — LLM Coach
-GPT as a **presentation layer only** — explain recommendations, compare players,
-answer "why", produce natural-language summaries. Consumes the deterministic GM
-engine; never replaces the decision logic.
+### ✅ Sprint 13 — LLM Coach
+`analyzer/coach.js` (+ test) and `analyzer/providers/llm.js`. Claude as a
+**presentation layer only** — explain recommendations, compare players, answer
+"why". `buildCoachPrompt({ report, moves, question })` → `{ system, user }` is
+pure and grounded only in the deterministic engine's output; the system
+instruction forbids changing/inventing decisions. `askCoach({ ..., provider })`
+calls a `(prompt) => Promise<string>` LLM provider — `createClaudeProvider`
+(Claude Opus 4.8, adaptive thinking, raw HTTPS, key from `ANTHROPIC_API_KEY` at
+call time, no SDK dependency). Tests inject a fake provider — no network, no key,
+no cost. ponytail: testable framework only; real call wired but unexercised.
 
 ---
 
