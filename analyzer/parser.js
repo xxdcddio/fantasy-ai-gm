@@ -24,6 +24,15 @@ const SLOT_ALIASES = {
 
 const PITCHER_POSITIONS = new Set(["P", "SP", "RP"]);
 
+// Injury / availability tokens Yahoo glues onto the player name (e.g. "GelofIL10").
+const STATUS_RE = /^(IL\d*|DTD|NA|DL\d*|SUSP|GTD|NRI|O|Q)/;
+// A player's profile link (NOT the ".../news" note link).
+const PROFILE_HREF_RE = /\/mlb\/players\/\d+$/;
+// Game link text, e.g. "9:40 am @ ATH" / " 8:05 am vs SD".
+const GAME_TEXT_RE = /^(\d{1,2}:\d{2}\s*[ap]m)\s+((?:@|vs)\s*[A-Z]{2,3})$/i;
+// "TEAM - POS,POS,..." inside the player cell, e.g. "COL - 1B,2B,3B,SS,OF".
+const TEAM_POS_RE = /\b([A-Z]{2,3})\s*-\s*([A-Z0-9]+(?:,[A-Z0-9]+)*)/;
+
 const toArray = (value) => {
   if (Array.isArray(value)) return value;
   if (value == null || value === "") return [];
@@ -32,71 +41,56 @@ const toArray = (value) => {
 
 const clean = (value) => String(value ?? "").replace(/\s+/g, " ").trim();
 
-const firstNonEmpty = (...values) => values.map(clean).find(Boolean) || "";
+const links = (player) => toArray(player.links);
 
-const splitPositions = (value) =>
-  toArray(value)
-    .flatMap((entry) => clean(entry).split(/[,/| ]+/))
-    .map((entry) => entry.toUpperCase())
-    .filter(Boolean);
+const profileLink = (player) =>
+  links(player).find((link) => PROFILE_HREF_RE.test(link.href || ""));
 
-const linkByPattern = (player, pattern) => {
-  const links = toArray(player.links);
-  const found = links.find((link) => pattern.test(`${link.href || ""} ${link.text || ""}`));
-  return found?.href || "";
-};
+const cellByClass = (player, name) =>
+  toArray(player.cells).find((cell) => new RegExp(`\\b${name}\\b`).test(cell.className || ""));
 
-const cellText = (player, index) => clean(toArray(player.cells)[index]?.text);
+const playerCellText = (player) =>
+  clean(cellByClass(player, "player")?.text ?? toArray(player.cells)[2]?.text);
 
 const inferSlot = (player) =>
-  firstNonEmpty(
-    player.slot,
-    player.rosterSlot,
-    player.lineupSlot,
-    player.position,
-    cellText(player, 0)
-  ).toUpperCase();
+  clean(cellByClass(player, "pos")?.text ?? player.slot ?? player.position ?? toArray(player.cells)[0]?.text).toUpperCase();
 
-const inferMlbTeam = (player) =>
-  firstNonEmpty(
-    player.mlbTeam,
-    player.team,
-    player.proTeam,
-    player.editorialTeamAbbr,
-    cellText(player, 2)
-  );
-
-const inferEligiblePositions = (player, slot) => {
-  const positions = splitPositions(
-    firstNonEmpty(
-      player.eligiblePositions,
-      player.eligiblePosition,
-      player.positions,
-      player.positionType,
-      player.position
-    )
-  );
-
-  return Array.from(new Set([...positions, ...splitPositions(slot)])).filter(
-    (position) => !["BN", "BENCH", "IL", "IL10", "IL15", "IL60", "NA"].includes(position)
-  );
+const inferGame = (player) => {
+  const link = links(player).find((l) => GAME_TEXT_RE.test(clean(l.text)));
+  const match = link && clean(link.text).match(GAME_TEXT_RE);
+  return match ? { startTime: clean(match[1]), opponent: clean(match[2]) } : { startTime: "", opponent: "" };
 };
 
+const inferStatus = (cellText, name) => {
+  const idx = cellText.indexOf(name);
+  const rest = idx >= 0 ? cellText.slice(idx + name.length) : cellText;
+  const match = rest.match(STATUS_RE);
+  return match ? match[1] : "";
+};
+
+// A row is a player only if it has a profile link; this drops Yahoo's section
+// headers, "Starting Lineup Totals", and the team-analysis summary rows.
+const isPlayerRow = (player) => Boolean(profileLink(player));
+
 const normalizePlayer = (player) => {
-  const slot = inferSlot(player);
-  const eligiblePositions = inferEligiblePositions(player, slot);
+  const link = profileLink(player);
+  const name = clean(link?.text);
+  const cellText = playerCellText(player);
+  const teamPos = cellText.match(TEAM_POS_RE);
+  const { startTime, opponent } = inferGame(player);
+  const newsLink = links(player).find((l) => /\/news$/.test(l.href || ""));
 
   return {
     ...EMPTY_PLAYER,
-    name: firstNonEmpty(player.name, player.playerName, cellText(player, 1)),
-    mlbTeam: inferMlbTeam(player),
-    slot,
-    eligiblePositions,
-    opponent: firstNonEmpty(player.opponent, player.opp, player.matchup, cellText(player, 3)),
-    status: firstNonEmpty(player.status, player.playerStatus, player.injuryStatus),
-    startTime: firstNonEmpty(player.startTime, player.gameTime, player.time),
-    newsLink: firstNonEmpty(player.newsLink, linkByPattern(player, /news|playernote|note/i)),
-    playerLink: firstNonEmpty(player.playerLink, linkByPattern(player, /\/player\/|players\?/i))
+    name,
+    mlbTeam: teamPos ? teamPos[1] : "",
+    slot: inferSlot(player),
+    eligiblePositions: teamPos ? teamPos[2].split(",").map((p) => p.toUpperCase()).filter(Boolean) : [],
+    opponent,
+    status: inferStatus(cellText, name),
+    startTime,
+    newsLink: newsLink?.href || "",
+    playerLink: link?.href || ""
   };
 };
 
@@ -118,7 +112,7 @@ const normalizeFantasyJson = (input) => {
     pitchers: []
   };
 
-  const players = toArray(input?.roster).map(normalizePlayer).filter((player) => player.name);
+  const players = toArray(input?.roster).filter(isPlayerRow).map(normalizePlayer);
 
   players.forEach((player) => {
     normalized[bucketForPlayer(player)].push(player);
@@ -126,6 +120,51 @@ const normalizeFantasyJson = (input) => {
 
   return normalized;
 };
+
+// --- Free Agent (Player List page) ---------------------------------------
+// FA rows carry season stats in fixed columns to the right of the player cell.
+// Offsets are relative to the player cell, matching the "All Batters" tab.
+// ponytail: batter-tab column layout; pitcher tab (W/K/ERA/...) is a separate map, add when needed.
+const toNum = (value) => {
+  const s = clean(value).replace(/%/g, "");
+  if (s === "" || s === "-") return null;
+  const n = Number(s);
+  return Number.isNaN(n) ? null : n;
+};
+
+const playerCellIndex = (player) => {
+  const cells = toArray(player.cells);
+  const i = cells.findIndex((cell) => /\bplayer\b/.test(cell.className || ""));
+  return i >= 0 ? i : 2;
+};
+
+const normalizeFreeAgent = (player) => {
+  const cells = toArray(player.cells);
+  const base = playerCellIndex(player);
+  const at = (offset) => clean(cells[base + offset]?.text);
+
+  return {
+    ...normalizePlayer(player),
+    rosterStatus: at(2),
+    gamesPlayed: toNum(at(3)),
+    preSeasonRank: toNum(at(4)),
+    rank: toNum(at(5)),
+    percentRostered: toNum(at(6)),
+    stats: {
+      hAb: at(7),
+      R: toNum(at(8)),
+      HR: toNum(at(9)),
+      RBI: toNum(at(10)),
+      SB: toNum(at(11)),
+      BB: toNum(at(12)),
+      AVG: toNum(at(13)),
+      OPS: toNum(at(14))
+    }
+  };
+};
+
+const normalizeFreeAgents = (input) =>
+  toArray(input?.roster).filter(isPlayerRow).map(normalizeFreeAgent);
 
 const parseFantasyJson = (jsonText) => normalizeFantasyJson(JSON.parse(jsonText));
 
@@ -144,5 +183,6 @@ if (require.main === module) {
 module.exports = {
   normalizeFantasyJson,
   normalizePlayer,
+  normalizeFreeAgents,
   parseFantasyJson
 };

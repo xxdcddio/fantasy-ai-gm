@@ -4,9 +4,9 @@ const path = require("path");
 
 const { normalizeFantasyJson } = require("./parser");
 
-const samplePath = path.join(__dirname, "..", "data", "samples", "sample.json");
-const sample = JSON.parse(fs.readFileSync(samplePath, "utf8"));
-const normalized = normalizeFantasyJson(sample);
+const teamPath = path.join(__dirname, "..", "data", "samples", "team.json");
+const team = JSON.parse(fs.readFileSync(teamPath, "utf8"));
+const normalized = normalizeFantasyJson(team);
 
 const expectedKeys = [
   "name",
@@ -20,12 +20,6 @@ const expectedKeys = [
   "playerLink"
 ];
 
-assert.deepStrictEqual(Object.keys(normalized), ["roster", "bench", "IL", "pitchers"]);
-assert.strictEqual(normalized.roster.length, 1);
-assert.strictEqual(normalized.bench.length, 1);
-assert.strictEqual(normalized.IL.length, 1);
-assert.strictEqual(normalized.pitchers.length, 1);
-
 const allPlayers = [
   ...normalized.roster,
   ...normalized.bench,
@@ -33,16 +27,66 @@ const allPlayers = [
   ...normalized.pitchers
 ];
 
+const byName = (name) => allPlayers.find((p) => p.name === name);
+
+// Output shape
+assert.deepStrictEqual(Object.keys(normalized), ["roster", "bench", "IL", "pitchers"]);
+
+// Junk rows (Rank Fantasy Batting/Pitching, Starting Lineup Totals, Team analysis,
+// team summary) must be dropped — only rows with a real player profile link survive.
+assert.strictEqual(allPlayers.length, 27);
 allPlayers.forEach((player) => {
   assert.deepStrictEqual(Object.keys(player), expectedKeys);
-  assert.ok(player.name);
-  assert.ok(Array.isArray(player.eligiblePositions));
+  assert.ok(player.name, "player has a name");
+  assert.ok(!/Player Note|Rank Fantasy|Starting Lineup|Team analysis/.test(player.name),
+    `name is clean: ${player.name}`);
+  assert.ok(player.playerLink, `playerLink present: ${player.name}`);
   assert.strictEqual(Object.prototype.hasOwnProperty.call(player, "raw"), false);
   assert.strictEqual(Object.prototype.hasOwnProperty.call(player, "cells"), false);
-  assert.strictEqual(Object.prototype.hasOwnProperty.call(player, "className"), false);
 });
 
-assert.strictEqual(normalized.roster[0].name, "Aaron Judge");
-assert.strictEqual(normalized.bench[0].slot, "BN");
-assert.strictEqual(normalized.IL[0].status, "IL");
-assert.strictEqual(normalized.pitchers[0].eligiblePositions[0], "SP");
+// Bucketing
+assert.strictEqual(normalized.roster.length, 10);
+assert.strictEqual(normalized.bench.length, 5);
+assert.strictEqual(normalized.IL.length, 4);
+assert.strictEqual(normalized.pitchers.length, 8);
+
+// Multi-position hitter: team + all eligible positions from "TEAM - p,p,p"
+const castro = byName("Willi Castro");
+assert.ok(castro, "Willi Castro parsed");
+assert.strictEqual(castro.mlbTeam, "COL");
+assert.strictEqual(castro.slot, "3B");
+assert.deepStrictEqual(castro.eligiblePositions, ["1B", "2B", "3B", "SS", "OF"]);
+
+// Injury token glued into the name string
+const ramirez = byName("José Ramírez");
+assert.ok(ramirez, "José Ramírez parsed");
+assert.strictEqual(ramirez.slot, "IL");
+assert.strictEqual(ramirez.status, "IL10");
+assert.strictEqual(ramirez.mlbTeam, "CLE");
+assert.deepStrictEqual(ramirez.eligiblePositions, ["3B"]);
+
+const cag = byName("Jac Caglianone");
+assert.ok(cag, "Jac Caglianone parsed");
+assert.strictEqual(cag.slot, "BN");
+assert.strictEqual(cag.status, "DTD");
+assert.strictEqual(cag.mlbTeam, "KC");
+assert.deepStrictEqual(cag.eligiblePositions, ["1B", "OF"]);
+
+// Pitcher with game info parsed from the game link
+const rodon = byName("Carlos Rodón");
+assert.ok(rodon, "Carlos Rodón parsed");
+assert.strictEqual(rodon.slot, "SP");
+assert.strictEqual(rodon.mlbTeam, "NYY");
+assert.deepStrictEqual(rodon.eligiblePositions, ["SP"]);
+assert.strictEqual(rodon.startTime, "7:05 am");
+assert.strictEqual(rodon.opponent, "vs DET");
+
+// Player with no game today: no game link -> empty time/opponent
+const harris = byName("Michael Harris II");
+assert.ok(harris, "Michael Harris II parsed");
+assert.strictEqual(harris.startTime, "");
+assert.strictEqual(harris.opponent, "");
+assert.strictEqual(harris.mlbTeam, "ATL");
+
+console.log("parser.test.js OK");
