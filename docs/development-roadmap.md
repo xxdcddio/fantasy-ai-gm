@@ -50,15 +50,22 @@ Rewrote the parser against real `team.json`. Link-driven extraction (clean name 
 > and Category Analyzer come first; Streaming and the Decision Engine build on
 > them. These four sprints are the project's real differentiator.
 
-### Sprint 7 — Matchup Parser ⭐⭐⭐⭐⭐
-Not analysis — full parsing of the matchup page into models. Each row holds two
-players (mine vs opponent, e.g. `SS Jeremy Peña` vs `SS Corey Seager`). Produce:
-- my players + opponent players (reuse Player / Team models)
-- per-day starters
-- categories, current score, remaining games
+### ✅ Sprint 7 — Matchup Parser (done)
+`analyzer/matchupParser.js` (+ test). `parseMatchup(export)` → `{ week, score,
+teams{mine,opponent}, categories[] }`. Week/teams come from `matchupHeader`;
+score + the 14 scoring categories (7 hitting / 7 pitching, with `leader` and
+`lowerIsBetter` for ERA/WHIP) are parsed from the stat table. Non-scoring H/AB*
+and IP* are dropped; summary rows are ignored and no fake players are created.
 
-Requires handling the 2-players-per-row layout and the extension `pageKind`
-issue (matchup page is currently misclassified as `team` — see Known Issues).
+Enabled by two extension fixes:
+- **Sprint 7.0** — detect matchup pages by URL and scrape the off-table
+  `matchupHeader` (week, both teams' id/name/manager/record, games played &
+  remaining), with null/"" fallbacks. (manager is best-effort.)
+- **Sprint 7.1** — name the popup's JSON download by `page.kind`
+  (team/free-agents/matchup) so fixtures drop into `data/samples/`.
+
+Deferred: per-day starters and parsing the two players per row into Team models
+(not needed for the Category → Streaming → Decision path).
 
 ### Sprint 8 — Category Analyzer ⭐⭐⭐⭐⭐
 The core of every later decision. From the matchup standings, compute per-category
