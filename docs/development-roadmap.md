@@ -5,9 +5,14 @@
 ## Architecture Flow
 
 ```
-Yahoo Fantasy → Chrome Extension → JSON → Parser → Player Model → Team Model
-→ Free Agent Model → Analyzer → Streaming Engine → LLM Coach → Daily Recommendation
+Yahoo Extension → Parser → Player → Team → FreeAgent → Lineup Analyzer
+→ Matchup Parser → Category Analyzer → Streaming Engine → GM Decision Engine
 ```
+
+The first six stages are the foundation (done). Sprints 7–10 are where the
+project becomes a real AI GM: understand the matchup, turn it into category
+priorities, rank pickups by those priorities, and finally make explainable
+add/drop decisions with a projected win-probability change.
 
 ---
 
@@ -40,23 +45,54 @@ Rewrote the parser against real `team.json`. Link-driven extraction (clean name 
 
 ## Upcoming Sprints
 
-### Sprint 7 — Category Analyzer ⭐⭐⭐⭐⭐
-Analyze the current matchup (needs matchup-page parsing: 2 players/row, category columns). Output category needs: attack / protect / safe.
+> Re-planned 2026-06-29: a matchup must be fully parsed and turned into
+> category priorities **before** any pickup/decision logic. So Matchup Parser
+> and Category Analyzer come first; Streaming and the Decision Engine build on
+> them. These four sprints are the project's real differentiator.
 
-### Sprint 8 — Streaming Engine ⭐⭐⭐⭐⭐
-Recommend best pickup from FA using schedule + category needs + opponent. Scored, ranked, with reasons.
+### Sprint 7 — Matchup Parser ⭐⭐⭐⭐⭐
+Not analysis — full parsing of the matchup page into models. Each row holds two
+players (mine vs opponent, e.g. `SS Jeremy Peña` vs `SS Corey Seager`). Produce:
+- my players + opponent players (reuse Player / Team models)
+- per-day starters
+- categories, current score, remaining games
 
-### Sprint 9 — Schedule Analyzer ⭐⭐⭐
-Weekly schedule: games this week, off days, platoon detection.
+Requires handling the 2-players-per-row layout and the extension `pageKind`
+issue (matchup page is currently misclassified as `team` — see Known Issues).
 
-### Sprint 10 — Daily Recommendation ⭐⭐⭐⭐⭐
-Daily report: current matchup, today's starters, today's pickup, win probability.
+### Sprint 8 — Category Analyzer ⭐⭐⭐⭐⭐
+The core of every later decision. From the matchup standings, compute per-category
+status and priority:
+```
+HR  behind 2     → Priority High
+SB  ahead 5      → Priority Low
+AVG ahead a lot  → Priority Ignore
+OPS tied         → Priority High
+```
+Output: a category-priority map consumed by Streaming and Decision engines.
 
-### Sprint 11 — Trade Analyzer ⭐⭐⭐⭐
-Evaluate trades: score, pros / cons.
+### Sprint 9 — Streaming Engine ⭐⭐⭐⭐⭐
+Rank FA pickups by **category priority**, not Yahoo rank (supersedes the current
+`FreeAgentList.bestAvailable`). Weigh each candidate's projected category
+contribution against what the matchup needs:
+```
+Christian Walker  +0.35 HR  +1 RBI
+Ryan O'Hearn      +0.05 SB  +0.006 AVG
+```
+Ordered by need, with schedule (remaining games) factored in.
 
-### Sprint 12 — LLM Coach ⭐⭐⭐⭐⭐
-GPT as the final decision layer over team / FA / matchup / schedule JSON.
+### Sprint 10 — GM Decision Engine ⭐⭐⭐⭐⭐ (first real AI GM milestone)
+Explainable add/drop decisions with projected category deltas and win probability:
+```
+Drop  Jung Hoo Lee
+Add   Christian Walker
+Reason: this week HR +11%, RBI +9%, AVG −2%
+Win probability 52% → 61%
+```
+
+### Later
+Trade Analyzer, LLM Coach (GPT as a final explanation/decision layer over the
+team / FA / matchup / category models), plus the Future Ideas below.
 
 ---
 
