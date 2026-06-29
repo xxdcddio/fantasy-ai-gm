@@ -73,10 +73,10 @@ assert.strictEqual(cag.status, "DTD");
 assert.strictEqual(cag.mlbTeam, "KC");
 assert.deepStrictEqual(cag.eligiblePositions, ["1B", "OF"]);
 
-// Pitcher with game info parsed from the game link
+// Pitcher with game info parsed from the game link (now on the bench)
 const rodon = byName("Carlos Rodón");
 assert.ok(rodon, "Carlos Rodón parsed");
-assert.strictEqual(rodon.slot, "SP");
+assert.strictEqual(rodon.slot, "BN");
 assert.strictEqual(rodon.mlbTeam, "NYY");
 assert.deepStrictEqual(rodon.eligiblePositions, ["SP"]);
 assert.strictEqual(rodon.startTime, "7:05 am");

@@ -18,7 +18,7 @@ const team = new Team(normalizeFantasyJson(JSON.parse(fs.readFileSync(teamPath, 
 // Count hitters by eligible position (non-IL), as a depth chart of names
 const depth = getPositionDepth(team);
 assert.strictEqual(depth["C"].length, 1);
-assert.strictEqual(depth["1B"].length, 3);
+assert.strictEqual(depth["1B"].length, 4);
 assert.strictEqual(depth["2B"].length, 2);
 assert.strictEqual(depth["3B"].length, 1);
 assert.strictEqual(depth["SS"].length, 3);
@@ -34,7 +34,7 @@ assert.ok(!depth["C"].includes("Willi Castro"));
 const bench = getBenchCandidates(team);
 assert.strictEqual(bench.length, 5);
 assert.ok(bench.some((b) => b.name === "Jac Caglianone"));
-assert.ok(bench.some((b) => b.name === "Tarik Skubal"));
+assert.ok(bench.some((b) => b.name === "Carlos Rodón"));
 
 // IL summary
 const il = getILSummary(team);

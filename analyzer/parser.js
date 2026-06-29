@@ -163,8 +163,12 @@ const normalizeFreeAgent = (player) => {
   };
 };
 
+// The fixed extension puts FAs in `freeAgents`; old fixtures (misclassified
+// pages) put them in `roster`. Prefer freeAgents, fall back to roster.
 const normalizeFreeAgents = (input) =>
-  toArray(input?.roster).filter(isPlayerRow).map(normalizeFreeAgent);
+  toArray(input?.freeAgents?.length ? input.freeAgents : input?.roster)
+    .filter(isPlayerRow)
+    .map(normalizeFreeAgent);
 
 const parseFantasyJson = (jsonText) => normalizeFantasyJson(JSON.parse(jsonText));
 

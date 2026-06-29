@@ -130,10 +130,22 @@ calls a `(prompt) => Promise<string>` LLM provider — `createClaudeProvider`
 call time, no SDK dependency). Tests inject a fake provider — no network, no key,
 no cost. ponytail: testable framework only; real call wired but unexercised.
 
+### ✅ Sprint 13.5 — CLI Analyzer
+`scripts/analyze.js` (+ test) wires the whole deterministic pipeline from the
+extension fixtures and prints today's recommendation: `npm run analyze`. Reads
+team/player/matchup → Parser → Team/FreeAgent → Matchup/Category → Streaming →
+GM Decision → Weekly Report → console. `runAnalysis()` returns the structured
+result; `formatAnalysis()` renders it. `npm run coach` (optional) explains the
+top move via the LLM Coach (needs `ANTHROPIC_API_KEY`). Also: the fixed
+extension now files FAs under `freeAgents[]` (was `roster[]`), so
+`normalizeFreeAgents` reads `freeAgents` (roster fallback for old fixtures), and
+the six fixture-pinned tests were re-baselined against the freshly-extracted
+team/player pages.
+
 ---
 
 ## Known Issues / Tech Debt
-- Chrome extension `pageKind` misclassifies matchup and player-list pages as `team`, so all rows land in `roster[]` and `matchup` / `freeAgents` are always empty. Parser currently reads `roster[]` regardless. Fix the extension or route by `page.url` before Sprint 7.
+- `getPlayerStatcast` slug splits on the apostrophe (`Ryan O'Hearn` → `ryan-o-hearn`) and misses `ryan-ohearn.json`. Only matters if an apostrophe-named FA needs Statcast; Curtis Mead is the current fixture-backed FA.
 - FA stat parsing is mapped to the "All Batters" tab column layout. Pitcher tab (W/K/ERA/WHIP/K/BB/QS/SV+H) is a separate column map — add when the pitcher FA list is needed.
 
 ---

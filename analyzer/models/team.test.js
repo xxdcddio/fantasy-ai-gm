@@ -15,8 +15,8 @@ assert.strictEqual(team.players.length, 27);
 assert.ok(team.players.every((p) => p instanceof Player));
 
 // Views by player type (across all slots)
-assert.strictEqual(team.pitchers().length, 12); // 8 active + 4 on bench
-assert.strictEqual(team.hitters().length, 15);
+assert.strictEqual(team.pitchers().length, 11); // 8 active + 3 on bench
+assert.strictEqual(team.hitters().length, 16);
 assert.ok(team.pitchers().every((p) => p.isPitcher()));
 assert.ok(team.hitters().every((p) => p.isHitter()));
 
@@ -37,7 +37,7 @@ assert.strictEqual(team.findPlayer("Nobody Here"), null);
 // toJSON exposes the four views as plain arrays
 const json = team.toJSON();
 assert.deepStrictEqual(Object.keys(json), ["hitters", "pitchers", "bench", "IL"]);
-assert.strictEqual(json.pitchers.length, 12);
+assert.strictEqual(json.pitchers.length, 11);
 assert.strictEqual(json.hitters[0].name, team.hitters()[0].name);
 
 // Constructor also accepts a flat array of normalized players

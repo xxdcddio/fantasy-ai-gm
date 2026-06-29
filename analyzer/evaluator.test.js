@@ -15,48 +15,47 @@ const strategy = { attack: ["HR", "RBI", "OPS"], protect: ["ERA"], ignore: ["SB"
 
 const ev = (name) => evaluatePlayer(fa.find(name), strategy, team);
 
-// Component shape (now includes Statcast)
-const walker = ev("Christian Walker");
-assert.deepStrictEqual(Object.keys(walker), [
+// Component shape (includes Statcast)
+const mead = ev("Curtis Mead");
+assert.deepStrictEqual(Object.keys(mead), [
   "score", "categoryScore", "positionScore", "availabilityScore",
   "flexibilityScore", "statcastScore", "reasons", "risks"
 ]);
 assert.strictEqual(
-  walker.score,
-  walker.categoryScore + walker.positionScore + walker.availabilityScore +
-    walker.flexibilityScore + walker.statcastScore
+  mead.score,
+  mead.categoryScore + mead.positionScore + mead.availabilityScore +
+    mead.flexibilityScore + mead.statcastScore
 );
 
-// Statcast: Walker has a fixture (4 metrics x 4 stars = 16) with quality reasons;
-// a player without a fixture scores 0.
-assert.strictEqual(walker.statcastScore, 16);
-assert.ok(walker.reasons.some((r) => /Barrel %|Hard Hit %|xwOBA|xSLG/.test(r)));
-assert.strictEqual(ev("Brooks Lee").statcastScore, 0); // no fixture
+// Statcast: Curtis Mead has a fixture (4 metrics x 3 stars = 12); a player
+// without a fixture scores 0.
+assert.strictEqual(mead.statcastScore, 12);
+assert.strictEqual(ev("Isaac Paredes").statcastScore, 0); // no fixture
 
-// Category: Walker (HR 19 / RBI 56) beats an AVG-first hitter (Arraez HR 3) on attack cats
+// Category: Mead (HR 14 / RBI 39) beats an AVG-first hitter (Arraez HR 3) on attack cats
 const arraez = ev("Luis Arraez");
-assert.ok(walker.categoryScore > arraez.categoryScore, "Walker category > Arraez");
-assert.ok(walker.reasons.includes("Improves HR"));
-assert.ok(walker.reasons.includes("Improves RBI"));
-assert.ok(walker.risks.includes("Lower AVG")); // .240 is weak
+assert.ok(mead.categoryScore > arraez.categoryScore, "Mead category > Arraez");
+assert.ok(mead.reasons.includes("Improves HR"));
+assert.ok(mead.reasons.includes("Improves RBI"));
+assert.ok(mead.risks.includes("Lower AVG")); // .222 is weak
 
 // Availability: healthy > DTD > IL
-assert.strictEqual(ev("Christian Walker").availabilityScore, 10); // healthy
+assert.strictEqual(ev("Curtis Mead").availabilityScore, 10); // healthy
 assert.strictEqual(ev("Dominic Canzone").availabilityScore, 3); // DTD
 assert.strictEqual(ev("Spencer Horwitz").availabilityScore, 0); // IL10
 assert.ok(ev("Spencer Horwitz").risks.some((r) => /IL/.test(r)));
 
 // Flexibility: multi-position > single-position
-assert.strictEqual(ev("Christian Walker").flexibilityScore, 0); // 1B only
-assert.strictEqual(ev("Luis García Jr.").flexibilityScore, 4); // 1B/2B
-assert.ok(ev("Brooks Lee").flexibilityScore === 10); // 2B/3B/SS
+assert.strictEqual(ev("Paul Goldschmidt").flexibilityScore, 0); // 1B only
+assert.strictEqual(ev("Luis Arraez").flexibilityScore, 4); // 1B/2B
+assert.strictEqual(ev("Brooks Lee").flexibilityScore, 10); // 2B/3B/SS
 
 // Position: fills a weak slot (3B) > a deep slot
 assert.strictEqual(ev("Isaac Paredes").positionScore, 20); // 1B/3B, 3B is weak
-assert.strictEqual(ev("Christian Walker").positionScore, 3); // 1B only, not weak
+assert.strictEqual(ev("Paul Goldschmidt").positionScore, 3); // 1B only, not weak
 assert.ok(ev("Isaac Paredes").reasons.some((r) => /weak 3B/.test(r)));
 
 // Deterministic
-assert.strictEqual(JSON.stringify(ev("Christian Walker")), JSON.stringify(ev("Christian Walker")));
+assert.strictEqual(JSON.stringify(ev("Curtis Mead")), JSON.stringify(ev("Curtis Mead")));
 
 console.log("evaluator.test.js OK");

@@ -28,7 +28,7 @@ assert.ok(
 );
 
 // Statcast flows through the same evaluator without any Streaming change
-assert.strictEqual(recs.find((r) => r.player === "Christian Walker").statcastScore, 16);
+assert.strictEqual(recs.find((r) => r.player === "Curtis Mead").statcastScore, 12);
 
 // Sorted by Streaming Score, highest first
 for (let i = 1; i < recs.length; i += 1) {
@@ -36,14 +36,14 @@ for (let i = 1; i < recs.length; i += 1) {
 }
 assert.strictEqual(recs[0].score, Math.max(...recs.map((r) => r.score)));
 
-// Walker (HR/RBI) ranks above the AVG-first bat Arraez
-assert.ok(rank("Christian Walker") < rank("Luis Arraez"));
+// Mead (HR/RBI, fills weak 3B) ranks above the AVG-first bat Arraez
+assert.ok(rank("Curtis Mead") < rank("Luis Arraez"));
 
 // Score is the internal Streaming Score, not Yahoo rank: the top pick is not
 // simply the best Yahoo current rank.
-const walkerRank = fa.find("Christian Walker").rank; // Yahoo #98 (best rank in pool)
-assert.notStrictEqual(recs[0].player, "Christian Walker"); // a weak-3B multi-position bat outranks him here
-assert.ok(typeof walkerRank === "number");
+const ohearnRank = fa.find("Ryan O'Hearn").rank; // Yahoo #105 (best rank in pool)
+assert.notStrictEqual(recs[0].player, "Ryan O'Hearn"); // a weak-3B multi-position bat outranks him here
+assert.ok(typeof ohearnRank === "number");
 
 // Deterministic
 assert.strictEqual(JSON.stringify(recommend(fa, strategy, team)), JSON.stringify(out));
