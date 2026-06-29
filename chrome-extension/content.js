@@ -97,9 +97,13 @@
     const url = window.location.href.toLowerCase();
     const body = text(document.body).toLowerCase();
 
+    // URL is the reliable signal; check matchup/players before the team
+    // heuristic, since every page's body contains "my team" / "roster" nav text.
+    if (url.includes("/matchup")) return "matchup";
+    if (url.includes("/players")) return "free_agents";
     if (url.includes("/team") || body.includes("my team") || body.includes("roster")) return "team";
-    if (url.includes("/matchup") || body.includes("matchup")) return "matchup";
-    if (url.includes("/players") || body.includes("players") || body.includes("free agents")) return "free_agents";
+    if (body.includes("matchup")) return "matchup";
+    if (body.includes("free agents")) return "free_agents";
     return "unknown";
   };
 
@@ -141,6 +145,62 @@
     };
   };
 
+  // Matchup header / sidebar data (week, both teams' name/manager/record,
+  // games played & remaining). This lives OUTSIDE the stat table, so it is
+  // scraped by text/URL patterns with null/"" fallbacks — never faked.
+  // Heuristics are order-based (first team block = mine, second = opponent);
+  // verify against a real export and tighten selectors if Yahoo's DOM differs.
+  const extractMatchupHeader = () => {
+    const bodyText = text(document.body);
+    const leagueId = (window.location.href.match(/\/b1\/(\d+)\//) || [])[1] || "";
+
+    const week = (bodyText.match(/\bWeek\s+\d+\b/) || [""])[0];
+
+    // Team links /b1/<league>/<teamId>; dedupe by id, keep document order.
+    const teamSeen = new Set();
+    const teams = [];
+    Array.from(document.querySelectorAll("a[href]")).forEach((a) => {
+      const href = absoluteUrl(attr(a, "href"));
+      const m = href.match(/\/b1\/\d+\/(\d+)(?:[/?#]|$)/);
+      const name = text(a);
+      if (!m || !name || teamSeen.has(m[1])) return;
+      teamSeen.add(m[1]);
+      teams.push({ id: m[1], name });
+    });
+
+    const managers = Array.from(
+      document.querySelectorAll("a[href*='/user/'], a[href*='profiles.sports.yahoo.com']")
+    )
+      .map(text)
+      .filter(Boolean);
+
+    // Records like "101-89-6"; drop date-like groups (e.g. 2026-06-29).
+    const records = (bodyText.match(/\b\d{1,3}-\d{1,3}-\d{1,3}\b/g) || []).filter((r) =>
+      r.split("-").every((n) => n.length <= 3)
+    );
+
+    // "0/113" => played / total; remaining = total - played.
+    const games = (bodyText.match(/\b\d+\s*\/\s*\d{2,3}\b/g) || []).map((g) => {
+      const [played, total] = g.split("/").map((n) => parseInt(n.trim(), 10));
+      return { played, total, remaining: total - played };
+    });
+
+    const teamAt = (i) => ({
+      id: teams[i]?.id || "",
+      name: teams[i]?.name || "",
+      manager: managers[i] || "",
+      record: records[i] || "",
+      gamesPlayed: games[i] ? games[i].played : null,
+      remainingGames: games[i] ? games[i].remaining : null
+    });
+
+    return {
+      leagueId,
+      week,
+      teams: { mine: teamAt(0), opponent: teamAt(1) }
+    };
+  };
+
   const extractFreeAgents = () => {
     const rows = visibleRows(document)
       .filter((row) => {
@@ -165,11 +225,15 @@
       },
       roster: [],
       matchup: null,
+      matchupHeader: null,
       freeAgents: []
     };
 
-    if (kind === "team" || kind === "unknown") output.roster = extractRoster();
+    // Matchup pages keep the raw stat rows in `roster` (the Sprint 7 parser
+    // reads them) AND gain `matchupHeader` for the off-table meta.
+    if (kind === "team" || kind === "matchup" || kind === "unknown") output.roster = extractRoster();
     if (kind === "matchup" || kind === "unknown") output.matchup = extractMatchup();
+    if (kind === "matchup") output.matchupHeader = extractMatchupHeader();
     if (kind === "free_agents" || kind === "unknown") output.freeAgents = extractFreeAgents();
 
     return output;
