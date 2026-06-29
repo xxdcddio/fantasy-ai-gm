@@ -152,10 +152,12 @@
   // verify against a real export and tighten selectors if Yahoo's DOM differs.
   // Nav/button labels that link to a team URL but aren't the team's name.
   const GENERIC_TEAM_LABELS = new Set([
-    "", "my team", "matchup", "matchups", "view profile", "profile",
-    "compare managers", "scoreboard", "standings", "edit", "research",
-    "research assistant", "trade hub", "players"
+    "", "my team", "watch list", "matchup", "matchups", "view profile", "profile",
+    "compare managers", "compare my team", "scoreboard", "standings", "edit",
+    "research", "research assistant", "trade hub", "players", "start active players",
+    "add player", "drop player"
   ]);
+  const isGeneric = (s) => GENERIC_TEAM_LABELS.has(String(s).trim().toLowerCase());
 
   const extractMatchupHeader = () => {
     const bodyText = text(document.body);
@@ -163,27 +165,40 @@
 
     const week = (bodyText.match(/\bWeek\s+\d+\b/) || [""])[0];
 
-    // Team links /b1/<league>/<teamId>. Several links share an id (a "My Team"
-    // nav alias, an empty logo link, the real name); keep the first non-generic
-    // label per id, in document order.
-    const names = new Map();
+    // Team links /b1/<league>/<teamId>. Many links share an id (nav aliases
+    // like "My Team" / "Watch List", an empty logo link, the real name). The
+    // real team name recurs across header + standings, so pick the most frequent
+    // non-generic label per id.
+    const counts = new Map();
     const order = [];
     Array.from(document.querySelectorAll("a[href]")).forEach((a) => {
       const m = absoluteUrl(attr(a, "href")).match(/\/b1\/\d+\/(\d+)(?:[/?#]|$)/);
       if (!m) return;
       const id = m[1];
-      if (!names.has(id)) { names.set(id, ""); order.push(id); }
+      if (!counts.has(id)) { counts.set(id, new Map()); order.push(id); }
       const name = text(a);
-      if (name && !GENERIC_TEAM_LABELS.has(name.toLowerCase()) && !names.get(id)) {
-        names.set(id, name);
+      if (name && !isGeneric(name)) {
+        const c = counts.get(id);
+        c.set(name, (c.get(name) || 0) + 1);
       }
     });
-    const teams = order.map((id) => ({ id, name: names.get(id) }));
+    const pickName = (id) => {
+      const c = counts.get(id);
+      if (!c || !c.size) return "";
+      return [...c.entries()].sort((a, b) => b[1] - a[1])[0][0];
+    };
+    const teams = order.map((id) => ({ id, name: pickName(id) }));
 
-    // Manager names render as "<name> View Profile" in the compare panel.
-    const managers = (bodyText.match(/(\S+)\s+View Profile/g) || [])
+    // Manager: prefer profile links (text is the manager name), else fall back
+    // to the "<name> View Profile" label shown in the compare panel. May be ""
+    // when neither is present in the DOM (compare panel not expanded).
+    const profileManagers = Array.from(
+      document.querySelectorAll("a[href*='profiles.sports.yahoo.com/user'], a[href*='/users/']")
+    ).map(text).filter((n) => n && !isGeneric(n));
+    const viaLabel = (bodyText.match(/(\S+)\s+View Profile/g) || [])
       .map((s) => s.replace(/\s+View Profile$/, "").trim())
-      .filter((n) => n && !GENERIC_TEAM_LABELS.has(n.toLowerCase()));
+      .filter((n) => n && !isGeneric(n));
+    const managers = profileManagers.length >= 2 ? profileManagers : viaLabel;
 
     // Records like "101-89-6"; drop date-like groups (e.g. 2026-06-29).
     const records = (bodyText.match(/\b\d{1,3}-\d{1,3}-\d{1,3}\b/g) || []).filter((r) =>
