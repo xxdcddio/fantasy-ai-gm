@@ -89,18 +89,32 @@ plus `reasons` + `risks`. Deterministic; replaces Yahoo rank as the scoring basi
 sorted by Streaming Score (not Yahoo rank). A thin layer over the Evaluator;
 ranks ADD candidates only (drop / swap is Sprint 10).
 
-### Sprint 10 — GM Decision Engine ⭐⭐⭐⭐⭐ (first real AI GM milestone)
-Explainable add/drop decisions with projected category deltas and win probability:
-```
-Drop  Jung Hoo Lee
-Add   Christian Walker
-Reason: this week HR +11%, RBI +9%, AVG −2%
-Win probability 52% → 61%
-```
+### ✅ Sprint 10 — GM Decision Engine (first real AI GM milestone)
+`analyzer/gmDecisionEngine.js` (+ test). `recommendMoves({ team, freeAgents,
+matchup, strategy })` → `{ moves: [{ type:"add_drop", add, drop, confidence,
+scoreGain, categoryImpact, explanation, risks }] }`. Pairs Streaming ADD
+candidates with the weakest droppable roster spot (Net Gain = Evaluator(add) −
+Evaluator(drop)), ranked by gain; confidence from a Net-Gain ladder. Never drops
+IL or a protected-core player. Deterministic, structured JSON, no GPT.
+ponytail: temporary protected-name list + single-weakest-spot swap — refine with
+Evaluator thresholds and position-aware swaps.
 
-### Later
-Trade Analyzer, LLM Coach (GPT as a final explanation/decision layer over the
-team / FA / matchup / category models), plus the Future Ideas below.
+---
+
+## Future
+
+### Sprint 11 — Baseball Savant Integration
+Add external quality metrics (xwOBA, Barrel %, Hard Hit %, Chase %, Whiff %, K %,
+BB %, Sprint Speed) as extra Evaluator inputs.
+
+### Sprint 12 — Weekly Report Generator
+Deterministic structured report: team strengths, weaknesses, best adds, worst
+roster spots, category outlook.
+
+### Sprint 13 — LLM Coach
+GPT as a **presentation layer only** — explain recommendations, compare players,
+answer "why", produce natural-language summaries. Consumes the deterministic GM
+engine; never replaces the decision logic.
 
 ---
 

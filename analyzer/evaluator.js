@@ -98,4 +98,4 @@ const evaluatePlayer = (player, strategy, team) => {
   };
 };
 
-module.exports = { evaluatePlayer };
+module.exports = { evaluatePlayer, strengthOf };
