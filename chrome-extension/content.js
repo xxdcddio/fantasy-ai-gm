@@ -150,40 +150,52 @@
   // scraped by text/URL patterns with null/"" fallbacks — never faked.
   // Heuristics are order-based (first team block = mine, second = opponent);
   // verify against a real export and tighten selectors if Yahoo's DOM differs.
+  // Nav/button labels that link to a team URL but aren't the team's name.
+  const GENERIC_TEAM_LABELS = new Set([
+    "", "my team", "matchup", "matchups", "view profile", "profile",
+    "compare managers", "scoreboard", "standings", "edit", "research",
+    "research assistant", "trade hub", "players"
+  ]);
+
   const extractMatchupHeader = () => {
     const bodyText = text(document.body);
     const leagueId = (window.location.href.match(/\/b1\/(\d+)\//) || [])[1] || "";
 
     const week = (bodyText.match(/\bWeek\s+\d+\b/) || [""])[0];
 
-    // Team links /b1/<league>/<teamId>; dedupe by id, keep document order.
-    const teamSeen = new Set();
-    const teams = [];
+    // Team links /b1/<league>/<teamId>. Several links share an id (a "My Team"
+    // nav alias, an empty logo link, the real name); keep the first non-generic
+    // label per id, in document order.
+    const names = new Map();
+    const order = [];
     Array.from(document.querySelectorAll("a[href]")).forEach((a) => {
-      const href = absoluteUrl(attr(a, "href"));
-      const m = href.match(/\/b1\/\d+\/(\d+)(?:[/?#]|$)/);
+      const m = absoluteUrl(attr(a, "href")).match(/\/b1\/\d+\/(\d+)(?:[/?#]|$)/);
+      if (!m) return;
+      const id = m[1];
+      if (!names.has(id)) { names.set(id, ""); order.push(id); }
       const name = text(a);
-      if (!m || !name || teamSeen.has(m[1])) return;
-      teamSeen.add(m[1]);
-      teams.push({ id: m[1], name });
+      if (name && !GENERIC_TEAM_LABELS.has(name.toLowerCase()) && !names.get(id)) {
+        names.set(id, name);
+      }
     });
+    const teams = order.map((id) => ({ id, name: names.get(id) }));
 
-    const managers = Array.from(
-      document.querySelectorAll("a[href*='/user/'], a[href*='profiles.sports.yahoo.com']")
-    )
-      .map(text)
-      .filter(Boolean);
+    // Manager names render as "<name> View Profile" in the compare panel.
+    const managers = (bodyText.match(/(\S+)\s+View Profile/g) || [])
+      .map((s) => s.replace(/\s+View Profile$/, "").trim())
+      .filter((n) => n && !GENERIC_TEAM_LABELS.has(n.toLowerCase()));
 
     // Records like "101-89-6"; drop date-like groups (e.g. 2026-06-29).
     const records = (bodyText.match(/\b\d{1,3}-\d{1,3}-\d{1,3}\b/g) || []).filter((r) =>
       r.split("-").every((n) => n.length <= 3)
     );
 
-    // "0/113" => played / total; remaining = total - played.
-    const games = (bodyText.match(/\b\d+\s*\/\s*\d{2,3}\b/g) || []).map((g) => {
-      const [played, total] = g.split("/").map((n) => parseInt(n.trim(), 10));
-      return { played, total, remaining: total - played };
-    });
+    // "0/113" => played / total. Require total >= 50 so dates ("6/29") and
+    // category scores don't get mistaken for game counts.
+    const games = (bodyText.match(/(\d+)\s*\/\s*(\d+)/g) || [])
+      .map((g) => g.split("/").map((n) => parseInt(n.trim(), 10)))
+      .filter(([, total]) => total >= 50)
+      .map(([played, total]) => ({ played, total, remaining: total - played }));
 
     const teamAt = (i) => ({
       id: teams[i]?.id || "",
