@@ -75,15 +75,19 @@ adds per-category `margin` / `status` (ahead|behind|tied|unknown) / `priority`
 fixed per-stat thresholds (a `ponytail:` heuristic to refine with remaining games
 / projections). Consumed by the Streaming + Decision engines.
 
-### Sprint 9 — Streaming Engine ⭐⭐⭐⭐⭐
-Rank FA pickups by **category priority**, not Yahoo rank (supersedes the current
-`FreeAgentList.bestAvailable`). Weigh each candidate's projected category
-contribution against what the matchup needs:
-```
-Christian Walker  +0.35 HR  +1 RBI
-Ryan O'Hearn      +0.05 SB  +0.006 AVG
-```
-Ordered by need, with schedule (remaining games) factored in.
+### ✅ Sprint 9.5 — Evaluator (shared GM scorer)
+`analyzer/evaluator.js` (+ test). `evaluatePlayer(player, strategy, team)` is the
+single scoring model reused by Streaming / Decision / Trade (and a future NBA GM):
+`categoryScore`(≤60, absolute per-stat thresholds vs `strategy.attack`) +
+`positionScore`(≤20, fills a weak slot from the Lineup Analyzer) +
+`availabilityScore`(≤10, healthy/DTD/IL) + `flexibilityScore`(≤10, multi-position),
+plus `reasons` + `risks`. Deterministic; replaces Yahoo rank as the scoring basis.
+
+### ✅ Sprint 9 — Streaming Engine
+`analyzer/streamingEngine.js` (+ test). `recommend(freeAgents, strategy, team)` →
+`{ recommendations: [{ player, action: "add", score, ...breakdown, reasons, risks }] }`,
+sorted by Streaming Score (not Yahoo rank). A thin layer over the Evaluator;
+ranks ADD candidates only (drop / swap is Sprint 10).
 
 ### Sprint 10 — GM Decision Engine ⭐⭐⭐⭐⭐ (first real AI GM milestone)
 Explainable add/drop decisions with projected category deltas and win probability:
