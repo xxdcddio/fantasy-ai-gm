@@ -5,6 +5,16 @@ const copyButton = document.querySelector("#copy");
 const downloadButton = document.querySelector("#download");
 
 let latestJson = "";
+let latestKind = "";
+
+// Download filename per page kind; the user moves it into data/samples/.
+const DOWNLOAD_NAMES = {
+  team: "team.json",
+  free_agents: "free-agents.json",
+  matchup: "matchup.json"
+};
+
+const downloadName = () => DOWNLOAD_NAMES[latestKind] || "yahoo-export.json";
 
 const setStatus = (message) => {
   statusEl.textContent = message;
@@ -12,6 +22,7 @@ const setStatus = (message) => {
 
 const setOutput = (data) => {
   latestJson = JSON.stringify(data, null, 2);
+  latestKind = data?.page?.kind || "";
   outputEl.textContent = latestJson;
   copyButton.disabled = !latestJson;
   downloadButton.disabled = !latestJson;
@@ -51,10 +62,12 @@ const extract = async () => {
 
     setOutput(response.data);
     setStatus(
-      `Extracted ${response.data.roster.length} roster rows and ${response.data.freeAgents.length} FA rows.`
+      `Extracted ${response.data.roster.length} roster rows and ${response.data.freeAgents.length} FA rows. ` +
+        `Download saves as ${downloadName()}.`
     );
   } catch (error) {
     latestJson = "";
+    latestKind = "";
     outputEl.textContent = "";
     copyButton.disabled = true;
     downloadButton.disabled = true;
@@ -72,10 +85,10 @@ const downloadJson = () => {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `fantasy-mlb-ai-${new Date().toISOString().slice(0, 10)}.json`;
+  link.download = downloadName();
   link.click();
   URL.revokeObjectURL(url);
-  setStatus("JSON download started.");
+  setStatus(`Downloaded ${downloadName()} — move it into data/samples/.`);
 };
 
 refreshButton.addEventListener("click", extract);
