@@ -15,16 +15,23 @@ const strategy = { attack: ["HR", "RBI", "OPS"], protect: ["ERA"], ignore: ["SB"
 
 const ev = (name) => evaluatePlayer(fa.find(name), strategy, team);
 
-// Component shape
+// Component shape (now includes Statcast)
 const walker = ev("Christian Walker");
 assert.deepStrictEqual(Object.keys(walker), [
   "score", "categoryScore", "positionScore", "availabilityScore",
-  "flexibilityScore", "reasons", "risks"
+  "flexibilityScore", "statcastScore", "reasons", "risks"
 ]);
 assert.strictEqual(
   walker.score,
-  walker.categoryScore + walker.positionScore + walker.availabilityScore + walker.flexibilityScore
+  walker.categoryScore + walker.positionScore + walker.availabilityScore +
+    walker.flexibilityScore + walker.statcastScore
 );
+
+// Statcast: Walker has a fixture (4 metrics x 4 stars = 16) with quality reasons;
+// a player without a fixture scores 0.
+assert.strictEqual(walker.statcastScore, 16);
+assert.ok(walker.reasons.some((r) => /Barrel %|Hard Hit %|xwOBA|xSLG/.test(r)));
+assert.strictEqual(ev("Brooks Lee").statcastScore, 0); // no fixture
 
 // Category: Walker (HR 19 / RBI 56) beats an AVG-first hitter (Arraez HR 3) on attack cats
 const arraez = ev("Luis Arraez");

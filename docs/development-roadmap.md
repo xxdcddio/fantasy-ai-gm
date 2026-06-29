@@ -103,9 +103,14 @@ Evaluator thresholds and position-aware swaps.
 
 ## Future
 
-### Sprint 11 — Baseball Savant Integration
-Add external quality metrics (xwOBA, Barrel %, Hard Hit %, Chase %, Whiff %, K %,
-BB %, Sprint Speed) as extra Evaluator inputs.
+### ✅ Sprint 11 — Baseball Savant Integration
+`analyzer/providers/statcast.js` (+ test) is the single Statcast source
+(`getPlayerStatcast(name)` → fixture from `data/statcast/<slug>.json`, or null).
+The Evaluator gains a `statcastScore` (≤~20): star tiers for Barrel %, Hard Hit %,
+xwOBA, xSLG summed, with quality reasons + whiff/chase risks. The Evaluator only
+knows the Provider interface, not the source — so Streaming / Decision are
+unchanged and just rank on the stronger score. ponytail: fixture-backed players
+get a data-availability nudge; revisit if it skews.
 
 ### Sprint 12 — Weekly Report Generator
 Deterministic structured report: team strengths, weaknesses, best adds, worst

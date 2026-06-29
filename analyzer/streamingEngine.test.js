@@ -23,9 +23,12 @@ assert.ok(recs.every((r) => r.action === "add"));
 assert.ok(
   recs.every((r) =>
     ["player", "action", "score", "categoryScore", "positionScore", "availabilityScore",
-      "flexibilityScore", "reasons", "risks"].every((k) => k in r)
+      "flexibilityScore", "statcastScore", "reasons", "risks"].every((k) => k in r)
   )
 );
+
+// Statcast flows through the same evaluator without any Streaming change
+assert.strictEqual(recs.find((r) => r.player === "Christian Walker").statcastScore, 16);
 
 // Sorted by Streaming Score, highest first
 for (let i = 1; i < recs.length; i += 1) {
