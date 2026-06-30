@@ -195,6 +195,19 @@ else throws. 401 → "Authentication failed…"; the API key never appears in an
 error. Tests inject a fake fetch (no real network). Config in `.env` (gitignored):
 `LLM_PROVIDER=kk`, `KK_LLM_GATEWAY_URL`, `KK_LLM_API_KEY`, `KK_LLM_MODEL`.
 
+### ✅ Sprint 15.1 — Re-baseline matchup fixture (week underway)
+**Not a parser bug.** Investigation: the previous `matchup.json` was a
+not-yet-started Week 15 snapshot (score 0-0, every category value `-` → null),
+so the Category Analyzer correctly bucketed everything into `ignore`. The parser
+reads the score/category table from `roster[]` and works on both states. Re-
+extracting `matchup.json` mid-week (score 6-6, real values) made `npm run analyze`
+produce real attack/protect/ignore with no code change. Per the fixtures rule,
+three value-pinned tests were re-baselined against the started-week data:
+`matchupParser.test.js` (score 6-6, gamesPlayed 17/15, remaining 92/96, HR 1 vs 2,
+ERA leader mine, K/BB still null), `categoryAnalyzer.test.js` (real strategy
+buckets), `weeklyReport.test.js` (currentScore 6-6, remaining 92/96). No
+`matchupParser.js` / `categoryAnalyzer.js` changes.
+
 ---
 
 ## Known Issues / Tech Debt

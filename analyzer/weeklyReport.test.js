@@ -26,8 +26,8 @@ const report = generateWeeklyReport({ team, matchup, strategy, recommendations: 
 // Summary
 assert.strictEqual(report.summary.week, "Week 15");
 assert.strictEqual(report.summary.opponent, "台鋼雄鷹MLB分隊");
-assert.strictEqual(report.summary.currentScore, "0-0");
-assert.deepStrictEqual(report.summary.remainingGames, { mine: 113, opponent: 114 });
+assert.strictEqual(report.summary.currentScore, "6-6");
+assert.deepStrictEqual(report.summary.remainingGames, { mine: 92, opponent: 96 });
 
 // Strengths / weaknesses from roster shape (weak slots: C, 3B; OF is deep)
 assert.ok(report.weaknesses.includes("Thin at C"));

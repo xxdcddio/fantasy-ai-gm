@@ -13,13 +13,14 @@ const m = parseMatchup(fixture);
 assert.strictEqual(m.week, "Week 15");
 assert.strictEqual(m.teams.mine.name, "棒球隊棒球隊");
 assert.strictEqual(m.teams.mine.record, "101-89-6");
-assert.strictEqual(m.teams.mine.gamesPlayed, 0);
-assert.strictEqual(m.teams.mine.remainingGames, 113);
+assert.strictEqual(m.teams.mine.gamesPlayed, 17);
+assert.strictEqual(m.teams.mine.remainingGames, 92);
 assert.strictEqual(m.teams.opponent.name, "台鋼雄鷹MLB分隊");
-assert.strictEqual(m.teams.opponent.remainingGames, 114);
+assert.strictEqual(m.teams.opponent.gamesPlayed, 15);
+assert.strictEqual(m.teams.opponent.remainingGames, 96);
 
-// Score parsed from the "0 vs 0" summary row
-assert.deepStrictEqual(m.score, { mine: 0, opponent: 0 });
+// Score parsed from the "6 vs 6" summary row
+assert.deepStrictEqual(m.score, { mine: 6, opponent: 6 });
 
 // 14 scoring categories (7 hitting + 7 pitching); non-scoring H/AB* and IP* dropped
 assert.strictEqual(m.categories.length, 14);
@@ -39,8 +40,15 @@ const hr = m.categories.find((c) => c.name === "HR");
 assert.strictEqual(hr.type, "hitting");
 assert.ok(!("lowerIsBetter" in hr));
 
-// Week not started in this fixture: every value is null and nobody leads
-assert.ok(m.categories.every((c) => c.mine === null && c.opponent === null && c.leader === "none"));
+// Week is underway in this fixture: categories carry real numeric values
+// (regression guard — the previous fixture was a not-yet-started week, all null).
+const cat = (name) => m.categories.find((c) => c.name === name);
+assert.deepStrictEqual([cat("HR").mine, cat("HR").opponent, cat("HR").leader], [1, 2, "opponent"]);
+assert.deepStrictEqual([cat("R").mine, cat("R").opponent, cat("R").leader], [5, 3, "mine"]);
+assert.deepStrictEqual([cat("AVG").mine, cat("AVG").opponent], [0.292, 0.132]);
+assert.strictEqual(cat("ERA").leader, "mine"); // 2.84 < 5.06, lower wins
+assert.strictEqual(cat("WHIP").leader, "opponent"); // 1.42 > 1.41, lower wins
+assert.strictEqual(cat("K/BB").mine, null); // genuinely "-" in this export
 
 // --- leader logic on synthetic data with real numbers ---
 const synth = {
