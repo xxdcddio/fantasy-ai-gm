@@ -10,7 +10,7 @@ const { normalizeFantasyJson, normalizeFreeAgents } = require("./parser");
 const read = (f) => JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", "samples", f), "utf8"));
 
 const team = new Team(normalizeFantasyJson(read("team.json"))); // weak slots: C, 3B
-const fa = new FreeAgentList(normalizeFreeAgents(read("player.json")));
+const fa = new FreeAgentList(normalizeFreeAgents(read("free-agents.json")));
 const strategy = { attack: ["HR", "RBI", "OPS"], protect: ["ERA"], ignore: ["SB"] };
 
 const ev = (name) => evaluatePlayer(fa.find(name), strategy, team);

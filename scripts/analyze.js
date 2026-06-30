@@ -22,7 +22,7 @@ const read = (f) => JSON.parse(fs.readFileSync(path.join(SAMPLES, f), "utf8"));
 
 const runAnalysis = () => {
   const team = new Team(normalizeFantasyJson(read("team.json")));
-  const freeAgents = new FreeAgentList(normalizeFreeAgents(read("player.json")));
+  const freeAgents = new FreeAgentList(normalizeFreeAgents(read("free-agents.json")));
   const matchup = parseMatchup(read("matchup.json"));
 
   const { strategy } = analyzeCategories(matchup);

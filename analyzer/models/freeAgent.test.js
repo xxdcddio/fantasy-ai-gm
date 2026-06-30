@@ -6,7 +6,7 @@ const Player = require("./player");
 const { FreeAgent, FreeAgentList } = require("./freeAgent");
 const { normalizeFreeAgents } = require("../parser");
 
-const faPath = path.join(__dirname, "..", "..", "data", "samples", "player.json");
+const faPath = path.join(__dirname, "..", "..", "data", "samples", "free-agents.json");
 const normalized = normalizeFreeAgents(JSON.parse(fs.readFileSync(faPath, "utf8")));
 const list = new FreeAgentList(normalized);
 

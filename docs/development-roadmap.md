@@ -1,6 +1,6 @@
 # Fantasy AI GM Development Roadmap
 
-> Last Updated: 2026-06-29
+> Last Updated: 2026-06-30
 
 ## Architecture Flow
 
@@ -141,6 +141,15 @@ extension now files FAs under `freeAgents[]` (was `roster[]`), so
 `normalizeFreeAgents` reads `freeAgents` (roster fallback for old fixtures), and
 the six fixture-pinned tests were re-baselined against the freshly-extracted
 team/player pages.
+
+### ✅ Sprint 13.7 — Normalize free agents filename
+Unified the free-agent fixture/working filename to `free-agents.json` (matches
+the extension download), replacing the old `player.json`. Renamed
+`data/samples/player.json` → `data/samples/free-agents.json` and updated
+`scripts/analyze.js` + the five tests that read it. Parser's old-format
+backward compatibility (`freeAgents[]` ↔ `roster[]`) is unchanged — that's
+payload shape, not filename. Also gitignored top-level `data/*.json` (per-run
+import files from Sprint 13.8) while keeping `data/samples/*.json` tracked.
 
 ---
 
