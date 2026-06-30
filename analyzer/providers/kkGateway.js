@@ -37,9 +37,10 @@ const createKKGatewayProvider = ({ apiKey, baseUrl, model, fetchImpl } = {}) =>
       body: JSON.stringify({ model: model || process.env.KK_LLM_MODEL, input })
     });
 
-    // Never echo the key or the raw body (which may carry it back) in errors.
+    // Never echo the key in errors. The response body (gateway's error detail)
+    // does not carry the auth header, so it's safe and needed for debugging.
     if (res.status === 401) throw new Error("Authentication failed. Please check KK_LLM_API_KEY.");
-    if (!res.ok) throw new Error(`KK Gateway request failed (HTTP ${res.status})`);
+    if (!res.ok) throw new Error(`KK Gateway request failed (HTTP ${res.status}): ${await res.text()}`);
 
     return extractText(await res.json());
   };
