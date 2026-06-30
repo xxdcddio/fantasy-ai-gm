@@ -169,6 +169,12 @@ Availability / Flexibility / Statcast scores + reasons + risks. Reuses
 or null; `formatPlayer()` renders it. Name match is case/accent-insensitive via
 `FreeAgentList.find`.
 
+### ✅ Sprint 14.2 — Compare CLI
+`scripts/compare.js` (+ test). `npm run compare "A" "B"` shows both players'
+Evaluator component scores side by side and declares a winner (higher GM score,
+or "Tie"). "Because" lists the components where the winner strictly beats the
+loser. Reuses `lookupPlayer` + the shared scorer; missing names → clear error.
+
 ---
 
 ## Known Issues / Tech Debt
