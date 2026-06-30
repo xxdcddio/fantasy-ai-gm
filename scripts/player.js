@@ -6,8 +6,13 @@
 const { runAnalysis } = require("./analyze");
 const { evaluatePlayer } = require("../analyzer/evaluator");
 
+// Single shared lookup for every CLI: search free agents first, then the team
+// roster. A name belongs to one or the other, never both.
 const lookupPlayer = (name, { freeAgents, strategy, team } = {}) => {
-  const player = freeAgents.find(name);
+  const player =
+    (freeAgents && freeAgents.find(name)) ||
+    (team && team.findPlayer && team.findPlayer(name)) ||
+    null;
   if (!player) return null;
   return { player, evaluation: evaluatePlayer(player, strategy, team) };
 };

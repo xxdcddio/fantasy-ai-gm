@@ -208,6 +208,14 @@ ERA leader mine, K/BB still null), `categoryAnalyzer.test.js` (real strategy
 buckets), `weeklyReport.test.js` (currentScore 6-6, remaining 92/96). No
 `matchupParser.js` / `categoryAnalyzer.js` changes.
 
+### ✅ Sprint 14.5 — Player lookup searches the team roster too
+Root cause: the shared `lookupPlayer` (`scripts/player.js`) only called
+`freeAgents.find(name)`, so rostered players (e.g. Willi Castro) returned
+"not found" in `player` / `compare`. Fix is one line in the shared lookup —
+fall back to `team.findPlayer(name)` after the FA search — so every CLI benefits
+and `compare.js` is untouched. `FreeAgentList.find` and `Team.findPlayer` already
+share the same `normalizeName` (trim + lowercase), so matching is consistent.
+
 ---
 
 ## Known Issues / Tech Debt

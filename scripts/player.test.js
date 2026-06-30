@@ -27,4 +27,12 @@ const text = formatPlayer("Zztest Player", result);
 ["Zztest Player", "GM Score", "Category", "Position", "Availability", "Flexibility", "Statcast", "Reasons"]
   .forEach((label) => assert.ok(text.includes(label), `missing ${label}`));
 
+// Sprint 14.5 — a player on the team roster (not a free agent) is also found,
+// via the same shared lookup. (hitters() satisfies the Evaluator's slot check.)
+const rosterGuy = { name: "Roster Guy", stats: { HR: 5 }, eligiblePositions: ["3B"], status: "" };
+const team = { findPlayer: (n) => (n === "Roster Guy" ? rosterGuy : null), hitters: () => [] };
+const rosterRes = lookupPlayer("Roster Guy", { freeAgents, strategy, team });
+assert.ok(rosterRes, "team roster player found");
+assert.strictEqual(rosterRes.player.name, "Roster Guy");
+
 console.log("player.test.js OK");
