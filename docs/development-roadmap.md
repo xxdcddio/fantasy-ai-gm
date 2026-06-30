@@ -175,6 +175,13 @@ Evaluator component scores side by side and declares a winner (higher GM score,
 or "Tie"). "Because" lists the components where the winner strictly beats the
 loser. Reuses `lookupPlayer` + the shared scorer; missing names → clear error.
 
+### ✅ Sprint 14.3 — Free Agent Ranking CLI
+`scripts/fa.js` (+ test). `npm run fa` ranks free agents by the shared
+Evaluator's GM score (`1. Name — score`). Flags: `--top N` (default 10) and
+`--position 3B` (uses `FreeAgentList.findByPosition` / `canPlay`). Note npm
+needs the `--` separator to pass flags through:
+`npm run fa -- --top 20 --position 3B`. Reuses `runAnalysis()` + `evaluatePlayer`.
+
 ---
 
 ## Known Issues / Tech Debt

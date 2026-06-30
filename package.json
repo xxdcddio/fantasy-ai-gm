@@ -8,6 +8,7 @@
     "import": "node scripts/import.js",
     "player": "node scripts/player.js",
     "compare": "node scripts/compare.js",
+    "fa": "node scripts/fa.js",
     "coach": "node scripts/coach.js",
     "test": "for f in analyzer/*.test.js analyzer/models/*.test.js analyzer/providers/*.test.js scripts/*.test.js; do node \"$f\" || exit 1; done"
   }
