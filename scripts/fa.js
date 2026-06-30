@@ -9,7 +9,8 @@ const { runAnalysis } = require("./analyze");
 const { evaluatePlayer } = require("../analyzer/evaluator");
 
 const rankFreeAgents = ({ freeAgents, strategy, team } = {}, { top = 10, position } = {}) => {
-  const pool = position ? freeAgents.findByPosition(position) : freeAgents.players;
+  const pool = (position ? freeAgents.findByPosition(position) : freeAgents.players)
+    .filter((p) => !(team && team.findPlayer(p.name)));
   return pool
     .map((p) => ({ name: p.name, score: evaluatePlayer(p, strategy, team).score }))
     .sort((a, b) => b.score - a.score)

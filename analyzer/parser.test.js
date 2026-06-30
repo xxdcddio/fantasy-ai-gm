@@ -89,4 +89,21 @@ assert.strictEqual(harris.startTime, "");
 assert.strictEqual(harris.opponent, "");
 assert.strictEqual(harris.mlbTeam, "ATL");
 
+// Sprint 15.2 — Free Agent hardening: non-player sidebar rows (Trade suggestions,
+// Research Assistant, Compare) carry no profile link, so they never become FAs.
+const { normalizeFreeAgents } = require("./parser");
+const junk = normalizeFreeAgents({
+  freeAgents: [
+    { cells: [{ className: "player", text: "Trade suggestions" }], links: [] },
+    { cells: [{ className: "player", text: "Research Assistant" }], links: [] },
+    { cells: [{ className: "player", text: "Compare" }], links: [] },
+    {
+      cells: [{ className: "Alt Ta-start player", text: "Real Player WSH - 1B" }],
+      links: [{ href: "https://sports.yahoo.com/mlb/players/999", text: "Real Player" }]
+    }
+  ]
+});
+assert.strictEqual(junk.length, 1, "only the row with a real profile link survives");
+assert.strictEqual(junk[0].name, "Real Player");
+
 console.log("parser.test.js OK");

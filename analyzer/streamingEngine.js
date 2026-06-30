@@ -10,6 +10,9 @@ const playersOf = (freeAgents) =>
 
 const recommend = (freeAgents, strategy, team) => {
   const recommendations = playersOf(freeAgents)
+    // Never recommend a player already on the roster. Single shared guard:
+    // Decision Engine consumes these recommendations, so it inherits it too.
+    .filter((player) => !(team && team.findPlayer(player.name)))
     .map((player) => ({
       player: player.name,
       action: "add",

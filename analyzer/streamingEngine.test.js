@@ -48,4 +48,16 @@ assert.ok(typeof ohearnRank === "number");
 // Deterministic
 assert.strictEqual(JSON.stringify(recommend(fa, strategy, team)), JSON.stringify(out));
 
+// Sprint 15.2 — a player already on the roster is never recommended (team and
+// FA pages can be extracted at different times, so a just-added player can
+// appear in both snapshots).
+const base = normalizeFantasyJson(read("team.json"));
+const teamWithMead = new Team([
+  ...base.roster, ...base.bench, ...base.IL, ...base.pitchers,
+  { name: "Curtis Mead", eligiblePositions: ["1B", "2B", "3B"] }
+]);
+const recsOwned = recommend(fa, strategy, teamWithMead).recommendations;
+assert.ok(!recsOwned.some((r) => r.player === "Curtis Mead"), "owned player excluded");
+assert.strictEqual(recsOwned.length, fa.players.length - 1);
+
 console.log("streamingEngine.test.js OK");

@@ -65,4 +65,15 @@ assert.ok(Object.values(top.categoryImpact).every((v) => ["+", "-", "="].include
 // Deterministic
 assert.strictEqual(JSON.stringify(recommendMoves({ team, freeAgents: fa, strategy })), JSON.stringify(out));
 
+// Sprint 15.2 — never recommend ADDing a player already on the roster.
+const teamWithMead = new Team([
+  ...normalizeFantasyJson(read("team.json")).roster,
+  ...normalizeFantasyJson(read("team.json")).bench,
+  ...normalizeFantasyJson(read("team.json")).IL,
+  ...normalizeFantasyJson(read("team.json")).pitchers,
+  { name: "Curtis Mead", eligiblePositions: ["1B", "2B", "3B"] }
+]);
+const ownedMoves = recommendMoves({ team: teamWithMead, freeAgents: fa, strategy }).moves;
+assert.ok(!ownedMoves.some((m) => m.add.name === "Curtis Mead"), "owned player not added");
+
 console.log("gmDecisionEngine.test.js OK");

@@ -1,6 +1,7 @@
 // Sprint 14.3 — Free Agent Ranking CLI.
 const assert = require("assert");
 const { rankFreeAgents, formatFa } = require("./fa");
+const Team = require("../analyzer/models/team");
 
 const players = [
   { name: "Power 3B", stats: { HR: 20 }, eligiblePositions: ["3B"], status: "", canPlay(p) { return this.eligiblePositions.includes(p); } },
@@ -29,5 +30,11 @@ assert.deepStrictEqual(only3b.map((r) => r.name), ["Power 3B", "Mid 3B"]);
 const text = formatFa(ranked);
 assert.ok(/1\. Power 3B/.test(text));
 assert.ok(/—\s*\d+/.test(text), "shows a score");
+
+// Sprint 15.2 — owned players are excluded from the FA ranking.
+const teamOwns = new Team([{ name: "Power 3B", eligiblePositions: ["3B"] }]);
+const rankedOwned = rankFreeAgents({ freeAgents, strategy: { attack: ["HR"] }, team: teamOwns }, {});
+assert.ok(!rankedOwned.some((r) => r.name === "Power 3B"), "owned player excluded");
+assert.strictEqual(rankedOwned.length, players.length - 1);
 
 console.log("fa.test.js OK");

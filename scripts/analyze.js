@@ -17,8 +17,10 @@ const { recommend } = require("../analyzer/streamingEngine");
 const { recommendMoves } = require("../analyzer/gmDecisionEngine");
 const { generateWeeklyReport } = require("../analyzer/weeklyReport");
 
-const SAMPLES = path.join(__dirname, "..", "data", "samples");
-const read = (f) => JSON.parse(fs.readFileSync(path.join(SAMPLES, f), "utf8"));
+// Read the freshly imported live data (where `npm run import` writes), not the
+// committed reference fixtures under data/samples used by unit tests.
+const DATA = path.join(__dirname, "..", "data");
+const read = (f) => JSON.parse(fs.readFileSync(path.join(DATA, f), "utf8"));
 
 const runAnalysis = () => {
   const team = new Team(normalizeFantasyJson(read("team.json")));
