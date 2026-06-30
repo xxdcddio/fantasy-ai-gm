@@ -151,6 +151,15 @@ backward compatibility (`freeAgents[]` ↔ `roster[]`) is unchanged — that's
 payload shape, not filename. Also gitignored top-level `data/*.json` (per-run
 import files from Sprint 13.8) while keeping `data/samples/*.json` tracked.
 
+### ✅ Sprint 13.8 — Import CLI
+`scripts/import.js` (+ test). `npm run import` moves the three extension
+downloads (`team.json` / `matchup.json` / `free-agents.json`) from
+`~/Downloads` into `data/`, creating `data/` if absent. `importFiles({from,to})`
+is pure (dirs injected, so the test runs against tmp dirs — no real Downloads);
+`formatImport()` renders `✓ name` / `✗ name (not found)`. Move = `renameSync`
+with a copy+unlink fallback on `EXDEV` (cross-volume). Daily flow is now
+`npm run import && npm run analyze`.
+
 ---
 
 ## Known Issues / Tech Debt

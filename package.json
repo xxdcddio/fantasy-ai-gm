@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "analyze": "node scripts/analyze.js",
+    "import": "node scripts/import.js",
     "coach": "node scripts/coach.js",
     "test": "for f in analyzer/*.test.js analyzer/models/*.test.js analyzer/providers/*.test.js scripts/*.test.js; do node \"$f\" || exit 1; done"
   }
