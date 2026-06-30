@@ -160,6 +160,15 @@ is pure (dirs injected, so the test runs against tmp dirs — no real Downloads)
 with a copy+unlink fallback on `EXDEV` (cross-volume). Daily flow is now
 `npm run import && npm run analyze`.
 
+### ✅ Sprint 14.1 — Player Lookup CLI
+`scripts/player.js` (+ test). `npm run player "Christian Walker"` prints the
+full Evaluator breakdown for one free agent: GM / Category / Position /
+Availability / Flexibility / Statcast scores + reasons + risks. Reuses
+`runAnalysis()` for data + the shared `evaluatePlayer` scorer (no re-scoring).
+`lookupPlayer(name, {freeAgents, strategy, team})` returns `{player, evaluation}`
+or null; `formatPlayer()` renders it. Name match is case/accent-insensitive via
+`FreeAgentList.find`.
+
 ---
 
 ## Known Issues / Tech Debt
