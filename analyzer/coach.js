@@ -10,7 +10,7 @@
 // real Claude provider (reads ANTHROPIC_API_KEY at call time); tests inject a
 // fake. No network unless a real call is actually made.
 
-const { createClaudeProvider } = require("./providers/llm");
+const { createProvider } = require("./providers");
 
 const SYSTEM =
   "You are the presentation layer for a deterministic Fantasy Baseball GM engine. " +
@@ -27,7 +27,7 @@ const buildCoachPrompt = ({ report, moves, question } = {}) => ({
 });
 
 const askCoach = ({ report, moves, question, provider } = {}) => {
-  const call = provider || createClaudeProvider();
+  const call = provider || createProvider();
   return Promise.resolve(call(buildCoachPrompt({ report, moves, question })));
 };
 

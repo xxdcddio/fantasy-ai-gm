@@ -182,6 +182,19 @@ Evaluator's GM score (`1. Name — score`). Flags: `--top N` (default 10) and
 needs the `--` separator to pass flags through:
 `npm run fa -- --top 20 --position 3B`. Reuses `runAnalysis()` + `evaluatePlayer`.
 
+### ✅ Sprint 14.4 — KK LLM Gateway Provider
+`analyzer/providers/kkGateway.js` (+ test) + `analyzer/providers/index.js`
+(`createProvider`). Adds the company KK LLM Gateway as a Coach backend behind the
+same `(prompt)=>Promise<string>` interface. `createProvider()` selects by
+`LLM_PROVIDER` (`claude` default → Anthropic; `kk` → gateway), so new backends
+(openai/gemini) drop in without touching the Coach. `askCoach` default now uses
+the factory. KK provider POSTs `${KK_LLM_GATEWAY_URL}/v1/responses` with
+`Authorization: Bearer ${KK_LLM_API_KEY}` and `{model, input}`; response parsing
+tolerates `output_text` / `output[].content[].text` / `choices[].message.content`,
+else throws. 401 → "Authentication failed…"; the API key never appears in any
+error. Tests inject a fake fetch (no real network). Config in `.env` (gitignored):
+`LLM_PROVIDER=kk`, `KK_LLM_GATEWAY_URL`, `KK_LLM_API_KEY`, `KK_LLM_MODEL`.
+
 ---
 
 ## Known Issues / Tech Debt

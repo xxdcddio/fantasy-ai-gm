@@ -15,7 +15,8 @@ const question =
 askCoach({ report, moves, question })
   .then((answer) => console.log(answer))
   .catch((err) => {
+    const provider = process.env.LLM_PROVIDER || "claude";
     console.error(`Coach unavailable: ${err.message}`);
-    console.error("Set ANTHROPIC_API_KEY to enable the LLM Coach.");
+    console.error(`Check your .env (LLM_PROVIDER=${provider}) and run: source .env && npm run coach`);
     process.exitCode = 1;
   });
