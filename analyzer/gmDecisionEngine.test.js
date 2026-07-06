@@ -6,6 +6,7 @@ const { recommendMoves } = require("./gmDecisionEngine");
 const Team = require("./models/team");
 const { FreeAgentList } = require("./models/freeAgent");
 const { normalizeFantasyJson, normalizeFreeAgents } = require("./parser");
+const { bandFor } = require("./waiverBands");
 
 const read = (f) => JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", "samples", f), "utf8"));
 
@@ -74,6 +75,15 @@ moves.forEach((m) => {
   assert.strictEqual(typeof m.confidenceSummary, "string");
   assert.ok(m.confidenceSummary.includes(`${Math.round(m.confidence * 100)}% confidence`));
   assert.ok(m.confidenceSummary.includes(`+${m.scoreGain} score gain over ${m.drop.name}`));
+});
+
+// P6: waiverBand matches bandFor({score: add's own score, confidence}) — the
+// add's score is the sum of its own component breakdown (categoryScore +
+// positionScore + availabilityScore + flexibilityScore + statcastScore).
+moves.forEach((m) => {
+  const addScore = m.components.reduce((sum, c) => sum + c.score, 0);
+  assert.deepStrictEqual(m.waiverBand, bandFor({ score: addScore, confidence: m.confidence }));
+  assert.deepStrictEqual(Object.keys(m.waiverBand).sort(), ["emoji", "key", "label"]);
 });
 
 // Deterministic

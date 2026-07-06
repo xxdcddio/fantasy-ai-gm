@@ -16,6 +16,7 @@ const { analyzeCategories } = require("../analyzer/categoryAnalyzer");
 const { recommend } = require("../analyzer/streamingEngine");
 const { recommendMoves } = require("../analyzer/gmDecisionEngine");
 const { generateWeeklyReport } = require("../analyzer/weeklyReport");
+const { bandFor } = require("../analyzer/waiverBands");
 
 // Read the freshly imported live data (where `npm run import` writes), not the
 // committed reference fixtures under data/samples used by unit tests.
@@ -55,6 +56,7 @@ const formatAnalysis = ({ report, streaming }) => {
   if (top) {
     lines.push(
       "Top Recommendation",
+      `${top.waiverBand.emoji} ${top.waiverBand.label}`,
       "ADD", top.add,
       "DROP", top.drop,
       "Confidence", `${Math.round(top.confidence * 100)}%`,
@@ -63,7 +65,10 @@ const formatAnalysis = ({ report, streaming }) => {
   }
 
   lines.push("Top 5 Streaming");
-  streaming.slice(0, 5).forEach((r, i) => lines.push(`${i + 1}. ${r.player}`));
+  streaming.slice(0, 5).forEach((r, i) => {
+    const band = bandFor({ score: r.score });
+    lines.push(`${i + 1}. ${band.emoji} ${r.player} (${band.label})`);
+  });
   lines.push(RULE);
 
   lines.push("Weak Positions", ...rosterAnalysis.weakPositions, RULE);

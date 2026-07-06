@@ -26,6 +26,8 @@ const text = formatAnalysis(out);
 assert.strictEqual(typeof text, "string");
 assert.ok(text.includes("Fantasy AI GM") && text.includes("Week 15"));
 assert.ok(text.includes("Top 5 Streaming") && text.includes("Finished"));
+// P6: waiver band shown for the top recommendation
+assert.ok(text.includes(top.waiverBand.emoji) && text.includes(top.waiverBand.label));
 
 // Running the script end-to-end exits 0 (execFileSync throws on non-zero).
 const stdout = execFileSync("node", [path.join(__dirname, "analyze.js")], { encoding: "utf8" });

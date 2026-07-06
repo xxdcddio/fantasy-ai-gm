@@ -226,6 +226,19 @@ in the prompt) instead of answering "why". `scripts/briefing.js` (`npm run
 briefing`) is the CLI, mirroring `scripts/coach.js`. No new provider, no
 change to the existing `buildCoachPrompt`/`askCoach`.
 
+### ✅ Sprint 19 — Waiver Timing (P6)
+`analyzer/waiverBands.js` (+ test, `docs/waiver-timing.md`). `bandFor({ score,
+confidence })` → `{ key, emoji, label }`, one of 🔥 Add Now / 👀 Watch List /
+🤝 Hold / ❌ Ignore. Pure presentation layer over the Evaluator's own `score`
+(max 120: categoryScore 60 + positionScore 20 + availabilityScore 10 +
+flexibilityScore 10 + statcastScore 20) — cutoffs are 50%/30%/15% of that max.
+`confidence` is optional and can only downgrade a band, never upgrade one, so
+callers without a paired drop candidate (`fa.js`, the raw streaming list) get a
+score-only band. Wired into `gmDecisionEngine.js` (each move), `weeklyReport.js`
+(recs + top-recommendation render), `scripts/fa.js` (ranked entries +
+`formatFa`), and `scripts/analyze.js` (top move + Top 5 Streaming); `coach.js`/
+`briefing.js` need no change (JSON passthrough). Evaluator itself is untouched.
+
 ---
 
 ## Known Issues / Tech Debt

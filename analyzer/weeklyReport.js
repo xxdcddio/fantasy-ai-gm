@@ -61,7 +61,8 @@ const generateWeeklyReport = ({ team, matchup, strategy, recommendations } = {})
     confidence: m.confidence,
     scoreGain: m.scoreGain,
     confidenceSummary: m.confidenceSummary,
-    components: m.components
+    components: m.components,
+    waiverBand: m.waiverBand
   }));
 
   const notes = [];
@@ -94,6 +95,7 @@ const renderWeeklyReport = (report) => {
   if (top) {
     lines.push(
       "Top Recommendation",
+      `  ${top.waiverBand.emoji} ${top.waiverBand.label}`,
       `  ADD  ${top.add}`,
       `  DROP ${top.drop}`,
       `  ${top.confidenceSummary}`,

@@ -57,6 +57,7 @@ report.recommendations.forEach((r) => {
   assert.strictEqual(typeof r.scoreGain, "number");
   assert.strictEqual(typeof r.confidenceSummary, "string");
   assert.ok(Array.isArray(r.components) && r.components.length === 5);
+  assert.deepStrictEqual(Object.keys(r.waiverBand).sort(), ["emoji", "key", "label"]);
 });
 
 // Notes reflect the strategy
@@ -68,6 +69,8 @@ const text = renderWeeklyReport(report);
 assert.strictEqual(typeof text, "string");
 assert.ok(text.includes("Week 15") && text.includes("台鋼雄鷹MLB分隊"));
 assert.ok(text.includes(report.recommendations[0].confidenceSummary));
+assert.ok(text.includes(report.recommendations[0].waiverBand.emoji));
+assert.ok(text.includes(report.recommendations[0].waiverBand.label));
 
 // Deterministic
 assert.strictEqual(

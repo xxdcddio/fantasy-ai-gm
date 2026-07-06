@@ -19,6 +19,9 @@ const ranked = rankFreeAgents(ctx, {});
 assert.strictEqual(ranked[0].name, "Power 3B");
 assert.ok(ranked[0].score >= ranked[1].score && ranked[1].score >= ranked[2].score);
 
+// P6: every ranked entry carries a score-only waiverBand
+ranked.forEach((r) => assert.deepStrictEqual(Object.keys(r.waiverBand).sort(), ["emoji", "key", "label"]));
+
 // --top limits
 assert.strictEqual(rankFreeAgents(ctx, { top: 2 }).length, 2);
 
@@ -28,8 +31,9 @@ assert.deepStrictEqual(only3b.map((r) => r.name), ["Power 3B", "Mid 3B"]);
 
 // render: numbered with scores
 const text = formatFa(ranked);
-assert.ok(/1\. Power 3B/.test(text));
+assert.ok(/1\. .* Power 3B/.test(text));
 assert.ok(/—\s*\d+/.test(text), "shows a score");
+assert.ok(text.includes(ranked[0].waiverBand.emoji), "shows the waiver band");
 
 // Sprint 15.2 — owned players are excluded from the FA ranking.
 const teamOwns = new Team([{ name: "Power 3B", eligiblePositions: ["3B"] }]);

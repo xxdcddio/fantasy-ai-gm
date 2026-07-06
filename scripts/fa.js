@@ -7,19 +7,25 @@
 
 const { runAnalysis } = require("./analyze");
 const { evaluatePlayer } = require("../analyzer/evaluator");
+const { bandFor } = require("../analyzer/waiverBands");
 
 const rankFreeAgents = ({ freeAgents, strategy, team } = {}, { top = 10, position } = {}) => {
   const pool = (position ? freeAgents.findByPosition(position) : freeAgents.players)
     .filter((p) => !(team && team.findPlayer(p.name)));
   return pool
     .map((p) => ({ name: p.name, score: evaluatePlayer(p, strategy, team).score }))
+    .map((r) => ({ ...r, waiverBand: bandFor({ score: r.score }) }))
     .sort((a, b) => b.score - a.score)
     .slice(0, top);
 };
 
 const formatFa = (ranked, { position } = {}) => {
   const header = position ? `Top Free Agents — ${position}` : "Top Free Agents";
-  return [header, "", ...ranked.map((r, i) => `${i + 1}. ${r.name} — ${r.score}`)].join("\n");
+  return [
+    header,
+    "",
+    ...ranked.map((r, i) => `${i + 1}. ${r.waiverBand.emoji} ${r.name} — ${r.score} (${r.waiverBand.label})`)
+  ].join("\n");
 };
 
 if (require.main === module) {

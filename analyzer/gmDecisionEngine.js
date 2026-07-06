@@ -6,6 +6,7 @@
 const { recommend } = require("./streamingEngine");
 const { evaluatePlayer, strengthOf } = require("./evaluator");
 const { analyzeCategories } = require("./categoryAnalyzer");
+const { bandFor } = require("./waiverBands");
 
 const MOVE_LIMIT = 5;
 const IMPACT_CATS = ["R", "HR", "RBI", "SB", "BB", "AVG", "OPS"];
@@ -103,7 +104,8 @@ const recommendMoves = ({ team, freeAgents, matchup, strategy } = {}) => {
         explanation: [...add.reasons, `Higher Evaluator score than ${worst.name}`],
         risks,
         components: componentsOf(add),
-        confidenceSummary: confidenceSummaryFor({ add, worst: { name: worst.name }, scoreGain, confidence })
+        confidenceSummary: confidenceSummaryFor({ add, worst: { name: worst.name }, scoreGain, confidence }),
+        waiverBand: bandFor({ score: add.score, confidence })
       };
     })
     .filter((m) => m.scoreGain > 0)
