@@ -1,6 +1,6 @@
 const assert = require("assert");
 
-const { buildCoachPrompt, askCoach } = require("./coach");
+const { buildCoachPrompt, askCoach, buildBriefingPrompt, askBriefing } = require("./coach");
 const { createClaudeProvider } = require("./providers/llm");
 
 // Deterministic engine output the Coach explains (never re-derives).
@@ -43,6 +43,23 @@ assert.ok(!/Mike Trout|Shohei/.test(p.user)); // no fabricated players
   const provider = createClaudeProvider({ apiKey: "" });
   assert.strictEqual(typeof provider, "function");
   await assert.rejects(() => provider({ system: "s", user: "u" }), /ANTHROPIC_API_KEY/);
+
+  // --- P8: proactive briefing (no question) — same grounding rules, different framing ---
+  const b = buildBriefingPrompt({ report, moves });
+  assert.deepStrictEqual(b, buildBriefingPrompt({ report, moves })); // deterministic
+  assert.ok("system" in b && "user" in b);
+  assert.ok(/never|not/i.test(b.system) && /decid|decision|change|override|invent/i.test(b.system));
+  assert.ok(b.user.includes("Isaac Paredes"));
+  assert.ok(b.user.includes("Week 15"));
+  assert.ok(!/Mike Trout|Shohei/.test(b.user)); // no fabricated players
+  assert.ok(!/QUESTION:/.test(b.user)); // proactive, not Q&A framed
+
+  const briefingCalls = [];
+  const fakeBriefing = async (prompt) => { briefingCalls.push(prompt); return "This week: attack HR/RBI, add Isaac Paredes."; };
+  const briefing = await askBriefing({ report, moves, provider: fakeBriefing });
+  assert.strictEqual(briefing, "This week: attack HR/RBI, add Isaac Paredes.");
+  assert.strictEqual(briefingCalls.length, 1);
+  assert.deepStrictEqual(briefingCalls[0], buildBriefingPrompt({ report, moves }));
 
   console.log("coach.test.js OK");
 })();

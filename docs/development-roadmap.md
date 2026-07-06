@@ -218,6 +218,16 @@ share the same `normalizeName` (trim + lowercase), so matching is consistent.
 
 ---
 
+### ✅ Sprint 18 — AI Coach proactive briefing (P8)
+`analyzer/coach.js` gains `buildBriefingPrompt({report, moves})` +
+`askBriefing({report, moves, provider})`: same grounding/guardrails as the
+Q&A Coach, but framed as an unprompted summary (no `question`, no "QUESTION:"
+in the prompt) instead of answering "why". `scripts/briefing.js` (`npm run
+briefing`) is the CLI, mirroring `scripts/coach.js`. No new provider, no
+change to the existing `buildCoachPrompt`/`askCoach`.
+
+---
+
 ## Known Issues / Tech Debt
 - `getPlayerStatcast` slug splits on the apostrophe (`Ryan O'Hearn` → `ryan-o-hearn`) and misses `ryan-ohearn.json`. Only matters if an apostrophe-named FA needs Statcast; Curtis Mead is the current fixture-backed FA.
 - FA stat parsing is mapped to the "All Batters" tab column layout. Pitcher tab (W/K/ERA/WHIP/K/BB/QS/SV+H) is a separate column map — add when the pitcher FA list is needed.
