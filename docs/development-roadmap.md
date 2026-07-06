@@ -221,6 +221,7 @@ share the same `normalizeName` (trim + lowercase), so matching is consistent.
 ## Known Issues / Tech Debt
 - `getPlayerStatcast` slug splits on the apostrophe (`Ryan O'Hearn` → `ryan-o-hearn`) and misses `ryan-ohearn.json`. Only matters if an apostrophe-named FA needs Statcast; Curtis Mead is the current fixture-backed FA.
 - FA stat parsing is mapped to the "All Batters" tab column layout. Pitcher tab (W/K/ERA/WHIP/K/BB/QS/SV+H) is a separate column map — add when the pitcher FA list is needed.
+- Calendar-dependent tests (`scripts/analyze.test.js` pins `"Week 15"`) read the real current date, so they fail whenever the week rolls over (e.g. every Monday). Should inject/freeze the date instead of deriving the week from `Date.now()` at test time, so these tests are deterministic regardless of when they run.
 
 ---
 

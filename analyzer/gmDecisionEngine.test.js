@@ -62,6 +62,20 @@ assert.ok(top.explanation.some((e) => /Higher Evaluator score/.test(e)));
 // categoryImpact uses +/-/= markers
 assert.ok(Object.values(top.categoryImpact).every((v) => ["+", "-", "="].includes(v)));
 
+// P10: component breakdown + human-readable confidence summary on every move
+const COMPONENT_LABELS = ["Category Fit", "Position Fit", "Availability", "Flexibility", "Stability"];
+moves.forEach((m) => {
+  assert.ok(Array.isArray(m.components) && m.components.length === 5);
+  assert.deepStrictEqual(m.components.map((c) => c.label), COMPONENT_LABELS);
+  m.components.forEach((c) => {
+    assert.strictEqual(typeof c.score, "number");
+    assert.strictEqual(typeof c.max, "number");
+  });
+  assert.strictEqual(typeof m.confidenceSummary, "string");
+  assert.ok(m.confidenceSummary.includes(`${Math.round(m.confidence * 100)}% confidence`));
+  assert.ok(m.confidenceSummary.includes(`+${m.scoreGain} score gain over ${m.drop.name}`));
+});
+
 // Deterministic
 assert.strictEqual(JSON.stringify(recommendMoves({ team, freeAgents: fa, strategy })), JSON.stringify(out));
 

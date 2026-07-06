@@ -55,6 +55,8 @@ report.recommendations.forEach((r) => {
   assert.ok(typeof r.drop === "string" && r.drop);
   assert.strictEqual(typeof r.confidence, "number");
   assert.strictEqual(typeof r.scoreGain, "number");
+  assert.strictEqual(typeof r.confidenceSummary, "string");
+  assert.ok(Array.isArray(r.components) && r.components.length === 5);
 });
 
 // Notes reflect the strategy
@@ -65,6 +67,7 @@ assert.ok(report.notes.some((n) => /Protect ERA/.test(n)));
 const text = renderWeeklyReport(report);
 assert.strictEqual(typeof text, "string");
 assert.ok(text.includes("Week 15") && text.includes("台鋼雄鷹MLB分隊"));
+assert.ok(text.includes(report.recommendations[0].confidenceSummary));
 
 // Deterministic
 assert.strictEqual(

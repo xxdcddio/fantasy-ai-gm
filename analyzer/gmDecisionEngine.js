@@ -24,6 +24,33 @@ const playersOf = (freeAgents) =>
 const confidenceFor = (gain) =>
   gain >= 20 ? 0.9 : gain >= 10 ? 0.75 : gain >= 5 ? 0.6 : 0.4;
 
+// P10 — Confidence Reasons: expose the Evaluator components behind the add
+// candidate's score, plus a one-line human-readable summary of why the
+// confidence % is what it is. Additive only; confidenceFor's scale/thresholds
+// are untouched.
+const COMPONENTS = [
+  ["categoryScore", "Category Fit", 60],
+  ["positionScore", "Position Fit", 20],
+  ["availabilityScore", "Availability", 10],
+  ["flexibilityScore", "Flexibility", 10],
+  ["statcastScore", "Stability", 20]
+];
+
+const componentsOf = (add) =>
+  COMPONENTS.map(([key, label, max]) => ({ label, score: add[key], max }));
+
+const confidenceSummaryFor = ({ add, worst, scoreGain, confidence }) => {
+  const positives = add.reasons.slice(0, 2);
+  const negatives = add.risks.slice(0, 2);
+  const parts = [
+    `${Math.round(confidence * 100)}% confidence`,
+    `+${scoreGain} score gain over ${worst.name}`
+  ];
+  if (positives.length) parts.push(`driven by ${positives.join(", ")}`);
+  if (negatives.length) parts.push(`tempered by ${negatives.join(", ")}`);
+  return parts.join(" — ");
+};
+
 // What adding this player does to each category, from its own stat strengths.
 // (Roster players lack season stats, so the drop side can't be compared yet.)
 const categoryImpact = (player) => {
@@ -65,15 +92,18 @@ const recommendMoves = ({ team, freeAgents, matchup, strategy } = {}) => {
       const scoreGain = add.score - worst.evaluation.score;
       const risks = [...add.risks];
       if (scoreGain < 5) risks.push("Small upgrade only");
+      const confidence = confidenceFor(scoreGain);
       return {
         type: "add_drop",
         add: { name: add.player },
         drop: { name: worst.name },
-        confidence: confidenceFor(scoreGain),
+        confidence,
         scoreGain,
         categoryImpact: categoryImpact(faByName.get(add.player)),
         explanation: [...add.reasons, `Higher Evaluator score than ${worst.name}`],
-        risks
+        risks,
+        components: componentsOf(add),
+        confidenceSummary: confidenceSummaryFor({ add, worst: { name: worst.name }, scoreGain, confidence })
       };
     })
     .filter((m) => m.scoreGain > 0)

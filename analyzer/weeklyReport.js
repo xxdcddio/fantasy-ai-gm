@@ -59,7 +59,9 @@ const generateWeeklyReport = ({ team, matchup, strategy, recommendations } = {})
     add: name(m.add),
     drop: name(m.drop),
     confidence: m.confidence,
-    scoreGain: m.scoreGain
+    scoreGain: m.scoreGain,
+    confidenceSummary: m.confidenceSummary,
+    components: m.components
   }));
 
   const notes = [];
@@ -94,7 +96,7 @@ const renderWeeklyReport = (report) => {
       "Top Recommendation",
       `  ADD  ${top.add}`,
       `  DROP ${top.drop}`,
-      `  Confidence ${Math.round(top.confidence * 100)}%`,
+      `  ${top.confidenceSummary}`,
       `  Expected Gain +${top.scoreGain}`
     );
   }
