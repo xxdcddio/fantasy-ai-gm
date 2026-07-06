@@ -4,7 +4,8 @@
 //
 //   evaluatePlayer(player, strategy, team)
 //     -> { score, categoryScore, positionScore, availabilityScore,
-//          flexibilityScore, reasons, risks }
+//          flexibilityScore, statcastScore, qualityScore, skillScore,
+//          disciplineScore, reasons, risks }
 //
 //   score = categoryScore(<=60) + positionScore(<=20)
 //         + availabilityScore(<=10) + flexibilityScore(<=10)
@@ -82,38 +83,92 @@ const flexibilityComponent = (player) => {
   };
 };
 
-// Statcast star tiers (Sprint 11). Each metric -> 1..5; statcastScore is their
-// sum, so a fixture-backed player gains up to ~20. Players without a fixture get
-// 0 (neutral). ponytail: availability of data nudges score; revisit if it skews.
-const barrelStars = (b) => (b >= 15 ? 5 : b >= 12 ? 4 : b >= 10 ? 3 : b >= 8 ? 2 : 1);
-const hardHitStars = (h) => (h >= 50 ? 5 : h >= 45 ? 4 : h >= 40 ? 3 : h >= 35 ? 2 : 1);
-const xwobaStars = (x) => (x >= 0.38 ? 5 : x >= 0.36 ? 4 : x >= 0.34 ? 3 : x >= 0.32 ? 2 : 1);
-const xslgStars = (s) => (s >= 0.55 ? 5 : s >= 0.5 ? 4 : s >= 0.47 ? 3 : s >= 0.43 ? 2 : 1);
+// Stability Score (Sprint 16, see docs/stability-score.md). statcastScore is no
+// longer a sum of 4 star ratings -- it's a 0-20 Underlying Skill score built
+// from three buckets: Quality (contact), Skill (expected outcomes), Discipline
+// (chase/whiff risk). Hot/Cold classification compares real AVG/OPS production
+// against this Skill/Quality process score. Thresholds below are initial
+// calibration; ponytail: revisit once more Statcast fixtures exist.
+const SCALE = {
+  xwOBA: [0.3, 0.4],
+  xSLG: [0.38, 0.56],
+  xBA: [0.23, 0.3],
+  barrelRate: [6, 16],
+  hardHitRate: [32, 52],
+  exitVelocity: [86, 94],
+  chaseRate: [35, 20], // lower is better
+  whiffRate: [32, 18] // lower is better
+};
+
+const gradeOf = (metric, value) => {
+  const [floor, full] = SCALE[metric];
+  if (value == null) return 0;
+  return clamp01((value - floor) / (full - floor));
+};
+
+const resultLevel = (stats) => {
+  const avg = strengthOf("AVG", stats.AVG);
+  const ops = strengthOf("OPS", stats.OPS);
+  if (avg == null || ops == null) return null;
+  const level = (avg + ops) / 2;
+  return level >= 0.65 ? "hot" : level <= 0.35 ? "cold" : "neutral";
+};
+
+const processLevel = (quality, skill) => {
+  const level = (quality + skill) / 16; // Quality max 6 + Skill max 10
+  return level >= 0.65 ? "strong" : level <= 0.35 ? "weak" : "neutral";
+};
+
+// Fixed set of 4 labels -- no 5th bucket. Anything not clearly hot+strong,
+// hot+weak, or cold+strong falls back to "Stable producer".
+const classify = (result, process) => {
+  if (result === "hot" && process === "strong") return "Hot and sustainable";
+  if (result === "hot" && process === "weak") return "Hot but lucky";
+  if (result === "cold" && process === "strong") return "Cold but unlucky";
+  return "Stable producer";
+};
 
 const statcastComponent = (player) => {
   const sc = getPlayerStatcast(player.name);
-  if (!sc) return { score: 0, reasons: [], risks: [] };
+  if (!sc) return { score: 0, quality: 0, skill: 0, discipline: 0, reasons: [], risks: [] };
 
-  const stars = [];
+  const quality = (gradeOf("barrelRate", sc.barrelRate) * 3)
+    + (gradeOf("hardHitRate", sc.hardHitRate) * 2)
+    + (gradeOf("exitVelocity", sc.exitVelocity) * 1);
+  const skill = (gradeOf("xwOBA", sc.xwOBA) * 5)
+    + (gradeOf("xSLG", sc.xSLG) * 3)
+    + (gradeOf("xBA", sc.xBA) * 2);
+  const discipline = (gradeOf("chaseRate", sc.chaseRate) * 2)
+    + (gradeOf("whiffRate", sc.whiffRate) * 2);
+
   const reasons = [];
   const risks = [];
-  const grade = (value, starsFn, label) => {
-    if (value == null) return;
-    const s = starsFn(value);
-    stars.push(s);
-    if (s >= 5) reasons.push(`Elite ${label}`);
-    else if (s >= 4) reasons.push(`Strong ${label}`);
+
+  if (quality / 6 >= 0.8) reasons.push("Elite contact quality");
+  if (skill / 10 >= 0.7) reasons.push("Strong underlying metrics");
+  if (sc.chaseRate != null && sc.chaseRate <= 25 && sc.whiffRate != null && sc.whiffRate <= 20) {
+    reasons.push("Excellent plate discipline");
+  }
+  if (sc.chaseRate != null && sc.chaseRate >= 32) risks.push("High chase risk");
+  if (sc.whiffRate != null && sc.whiffRate >= 30) risks.push("High whiff risk");
+
+  const stats = player.stats || {};
+  const result = resultLevel(stats);
+  if (result != null) {
+    const label = classify(result, processLevel(quality, skill));
+    reasons.push(label);
+    if (label === "Hot but lucky") reasons.push("Likely negative regression");
+    if (label === "Cold but unlucky") reasons.push("Likely positive regression");
+  }
+
+  return {
+    score: Math.round(quality + skill + discipline),
+    quality: Math.round(quality),
+    skill: Math.round(skill),
+    discipline: Math.round(discipline),
+    reasons,
+    risks
   };
-
-  grade(sc.barrelRate, barrelStars, "Barrel %");
-  grade(sc.hardHitRate, hardHitStars, "Hard Hit %");
-  grade(sc.xwOBA, xwobaStars, "xwOBA");
-  grade(sc.xSLG, xslgStars, "xSLG");
-
-  if (sc.whiffRate != null && sc.whiffRate >= 30) risks.push("High Whiff Rate");
-  if (sc.chaseRate != null && sc.chaseRate >= 32) risks.push("High Chase Rate");
-
-  return { score: stars.reduce((a, b) => a + b, 0), reasons, risks };
 };
 
 const evaluatePlayer = (player, strategy, team) => {
@@ -131,6 +186,9 @@ const evaluatePlayer = (player, strategy, team) => {
     availabilityScore: availability.score,
     flexibilityScore: flexibility.score,
     statcastScore: statcast.score,
+    qualityScore: statcast.quality,
+    skillScore: statcast.skill,
+    disciplineScore: statcast.discipline,
     reasons: [
       ...category.reasons, ...statcast.reasons, ...position.reasons,
       ...availability.reasons, ...flexibility.reasons

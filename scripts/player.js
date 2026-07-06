@@ -31,7 +31,7 @@ const formatPlayer = (name, result) => {
     `Position      ${e.positionScore}`,
     `Availability  ${e.availabilityScore}`,
     `Flexibility   ${e.flexibilityScore}`,
-    `Statcast      ${e.statcastScore}`,
+    `Statcast      ${e.statcastScore} (Quality ${e.qualityScore} / Skill ${e.skillScore} / Discipline ${e.disciplineScore})`,
     RULE, "Reasons", ...list(e.reasons, "+"),
     RULE, "Risks", ...list(e.risks, "-"),
     BAR

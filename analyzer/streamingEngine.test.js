@@ -27,8 +27,8 @@ assert.ok(
   )
 );
 
-// Statcast flows through the same evaluator without any Streaming change
-assert.strictEqual(recs.find((r) => r.player === "Curtis Mead").statcastScore, 12);
+// Stability Score flows through the same evaluator without any Streaming change
+assert.strictEqual(recs.find((r) => r.player === "Curtis Mead").statcastScore, 10);
 
 // Sorted by Streaming Score, highest first
 for (let i = 1; i < recs.length; i += 1) {
