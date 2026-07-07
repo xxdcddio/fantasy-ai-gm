@@ -4,8 +4,10 @@ const path = require("path");
 
 const { runAnalysis, formatAnalysis } = require("./analyze");
 
-// Reads the real fixtures and runs the whole pipeline without throwing.
-const out = runAnalysis();
+// Run against the committed data/samples fixtures (not live data/*.json,
+// which `npm run import` overwrites as the real fantasy week advances).
+const SAMPLES = path.join(__dirname, "..", "data", "samples");
+const out = runAnalysis(SAMPLES);
 
 // Weekly Report was produced and is grounded in the matchup fixture.
 assert.ok(out.report, "report missing");

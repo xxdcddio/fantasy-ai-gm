@@ -18,12 +18,13 @@ const { recommendMoves } = require("../analyzer/gmDecisionEngine");
 const { generateWeeklyReport } = require("../analyzer/weeklyReport");
 const { bandFor } = require("../analyzer/waiverBands");
 
-// Read the freshly imported live data (where `npm run import` writes), not the
-// committed reference fixtures under data/samples used by unit tests.
+// Defaults to the freshly imported live data (where `npm run import` writes).
+// Tests pass the committed data/samples fixtures instead, so assertions don't
+// drift as the real fantasy week advances.
 const DATA = path.join(__dirname, "..", "data");
-const read = (f) => JSON.parse(fs.readFileSync(path.join(DATA, f), "utf8"));
 
-const runAnalysis = () => {
+const runAnalysis = (dataDir = DATA) => {
+  const read = (f) => JSON.parse(fs.readFileSync(path.join(dataDir, f), "utf8"));
   const team = new Team(normalizeFantasyJson(read("team.json")));
   const freeAgents = new FreeAgentList(normalizeFreeAgents(read("free-agents.json")));
   const matchup = parseMatchup(read("matchup.json"));
