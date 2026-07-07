@@ -239,12 +239,21 @@ score-only band. Wired into `gmDecisionEngine.js` (each move), `weeklyReport.js`
 `formatFa`), and `scripts/analyze.js` (top move + Top 5 Streaming); `coach.js`/
 `briefing.js` need no change (JSON passthrough). Evaluator itself is untouched.
 
+### ✅ Sprint 20 — Tech debt: fix Week 15/16 flaky test
+Root cause wasn't `Date.now()` — no module in `analyzer/` or `scripts/` reads
+the system clock at all. `scripts/analyze.test.js` was the one test that ran
+the pipeline against live `data/*.json` (gitignored, overwritten by `npm run
+import`) instead of the committed `data/samples` fixtures every other test
+uses, so its pinned assertions drifted whenever the real fantasy week
+advanced. Fix: `runAnalysis()` now takes an optional data directory (defaults
+to the live dir for the actual CLI); the test passes `data/samples`. No Clock
+abstraction added — nothing needs one yet.
+
 ---
 
 ## Known Issues / Tech Debt
 - `getPlayerStatcast` slug splits on the apostrophe (`Ryan O'Hearn` → `ryan-o-hearn`) and misses `ryan-ohearn.json`. Only matters if an apostrophe-named FA needs Statcast; Curtis Mead is the current fixture-backed FA.
 - FA stat parsing is mapped to the "All Batters" tab column layout. Pitcher tab (W/K/ERA/WHIP/K/BB/QS/SV+H) is a separate column map — add when the pitcher FA list is needed.
-- Calendar-dependent tests (`scripts/analyze.test.js` pins `"Week 15"`) read the real current date, so they fail whenever the week rolls over (e.g. every Monday). Should inject/freeze the date instead of deriving the week from `Date.now()` at test time, so these tests are deterministic regardless of when they run.
 
 ---
 
