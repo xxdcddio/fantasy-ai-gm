@@ -2,7 +2,7 @@ const assert = require("assert");
 const fs = require("fs");
 const path = require("path");
 
-const { evaluatePlayer } = require("./evaluator");
+const { evaluatePlayer, categoryDelta } = require("./evaluator");
 const Team = require("./models/team");
 const { FreeAgentList } = require("./models/freeAgent");
 const { normalizeFantasyJson, normalizeFreeAgents } = require("./parser");
@@ -72,5 +72,16 @@ assert.ok(ev("Ivan Herrera").reasons.some((r) => /weak C/.test(r)));
 
 // Deterministic
 assert.strictEqual(JSON.stringify(ev("Christian Walker")), JSON.stringify(ev("Christian Walker")));
+
+// Move Evaluator (PRD v2, P1) — Category Delta regression guard: adding a
+// zero-SB power bat over a real SB source must show SB as a real loss, not a
+// gain (the bug this feature exists to fix). Walker: HR20/RBI61/SB0/AVG.232;
+// Arraez: HR4/RBI41/SB9/AVG.326.
+const delta = categoryDelta(fa.find("Christian Walker").stats, fa.find("Luis Arraez").stats, strategy);
+assert.strictEqual(delta.perCategory.HR.marker, "+");
+assert.strictEqual(delta.perCategory.RBI.marker, "+");
+assert.strictEqual(delta.perCategory.SB.marker, "-"); // giving up Arraez's 9 SB, not "improving" it
+assert.strictEqual(delta.perCategory.SB.delta, -9);
+assert.strictEqual(delta.perCategory.AVG.marker, "-");
 
 console.log("evaluator.test.js OK");

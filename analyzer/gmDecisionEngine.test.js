@@ -55,6 +55,10 @@ for (let i = 1; i < moves.length; i += 1) {
   assert.ok(moves[i - 1].confidence >= moves[i].confidence);
 }
 
+// P1 — Recommendation Threshold: <15 No Move, 15-30 Watch, 30+ Add Now
+const recBand = (g) => (g >= 30 ? "Add Now" : g >= 15 ? "Watch" : "No Move");
+moves.forEach((m) => assert.strictEqual(m.recommendation, recBand(m.scoreGain)));
+
 // Explanation reflects the add's scoring (category reasons carry through)
 const top = moves[0];
 assert.ok(top.explanation.some((e) => /Improves|Fills|Multi-position|Healthy/.test(e)));
@@ -99,5 +103,28 @@ const teamWithMead = new Team([
 ]);
 const ownedMoves = recommendMoves({ team: teamWithMead, freeAgents: fa, strategy }).moves;
 assert.ok(!ownedMoves.some((m) => m.add.name === "Curtis Mead"), "owned player not added");
+
+// PRD v2 regression: adding a zero-SB power bat over a real SB source must
+// show SB as worsened, never "Improves SB" (the reported bug -- categoryImpact
+// used to reflect the add's own absolute strength, ignoring what it replaced).
+const syntheticTeam = new Team([
+  { name: "Weak Bat", eligiblePositions: ["OF"], slot: "BN", status: "",
+    stats: { R: 40, HR: 2, RBI: 20, SB: 9, BB: 15, AVG: 0.3, OPS: 0.76 } }
+]);
+const syntheticFA = new FreeAgentList([
+  { name: "Power Bat", eligiblePositions: ["OF"], rosterStatus: "FA",
+    stats: { R: 50, HR: 25, RBI: 70, SB: 0, BB: 30, AVG: 0.24, OPS: 0.78 } }
+]);
+const synthMove = recommendMoves({
+  team: syntheticTeam,
+  freeAgents: syntheticFA,
+  strategy: { attack: ["HR", "RBI"], protect: [], ignore: ["SB"] }
+}).moves[0];
+assert.strictEqual(synthMove.add.name, "Power Bat");
+assert.strictEqual(synthMove.drop.name, "Weak Bat");
+assert.strictEqual(synthMove.categoryImpact.HR, "+");
+assert.strictEqual(synthMove.categoryImpact.SB, "-");
+assert.ok(!synthMove.explanation.includes("Improves SB"));
+assert.ok(synthMove.risks.includes("Worsens SB"));
 
 console.log("gmDecisionEngine.test.js OK");

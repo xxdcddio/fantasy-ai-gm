@@ -4,12 +4,16 @@
 //   recommendMoves({ team, freeAgents, matchup, strategy }) -> { moves: [...] }
 
 const { recommend } = require("./streamingEngine");
-const { evaluatePlayer, strengthOf } = require("./evaluator");
+const { evaluatePlayer, categoryDelta } = require("./evaluator");
 const { analyzeCategories } = require("./categoryAnalyzer");
 const { bandFor } = require("./waiverBands");
 
 const MOVE_LIMIT = 5;
-const IMPACT_CATS = ["R", "HR", "RBI", "SB", "BB", "AVG", "OPS"];
+
+// P1 — Recommendation Threshold: bands the net Move Score into an actionable
+// call, independent of the numeric confidence ladder below.
+const recommendationFor = (moveScore) =>
+  moveScore >= 30 ? "Add Now" : moveScore >= 15 ? "Watch" : "No Move";
 
 // Obvious core players we never auto-drop yet.
 // ponytail: temporary name list; replaced by Evaluator thresholds once roster
@@ -40,9 +44,9 @@ const COMPONENTS = [
 const componentsOf = (add) =>
   COMPONENTS.map(([key, label, max]) => ({ label, score: add[key], max }));
 
-const confidenceSummaryFor = ({ add, worst, scoreGain, confidence }) => {
-  const positives = add.reasons.slice(0, 2);
-  const negatives = add.risks.slice(0, 2);
+const confidenceSummaryFor = ({ reasons, risks, worst, scoreGain, confidence }) => {
+  const positives = reasons.slice(0, 2);
+  const negatives = risks.slice(0, 2);
   const parts = [
     `${Math.round(confidence * 100)}% confidence`,
     `+${scoreGain} score gain over ${worst.name}`
@@ -50,19 +54,6 @@ const confidenceSummaryFor = ({ add, worst, scoreGain, confidence }) => {
   if (positives.length) parts.push(`driven by ${positives.join(", ")}`);
   if (negatives.length) parts.push(`tempered by ${negatives.join(", ")}`);
   return parts.join(" — ");
-};
-
-// What adding this player does to each category, from its own stat strengths.
-// (Roster players lack season stats, so the drop side can't be compared yet.)
-const categoryImpact = (player) => {
-  const stats = player?.stats || {};
-  const impact = {};
-  IMPACT_CATS.forEach((cat) => {
-    const s = strengthOf(cat, stats[cat]);
-    if (s == null) return;
-    impact[cat] = s >= 0.6 ? "+" : s < 0.3 ? "-" : "=";
-  });
-  return impact;
 };
 
 const isDroppable = (player) =>
@@ -79,7 +70,7 @@ const recommendMoves = ({ team, freeAgents, matchup, strategy } = {}) => {
   // Step 2: evaluate droppable roster spots with the same Evaluator.
   const drops = (team?.players || [])
     .filter(isDroppable)
-    .map((p) => ({ name: p.name, evaluation: evaluatePlayer(p, activeStrategy, team) }))
+    .map((p) => ({ name: p.name, player: p, evaluation: evaluatePlayer(p, activeStrategy, team) }))
     .sort((a, b) => a.evaluation.score - b.evaluation.score);
 
   const worst = drops[0];
@@ -90,25 +81,58 @@ const recommendMoves = ({ team, freeAgents, matchup, strategy } = {}) => {
   // ponytail: always swaps the single weakest spot; position-aware swaps later.
   const moves = recommendations
     .map((add) => {
-      const scoreGain = add.score - worst.evaluation.score;
-      const risks = [...add.risks];
+      const addPlayer = faByName.get(add.player);
+
+      // Move Evaluator (P1): score this category by what the add actually
+      // gains over what THIS drop already contributes, not the add's own
+      // absolute strength -- an add's own categoryScore assumes an empty
+      // roster spot, which is wrong once we know the real drop.
+      const { score: categoryDeltaScore, perCategory } =
+        categoryDelta(addPlayer?.stats, worst.player.stats, activeStrategy);
+
+      const categoryReasons = Object.entries(perCategory)
+        .filter(([, v]) => v.marker === "+")
+        .map(([cat]) => `Improves ${cat}`);
+      const categoryRisks = Object.entries(perCategory)
+        .filter(([, v]) => v.marker === "-")
+        .map(([cat]) => `Worsens ${cat}`);
+      const categoryImpact = {};
+      Object.entries(perCategory).forEach(([cat, v]) => { categoryImpact[cat] = v.marker; });
+
+      // Non-category reasons/risks (position/availability/flexibility/stability)
+      // describe the add candidate itself, not a comparison -- keep as-is.
+      const nonCategoryReasons = add.reasons.filter((r) => !/^Improves /.test(r));
+      const nonCategoryRisks = add.risks.filter((r) => r !== "Lower AVG");
+
+      const reasons = [...categoryReasons, ...nonCategoryReasons];
+      const moveScore = categoryDeltaScore + add.positionScore + add.availabilityScore
+        + add.flexibilityScore + add.statcastScore;
+      const scoreGain = moveScore - worst.evaluation.score;
+
+      const risks = [...categoryRisks, ...nonCategoryRisks];
       if (scoreGain < 5) risks.push("Small upgrade only");
       const confidence = confidenceFor(scoreGain);
+
       return {
         type: "add_drop",
         add: { name: add.player },
         drop: { name: worst.name },
         confidence,
         scoreGain,
-        categoryImpact: categoryImpact(faByName.get(add.player)),
-        explanation: [...add.reasons, `Higher Evaluator score than ${worst.name}`],
+        recommendation: recommendationFor(scoreGain),
+        categoryImpact,
+        explanation: [...reasons, `Higher Evaluator score than ${worst.name}`],
         risks,
-        components: componentsOf(add),
-        confidenceSummary: confidenceSummaryFor({ add, worst: { name: worst.name }, scoreGain, confidence }),
-        waiverBand: bandFor({ score: add.score, confidence })
+        components: componentsOf({ ...add, categoryScore: categoryDeltaScore }),
+        confidenceSummary: confidenceSummaryFor({ reasons, risks, worst: { name: worst.name }, scoreGain, confidence }),
+        waiverBand: bandFor({ score: moveScore, confidence })
       };
     })
     .filter((m) => m.scoreGain > 0)
+    // Category Delta breaks the old add.score ordering (it's no longer
+    // monotonic with the add's absolute streaming score), so re-sort by the
+    // real net gain for this specific pairing.
+    .sort((a, b) => b.scoreGain - a.scoreGain || a.add.name.localeCompare(b.add.name))
     .slice(0, MOVE_LIMIT);
 
   return { moves };

@@ -26,10 +26,45 @@ const STAT_SCALE = {
 };
 
 const clamp01 = (n) => Math.max(0, Math.min(1, n));
+const clampSigned = (n) => Math.max(-1, Math.min(1, n));
 const strengthOf = (cat, value) => {
   const scale = STAT_SCALE[cat];
   if (!scale || value == null) return null;
   return clamp01((value - scale[0]) / (scale[1] - scale[0]));
+};
+
+// Move Evaluator (PRD v2, P1) — what ADDing this player instead of DROPping the
+// other one actually does per category, not just the add's own absolute
+// strength. Fixes the "recommends a zero-SB bat over a real SB source and
+// claims it improves SB" class of bug: delta is computed against the real
+// drop, not against an implicit empty roster spot.
+const CATEGORY_DELTA_CATS = ["R", "HR", "RBI", "SB", "BB", "AVG", "OPS"];
+
+const categoryDelta = (addStats = {}, dropStats = {}, strategy = {}) => {
+  const attack = new Set(strategy?.attack || []);
+  const perCategory = {};
+  let weightedSum = 0;
+  let weightTotal = 0;
+
+  CATEGORY_DELTA_CATS.forEach((cat) => {
+    const scale = STAT_SCALE[cat];
+    const addValue = addStats[cat];
+    const dropValue = dropStats[cat];
+    if (!scale || addValue == null || dropValue == null) return;
+
+    const width = scale[1] - scale[0];
+    const delta = addValue - dropValue;
+    const normalized = clampSigned(delta / width);
+    const marker = normalized > 0.15 ? "+" : normalized < -0.15 ? "-" : "=";
+    perCategory[cat] = { add: addValue, drop: dropValue, delta, marker };
+
+    const weight = attack.has(cat) ? 2 : 1;
+    weightedSum += normalized * weight;
+    weightTotal += weight;
+  });
+
+  const score = weightTotal ? Math.round(clampSigned(weightedSum / weightTotal) * 60) : 0;
+  return { score, perCategory };
 };
 
 const categoryComponent = (player, strategy) => {
@@ -197,4 +232,4 @@ const evaluatePlayer = (player, strategy, team) => {
   };
 };
 
-module.exports = { evaluatePlayer, strengthOf };
+module.exports = { evaluatePlayer, strengthOf, categoryDelta };

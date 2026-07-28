@@ -1,6 +1,6 @@
 # Fantasy AI GM Development Roadmap
 
-> Last Updated: 2026-06-30
+> Last Updated: 2026-07-28
 
 ## Architecture Flow
 
@@ -248,6 +248,41 @@ uses, so its pinned assertions drifted whenever the real fantasy week
 advanced. Fix: `runAnalysis()` now takes an optional data directory (defaults
 to the live dir for the actual CLI); the test passes `data/samples`. No Clock
 abstraction added — nothing needs one yet.
+
+### ✅ Sprint 21 — Roster season stats + fixture re-baseline
+`analyzer/parser.js` gains `normalizeRosterPlayer`: the Team page's "2026
+Season" stat view carries the same 7 batting categories as the free-agent
+list (Pre-Season rank, Current rank, %Start, %Ros, then H/AB/R/HR/RBI/SB/
+BB/AVG/OPS), just in a different column layout. Pitcher rows share the same
+column *positions* but they mean pitching stats there, so `stats` stays `{}`
+for pitchers. `Player`/`FreeAgent` models expose the same
+`preSeasonRank/rank/percentStart/percentRostered/stats` fields for both
+roster and FA players — this is the prerequisite for real ADD/DROP category
+deltas (Sprint 22): until now, roster players had no stats to compare
+against at all. No chrome-extension change needed (it already captures
+whatever stat view is active). Fixtures re-extracted and every dependent
+test re-baselined against the new real roster/matchup/FA data.
+
+### ✅ Sprint 22 — Move Evaluator (PRD v2, P1)
+`analyzer/evaluator.js` gains `categoryDelta(addStats, dropStats, strategy)`:
+per-category delta (`add − drop`, normalized against `STAT_SCALE`, attack
+categories weighted double) for R/HR/RBI/SB/BB/AVG/OPS, with a `+`/`-`/`=`
+marker per category. This fixes the reported bug — recommending a zero-SB
+bat over a real SB source and claiming "Improves SB" — by scoring what the
+move actually changes instead of the add's own absolute strength (which
+implicitly assumed an empty roster spot). `gmDecisionEngine.js`'s
+`categoryImpact`/`explanation`/`risks` are now delta-based; the add's
+`categoryScore` in the Net Gain formula is replaced by the delta-corrected
+score for this specific pairing, so ranking itself is now delta-aware, not
+just the label. Moves are re-sorted by the corrected `scoreGain` (no longer
+monotonic with the add's raw Streaming Score). New `recommendation` field
+per move: `<15` No Move / `15–30` Watch / `30+` Add Now (independent of the
+existing numeric confidence ladder). `waiverBand` now reflects the
+delta-corrected move score too. Position/availability/flexibility/stability
+scoring are unchanged — they describe the add candidate itself, not a
+comparison (P2 will revisit Weak Position classification + replacement
+cost). Regression test locks in the exact PRD bug scenario (power bat with
+0 SB vs a real 9-SB bat: SB must read `-`, never `+`).
 
 ---
 
