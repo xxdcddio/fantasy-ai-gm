@@ -99,6 +99,10 @@ const recommendMoves = ({ team, freeAgents, matchup, strategy } = {}) => {
       const categoryImpact = {};
       Object.entries(perCategory).forEach(([cat, v]) => { categoryImpact[cat] = v.marker; });
 
+      // P2 — Explain Score: the numeric add/drop/delta behind each marker,
+      // for callers (Coach output) that need more than +/-/=.
+      const categoryBreakdown = Object.entries(perCategory).map(([cat, v]) => ({ cat, ...v }));
+
       // Non-category reasons/risks (position/availability/flexibility/stability)
       // describe the add candidate itself, not a comparison -- keep as-is.
       const nonCategoryReasons = add.reasons.filter((r) => !/^Improves /.test(r));
@@ -121,6 +125,7 @@ const recommendMoves = ({ team, freeAgents, matchup, strategy } = {}) => {
         scoreGain,
         recommendation: recommendationFor(scoreGain),
         categoryImpact,
+        categoryBreakdown,
         explanation: [...reasons, `Higher Evaluator score than ${worst.name}`],
         risks,
         components: componentsOf({ ...add, categoryScore: categoryDeltaScore }),

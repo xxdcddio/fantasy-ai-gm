@@ -284,6 +284,25 @@ comparison (P2 will revisit Weak Position classification + replacement
 cost). Regression test locks in the exact PRD bug scenario (power bat with
 0 SB vs a real 9-SB bat: SB must read `-`, never `+`).
 
+### ✅ Sprint 23 — Weak Position reclassification + Replacement Cost (P2)
+`lineupAnalyzer.js` gains `classifyWeakSlots(team)`: replaces the old flat
+weak-slot flag with 4 labels — `"No starter"` (0 eligible, nobody on IL
+there), `"Temporary injury"` (0 eligible, but the missing starter is on IL —
+resolves itself), `"Permanent weakness"` (1 eligible and the position is
+scarce: C/SS), `"No backup"` (1 eligible, not scarce). `evaluator.js`'s
+`positionComponent` now scores off this classification via `WEAK_SLOT_BONUS`
+(`No starter`/`Permanent weakness` 20, `No backup` 15, `Temporary injury` 8 —
+a short IL stint is a smaller problem than a real hole). Replacement Cost:
+even on positions that aren't currently weak, eligibility at a scarce
+position (C/SS/RP/SP, exported as `SCARCE_POSITIONS`) carries a flat +8
+bonus over the default +3, since scarce spots are harder to backfill later
+than deep ones. `gmDecisionEngine.js` gains `categoryBreakdown` per move —
+the numeric `{cat, add, drop, delta, marker}` behind each `categoryImpact`
+marker (Explain Score). No new plumbing needed in `coach.js`: it already
+serializes the full move object to the LLM prompt, so `categoryBreakdown`
+reaches the Coach for free; `weeklyReport.js`'s text summary stays
+deliberately terse (full Coach output reformat is P4/Sprint 26).
+
 ---
 
 ## Known Issues / Tech Debt

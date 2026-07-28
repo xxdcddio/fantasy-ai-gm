@@ -70,6 +70,17 @@ assert.strictEqual(ev("Ivan Herrera").positionScore, 20); // C, C is weak
 assert.strictEqual(ev("Christian Walker").positionScore, 3); // 1B only, not weak
 assert.ok(ev("Ivan Herrera").reasons.some((r) => /weak C/.test(r)));
 
+// P2 — Weak Position reclassification: the current fixture's only weak slot
+// (C, 1 eligible non-IL hitter) is a scarce position -> "Permanent weakness",
+// not the generic flat bonus.
+assert.ok(ev("Ivan Herrera").reasons.some((r) => r.includes("Permanent weakness")));
+
+// P2 — Replacement Cost: SS is deep on this roster (not a weak slot), but
+// still a scarce position -- eligibility there alone is worth more than a
+// non-scarce deep slot, even without filling a need.
+assert.strictEqual(ev("Brayan Rocchio").positionScore, 8); // 2B/SS, SS scarce
+assert.ok(ev("Brayan Rocchio").reasons.some((r) => /Scarce position \(SS\)/.test(r)));
+
 // Deterministic
 assert.strictEqual(JSON.stringify(ev("Christian Walker")), JSON.stringify(ev("Christian Walker")));
 

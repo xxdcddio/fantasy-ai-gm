@@ -10,8 +10,18 @@
 //   score = categoryScore(<=60) + positionScore(<=20)
 //         + availabilityScore(<=10) + flexibilityScore(<=10)
 
-const { findEmptyOrWeakSlots } = require("./lineupAnalyzer");
+const { classifyWeakSlots, SCARCE_POSITIONS } = require("./lineupAnalyzer");
 const { getPlayerStatcast } = require("./providers/statcast");
+
+// P2 — Weak Position Bonus is no longer flat: how badly a slot needs help
+// depends on *why* it's weak. Temporary injuries resolve themselves, so they
+// get a smaller bonus than a genuine, hard-to-fix weakness.
+const WEAK_SLOT_BONUS = {
+  "No starter": 20,
+  "Permanent weakness": 20,
+  "No backup": 15,
+  "Temporary injury": 8
+};
 
 // Absolute reference scales: [floor, full]. value >= full -> strength 1.
 // ponytail: crude season-total thresholds; refine with projections / pace.
@@ -90,10 +100,25 @@ const categoryComponent = (player, strategy) => {
 };
 
 const positionComponent = (player, team) => {
-  const weak = team ? findEmptyOrWeakSlots(team) : [];
-  const hit = (player.eligiblePositions || []).find((p) => weak.includes(p));
-  return hit
-    ? { score: 20, reasons: [`Fills weak ${hit} position`], risks: [] }
+  const weak = team ? classifyWeakSlots(team) : {};
+  const positions = player.eligiblePositions || [];
+
+  const hit = positions.find((p) => weak[p]);
+  if (hit) {
+    const classification = weak[hit];
+    return {
+      score: WEAK_SLOT_BONUS[classification],
+      reasons: [`Fills weak ${hit} position (${classification})`],
+      risks: []
+    };
+  }
+
+  // P2 — Replacement Cost: even when your own roster isn't thin there right
+  // now, scarce positions (C/SS/RP/SP) are harder to replace later than deep
+  // ones, so eligibility there carries a small bonus on its own.
+  const scarcePosition = positions.find((p) => SCARCE_POSITIONS.has(p));
+  return scarcePosition
+    ? { score: 8, reasons: [`Scarce position (${scarcePosition})`], risks: [] }
     : { score: 3, reasons: [], risks: [] };
 };
 

@@ -9,7 +9,8 @@ const {
   getPositionDepth,
   getBenchCandidates,
   getILSummary,
-  findEmptyOrWeakSlots
+  findEmptyOrWeakSlots,
+  classifyWeakSlots
 } = require("./lineupAnalyzer");
 
 const teamPath = path.join(__dirname, "..", "data", "samples", "team.json");
@@ -60,6 +61,11 @@ assert.strictEqual(result.IL.length, 3);
 assert.deepStrictEqual([...result.weakSlots].sort(), ["C"]);
 assert.ok(Array.isArray(result.notes));
 assert.ok(result.notes.some((n) => /\bC\b.*thin/.test(n)));
+
+// P2 — Weak Position reclassification: C has exactly 1 eligible non-IL
+// hitter (Gabriel Moreno) and is a scarce position -> "Permanent weakness",
+// even though Will Smith (C, IL60) is also on this roster.
+assert.deepStrictEqual(classifyWeakSlots(team), { C: "Permanent weakness" });
 
 // Deterministic output: same team -> byte-identical JSON
 assert.strictEqual(JSON.stringify(analyzeLineup(team)), JSON.stringify(analyzeLineup(team)));

@@ -127,4 +127,15 @@ assert.strictEqual(synthMove.categoryImpact.SB, "-");
 assert.ok(!synthMove.explanation.includes("Improves SB"));
 assert.ok(synthMove.risks.includes("Worsens SB"));
 
+// P2 — Explain Score: categoryBreakdown carries the real numbers behind
+// each marker, not just +/-/=.
+const sbRow = synthMove.categoryBreakdown.find((r) => r.cat === "SB");
+assert.deepStrictEqual(sbRow, { cat: "SB", add: 0, drop: 9, delta: -9, marker: "-" });
+moves.forEach((m) => {
+  assert.ok(Array.isArray(m.categoryBreakdown));
+  m.categoryBreakdown.forEach((row) => {
+    assert.deepStrictEqual(Object.keys(row), ["cat", "add", "drop", "delta", "marker"]);
+  });
+});
+
 console.log("gmDecisionEngine.test.js OK");
