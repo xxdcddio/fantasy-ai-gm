@@ -28,7 +28,7 @@ assert.ok(
 );
 
 // Stability Score flows through the same evaluator without any Streaming change
-assert.strictEqual(recs.find((r) => r.player === "Curtis Mead").statcastScore, 10);
+assert.strictEqual(recs.find((r) => r.player === "Christian Walker").statcastScore, 13);
 
 // Sorted by Streaming Score, highest first
 for (let i = 1; i < recs.length; i += 1) {
@@ -36,13 +36,13 @@ for (let i = 1; i < recs.length; i += 1) {
 }
 assert.strictEqual(recs[0].score, Math.max(...recs.map((r) => r.score)));
 
-// Mead (HR/RBI, fills weak 3B) ranks above the AVG-first bat Arraez
-assert.ok(rank("Curtis Mead") < rank("Luis Arraez"));
+// Herrera (HR/RBI, fills weak C) ranks above the AVG-first bat Arraez
+assert.ok(rank("Ivan Herrera") < rank("Luis Arraez"));
 
 // Score is the internal Streaming Score, not Yahoo rank: the top pick is not
 // simply the best Yahoo current rank.
-const ohearnRank = fa.find("Ryan O'Hearn").rank; // Yahoo #105 (best rank in pool)
-assert.notStrictEqual(recs[0].player, "Ryan O'Hearn"); // a weak-3B multi-position bat outranks him here
+const ohearnRank = fa.find("Ryan O'Hearn").rank; // Yahoo #91 (best rank in pool)
+assert.notStrictEqual(recs[0].player, "Ryan O'Hearn"); // Christian Walker's Stability Score outranks him here
 assert.ok(typeof ohearnRank === "number");
 
 // Deterministic
@@ -52,12 +52,12 @@ assert.strictEqual(JSON.stringify(recommend(fa, strategy, team)), JSON.stringify
 // FA pages can be extracted at different times, so a just-added player can
 // appear in both snapshots).
 const base = normalizeFantasyJson(read("team.json"));
-const teamWithMead = new Team([
+const teamWithOhearn = new Team([
   ...base.roster, ...base.bench, ...base.IL, ...base.pitchers,
-  { name: "Curtis Mead", eligiblePositions: ["1B", "2B", "3B"] }
+  { name: "Ryan O'Hearn", eligiblePositions: ["1B", "OF"] }
 ]);
-const recsOwned = recommend(fa, strategy, teamWithMead).recommendations;
-assert.ok(!recsOwned.some((r) => r.player === "Curtis Mead"), "owned player excluded");
+const recsOwned = recommend(fa, strategy, teamWithOhearn).recommendations;
+assert.ok(!recsOwned.some((r) => r.player === "Ryan O'Hearn"), "owned player excluded");
 assert.strictEqual(recsOwned.length, fa.players.length - 1);
 
 console.log("streamingEngine.test.js OK");

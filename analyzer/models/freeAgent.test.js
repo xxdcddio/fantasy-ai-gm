@@ -11,8 +11,8 @@ const normalized = normalizeFreeAgents(JSON.parse(fs.readFileSync(faPath, "utf8"
 const list = new FreeAgentList(normalized);
 
 // Parser drops header rows, keeps only real player rows
-assert.strictEqual(normalized.length, 24);
-assert.strictEqual(list.players.length, 24);
+assert.strictEqual(normalized.length, 25);
+assert.strictEqual(list.players.length, 25);
 assert.ok(list.players.every((p) => p instanceof FreeAgent && p instanceof Player));
 
 // Batter with full stat line
@@ -21,32 +21,32 @@ assert.ok(ohearn, "Ryan O'Hearn parsed");
 assert.strictEqual(ohearn.mlbTeam, "PIT");
 assert.deepStrictEqual(ohearn.eligiblePositions, ["1B", "OF"]);
 assert.strictEqual(ohearn.rosterStatus, "FA");
-assert.strictEqual(ohearn.rank, 105);
-assert.strictEqual(ohearn.preSeasonRank, 298);
-assert.strictEqual(ohearn.gamesPlayed, 69);
-assert.strictEqual(ohearn.percentRostered, 59);
-assert.strictEqual(ohearn.opponent, "@ PHI");
+assert.strictEqual(ohearn.rank, 91);
+assert.strictEqual(ohearn.preSeasonRank, 301);
+assert.strictEqual(ohearn.gamesPlayed, 92);
+assert.strictEqual(ohearn.percentRostered, 71);
+assert.strictEqual(ohearn.opponent, "vs AZ");
 assert.strictEqual(ohearn.gameTime, "6:40 am");
 assert.deepStrictEqual(ohearn.stats, {
-  hAb: "74/259",
-  R: 38,
-  HR: 13,
-  RBI: 50,
+  hAb: "94/341",
+  R: 53,
+  HR: 17,
+  RBI: 68,
   SB: 1,
-  BB: 21,
-  AVG: 0.286,
-  OPS: 0.821
+  BB: 30,
+  AVG: 0.276,
+  OPS: 0.803
 });
 
 // Multi-position eligibility
 const arraez = list.find("Luis Arraez");
 assert.deepStrictEqual(arraez.eligiblePositions, ["1B", "2B"]);
-assert.strictEqual(arraez.rank, 134);
+assert.strictEqual(arraez.rank, 117);
 
 // Injury token glued into the name
-const horwitz = list.find("Spencer Horwitz");
-assert.strictEqual(horwitz.status, "IL10");
-assert.deepStrictEqual(horwitz.eligiblePositions, ["1B"]);
+const bellinger = list.find("Cody Bellinger");
+assert.strictEqual(bellinger.status, "IL10");
+assert.deepStrictEqual(bellinger.eligiblePositions, ["OF"]);
 
 // findByPosition uses eligibility (inherited canPlay)
 const secondBase = list.findByPosition("2B").map((p) => p.name);
@@ -55,7 +55,7 @@ assert.ok(!secondBase.includes("Ryan O'Hearn"));
 
 // bestAvailable: lowest Yahoo current rank first
 const top3 = list.bestAvailable(3).map((p) => p.name);
-assert.deepStrictEqual(top3, ["Ryan O'Hearn", "Spencer Horwitz", "Luis Arraez"]);
+assert.deepStrictEqual(top3, ["TJ Rumfield", "Ryan O'Hearn", "Cody Bellinger"]);
 
 // find: case/whitespace-insensitive, null when absent
 assert.strictEqual(list.find("  ryan o'hearn ").name, "Ryan O'Hearn");

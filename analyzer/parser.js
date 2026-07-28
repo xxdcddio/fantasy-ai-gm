@@ -104,6 +104,41 @@ const bucketForPlayer = (player) => {
   return "roster";
 };
 
+// Team page ("My Team" -> Stats -> 2026 Season) carries the same 7 batting
+// categories as the free-agent list, in a different column layout: Pre-Season
+// rank, Current rank, %Start, %Ros, then H/AB, R, HR, RBI, SB, BB, AVG, OPS.
+// ponytail: pitcher rows share these column *positions* but the columns mean
+// IP/W/K/ERA/WHIP/K-BB/QS/SV+H there, not batting stats -- stats stays {}
+// for pitchers until a Move Evaluator use case needs pitching categories.
+const normalizeRosterPlayer = (player) => {
+  const base = normalizePlayer(player);
+  const cells = toArray(player.cells);
+  const cellIndex = playerCellIndex(player);
+  const at = (offset) => clean(cells[cellIndex + offset]?.text);
+
+  const isPitcher = base.eligiblePositions.some((position) => PITCHER_POSITIONS.has(position));
+
+  return {
+    ...base,
+    preSeasonRank: toNum(at(2)),
+    rank: toNum(at(3)),
+    percentStart: toNum(at(4)),
+    percentRostered: toNum(at(5)),
+    stats: isPitcher
+      ? {}
+      : {
+          hAb: at(6),
+          R: toNum(at(7)),
+          HR: toNum(at(8)),
+          RBI: toNum(at(9)),
+          SB: toNum(at(10)),
+          BB: toNum(at(11)),
+          AVG: toNum(at(12)),
+          OPS: toNum(at(13))
+        }
+  };
+};
+
 const normalizeFantasyJson = (input) => {
   const normalized = {
     roster: [],
@@ -112,7 +147,7 @@ const normalizeFantasyJson = (input) => {
     pitchers: []
   };
 
-  const players = toArray(input?.roster).filter(isPlayerRow).map(normalizePlayer);
+  const players = toArray(input?.roster).filter(isPlayerRow).map(normalizeRosterPlayer);
 
   players.forEach((player) => {
     normalized[bucketForPlayer(player)].push(player);

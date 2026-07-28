@@ -24,15 +24,15 @@ const report = generateWeeklyReport({ team, matchup, strategy, recommendations: 
   .forEach((k) => assert.ok(k in report, `missing ${k}`));
 
 // Summary
-assert.strictEqual(report.summary.week, "Week 15");
-assert.strictEqual(report.summary.opponent, "台鋼雄鷹MLB分隊");
-assert.strictEqual(report.summary.currentScore, "6-6");
-assert.deepStrictEqual(report.summary.remainingGames, { mine: 92, opponent: 96 });
+assert.strictEqual(report.summary.week, "Week 18");
+assert.strictEqual(report.summary.opponent, "我們是富邦悍將你又是誰");
+assert.strictEqual(report.summary.currentScore, "1-10");
+assert.deepStrictEqual(report.summary.remainingGames, { mine: 103, opponent: 85 });
 
-// Strengths / weaknesses from roster shape (weak slots: C, 3B; OF is deep)
+// Strengths / weaknesses from roster shape (weak slot: C only; OF/SP are deep)
 assert.ok(report.weaknesses.includes("Thin at C"));
-assert.ok(report.weaknesses.includes("Thin at 3B"));
 assert.ok(report.strengths.includes("Deep OF"));
+assert.ok(report.strengths.includes("Deep SP"));
 
 // Category outlook mirrors the strategy
 assert.deepStrictEqual(report.categoryOutlook, {
@@ -42,10 +42,10 @@ assert.deepStrictEqual(report.categoryOutlook, {
 });
 
 // Roster analysis
-assert.deepStrictEqual([...report.rosterAnalysis.weakPositions].sort(), ["3B", "C"]);
-assert.strictEqual(report.rosterAnalysis.IL.length, 4);
+assert.deepStrictEqual([...report.rosterAnalysis.weakPositions].sort(), ["C"]);
+assert.strictEqual(report.rosterAnalysis.IL.length, 3);
 assert.ok(report.rosterAnalysis.IL.includes("Will Smith"));
-assert.ok(report.rosterAnalysis.IL.includes("José Ramírez"));
+assert.ok(report.rosterAnalysis.IL.includes("Corey Seager"));
 assert.strictEqual(report.rosterAnalysis.bench.length, 5);
 
 // Recommendations carried from the GM Decision Engine
@@ -67,7 +67,7 @@ assert.ok(report.notes.some((n) => /Protect ERA/.test(n)));
 // Text renderer returns a string with the key headline info
 const text = renderWeeklyReport(report);
 assert.strictEqual(typeof text, "string");
-assert.ok(text.includes("Week 15") && text.includes("台鋼雄鷹MLB分隊"));
+assert.ok(text.includes("Week 18") && text.includes("我們是富邦悍將你又是誰"));
 assert.ok(text.includes(report.recommendations[0].confidenceSummary));
 assert.ok(text.includes(report.recommendations[0].waiverBand.emoji));
 assert.ok(text.includes(report.recommendations[0].waiverBand.label));

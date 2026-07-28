@@ -76,5 +76,10 @@ assert.deepStrictEqual(hitter.toJSON(), {
   gameTime: "7:05 PM",
   status: "Healthy",
   newsLink: "https://sports.yahoo.com/mlb/players/10001/news",
-  playerLink: "https://baseball.fantasysports.yahoo.com/b1/player/10001"
+  playerLink: "https://baseball.fantasysports.yahoo.com/b1/player/10001",
+  preSeasonRank: null,
+  rank: null,
+  percentStart: null,
+  percentRostered: null,
+  stats: {}
 });

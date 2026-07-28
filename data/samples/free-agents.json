@@ -1,6 +1,6 @@
 {
   "source": "fantasy-mlb-ai-yahoo-extractor",
-  "extractedAt": "2026-06-29T15:05:41.162Z",
+  "extractedAt": "2026-07-28T09:01:40.521Z",
   "page": {
     "kind": "free_agents",
     "title": "Player List | Fantasy Baseball | Yahoo! Sports",
@@ -14,7 +14,7 @@
       "name": "Batters",
       "position": "",
       "team": "",
-      "raw": "Batters Opp: 6/29 Roster Status GP* Pre-Season Current % Ros H/AB* R HR RBI SB BB AVG OPS",
+      "raw": "Batters Opp: 7/28 Roster Status GP* Pre-Season Current % Ros H/AB* R HR RBI SB BB AVG OPS",
       "cells": [
         {
           "text": "",
@@ -29,7 +29,7 @@
           "className": "Alt Ta-start player"
         },
         {
-          "text": "Opp: 6/29",
+          "text": "Opp: 7/28",
           "className": "Bdrend"
         },
         {
@@ -145,10 +145,10 @@
       ]
     },
     {
-      "name": "Ryan O'HearnNew Player Note PIT - 1B,OF",
+      "name": "TJ RumfieldPlayer Note COL - 1B",
       "position": "",
-      "team": "Ryan O'HearnNew Player Note PIT - 1B,OF 6:40 am @ PHI",
-      "raw": "  Ryan O'HearnNew Player Note PIT - 1B,OF 6:40 am @ PHI @ PHI FA 69 298 105 59% 74/259 38 13 50 1 21 .286 .821",
+      "team": "TJ RumfieldPlayer Note COL - 1B 9:40 am @ SD",
+      "raw": "  TJ RumfieldPlayer Note COL - 1B 9:40 am @ SD @ SD FA 104 265 84 44% 109/366 46 13 53 0 44 .298 .857",
       "cells": [
         {
           "text": "",
@@ -159,11 +159,11 @@
           "className": "Ta-c Bdrend"
         },
         {
-          "text": "Ryan O'HearnNew Player Note PIT - 1B,OF 6:40 am @ PHI",
+          "text": "TJ RumfieldPlayer Note COL - 1B 9:40 am @ SD",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "@ PHI",
+          "text": "@ SD",
           "className": "Bdrend"
         },
         {
@@ -171,27 +171,27 @@
           "className": "Alt Ta-start Nowrap Bdrend"
         },
         {
-          "text": "69",
+          "text": "104",
           "className": "F-faded Bdrend"
         },
         {
-          "text": "298",
+          "text": "265",
           "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "105",
+          "text": "84",
           "className": "Ta-end Selected Bdrend"
         },
         {
-          "text": "59%",
+          "text": "44%",
           "className": "Alt Ta-end Nowrap Bdrend"
         },
         {
-          "text": "74/259",
+          "text": "109/366",
           "className": "Ta-end F-faded"
         },
         {
-          "text": "38",
+          "text": "46",
           "className": "Alt Ta-end"
         },
         {
@@ -199,7 +199,109 @@
           "className": "Ta-end"
         },
         {
-          "text": "50",
+          "text": "53",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "0",
+          "className": "Ta-end"
+        },
+        {
+          "text": "44",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".298",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".857",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=61787"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=61787&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "TJ Rumfield",
+          "href": "https://sports.yahoo.com/mlb/players/61787"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/61787/news"
+        },
+        {
+          "text": "9:40 am @ SD",
+          "href": "https://sports.yahoo.com/mlb/colorado-rockies-san-diego-padres-460728125/"
+        }
+      ]
+    },
+    {
+      "name": "Ryan O'HearnPlayer Note PIT - 1B,OF",
+      "position": "",
+      "team": "Ryan O'HearnPlayer Note PIT - 1B,OF 6:40 am vs AZ",
+      "raw": "  Ryan O'HearnPlayer Note PIT - 1B,OF 6:40 am vs AZ AZ FA 92 301 91 71% 94/341 53 17 68 1 30 .276 .803",
+      "cells": [
+        {
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Ryan O'HearnPlayer Note PIT - 1B,OF 6:40 am vs AZ",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "AZ",
+          "className": "Bdrend"
+        },
+        {
+          "text": "FA",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "92",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "301",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "91",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "71%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "94/341",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "53",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "17",
+          "className": "Ta-end"
+        },
+        {
+          "text": "68",
           "className": "Alt Ta-end"
         },
         {
@@ -207,15 +309,15 @@
           "className": "Ta-end"
         },
         {
-          "text": "21",
+          "text": "30",
           "className": "Alt Ta-end"
         },
         {
-          "text": ".286",
+          "text": ".276",
           "className": "Ta-end"
         },
         {
-          "text": ".821",
+          "text": ".803",
           "className": "Alt Last Ta-end"
         },
         {
@@ -230,27 +332,27 @@
         },
         {
           "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=10485&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=10485&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
         },
         {
           "text": "Ryan O'Hearn",
           "href": "https://sports.yahoo.com/mlb/players/10485"
         },
         {
-          "text": "New Player Note",
+          "text": "Player Note",
           "href": "https://sports.yahoo.com/mlb/players/10485/news"
         },
         {
-          "text": "6:40 am @ PHI",
-          "href": "https://sports.yahoo.com/mlb/pittsburgh-pirates-philadelphia-phillies-460629122/"
+          "text": "6:40 am vs AZ",
+          "href": "https://sports.yahoo.com/mlb/arizona-diamondbacks-pittsburgh-pirates-460728123/"
         }
       ]
     },
     {
-      "name": "Spencer HorwitzIL10New Player Note PIT - 1B",
+      "name": "Cody BellingerIL10New Player Note NYY - OF",
       "position": "",
-      "team": "Spencer HorwitzIL10New Player Note PIT - 1B 6:40 am @ PHI",
-      "raw": "  Spencer HorwitzIL10New Player Note PIT - 1B 6:40 am @ PHI @ PHI FA 74 215 120 17% 69/246 36 10 33 1 40 .280 .841",
+      "team": "Cody BellingerIL10New Player Note NYY - OF 7:40 am @ CWS",
+      "raw": "  Cody BellingerIL10New Player Note NYY - OF 7:40 am @ CWS @ CWS W (Jul 28) 102 46 102 97% 97/374 52 11 53 10 55 .259 .770",
       "cells": [
         {
           "text": "",
@@ -261,39 +363,47 @@
           "className": "Ta-c Bdrend"
         },
         {
-          "text": "Spencer HorwitzIL10New Player Note PIT - 1B 6:40 am @ PHI",
+          "text": "Cody BellingerIL10New Player Note NYY - OF 7:40 am @ CWS",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "@ PHI",
+          "text": "@ CWS",
           "className": "Bdrend"
         },
         {
-          "text": "FA",
+          "text": "W (Jul 28)",
           "className": "Alt Ta-start Nowrap Bdrend"
         },
         {
-          "text": "74",
+          "text": "102",
           "className": "F-faded Bdrend"
         },
         {
-          "text": "215",
+          "text": "46",
           "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "120",
+          "text": "102",
           "className": "Ta-end Selected Bdrend"
         },
         {
-          "text": "17%",
+          "text": "97%",
           "className": "Alt Ta-end Nowrap Bdrend"
         },
         {
-          "text": "69/246",
+          "text": "97/374",
           "className": "Ta-end F-faded"
         },
         {
-          "text": "36",
+          "text": "52",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "11",
+          "className": "Ta-end"
+        },
+        {
+          "text": "53",
           "className": "Alt Ta-end"
         },
         {
@@ -301,23 +411,15 @@
           "className": "Ta-end"
         },
         {
-          "text": "33",
+          "text": "55",
           "className": "Alt Ta-end"
         },
         {
-          "text": "1",
+          "text": ".259",
           "className": "Ta-end"
         },
         {
-          "text": "40",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".280",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".841",
+          "text": ".770",
           "className": "Alt Last Ta-end"
         },
         {
@@ -328,31 +430,31 @@
       "links": [
         {
           "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=12742"
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=10504"
         },
         {
           "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=12742&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=10504&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
         },
         {
-          "text": "Spencer Horwitz",
-          "href": "https://sports.yahoo.com/mlb/players/12742"
+          "text": "Cody Bellinger",
+          "href": "https://sports.yahoo.com/mlb/players/10504"
         },
         {
           "text": "New Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/12742/news"
+          "href": "https://sports.yahoo.com/mlb/players/10504/news"
         },
         {
-          "text": "6:40 am @ PHI",
-          "href": "https://sports.yahoo.com/mlb/pittsburgh-pirates-philadelphia-phillies-460629122/"
+          "text": "7:40 am @ CWS",
+          "href": "https://sports.yahoo.com/mlb/new-york-yankees-chicago-white-sox-460728104/"
         }
       ]
     },
     {
-      "name": "Luis ArraezPlayer Note SF - 1B,2B",
+      "name": "Luis ArraezVideo ForecastNew Player Note SF - 1B,2B",
       "position": "",
-      "team": "Luis ArraezPlayer Note SF - 1B,2B 9:40 am @ AZ",
-      "raw": "  Luis ArraezPlayer Note SF - 1B,2B 9:40 am @ AZ @ AZ FA 78 325 134 79% 100/309 42 3 31 6 19 .324 .807",
+      "team": "Luis ArraezVideo ForecastNew Player Note SF - 1B,2B 9:45 am vs MIL",
+      "raw": "  Luis ArraezVideo ForecastNew Player Note SF - 1B,2B 9:45 am vs MIL MIL FA 100 328 117 81% 130/399 50 4 41 9 25 .326 .811",
       "cells": [
         {
           "text": "",
@@ -363,11 +465,11 @@
           "className": "Ta-c Bdrend"
         },
         {
-          "text": "Luis ArraezPlayer Note SF - 1B,2B 9:40 am @ AZ",
+          "text": "Luis ArraezVideo ForecastNew Player Note SF - 1B,2B 9:45 am vs MIL",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "@ AZ",
+          "text": "MIL",
           "className": "Bdrend"
         },
         {
@@ -375,51 +477,51 @@
           "className": "Alt Ta-start Nowrap Bdrend"
         },
         {
-          "text": "78",
+          "text": "100",
           "className": "F-faded Bdrend"
         },
         {
-          "text": "325",
+          "text": "328",
           "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "134",
+          "text": "117",
           "className": "Ta-end Selected Bdrend"
         },
         {
-          "text": "79%",
+          "text": "81%",
           "className": "Alt Ta-end Nowrap Bdrend"
         },
         {
-          "text": "100/309",
+          "text": "130/399",
           "className": "Ta-end F-faded"
         },
         {
-          "text": "42",
+          "text": "50",
           "className": "Alt Ta-end"
         },
         {
-          "text": "3",
+          "text": "4",
           "className": "Ta-end"
         },
         {
-          "text": "31",
+          "text": "41",
           "className": "Alt Ta-end"
         },
         {
-          "text": "6",
+          "text": "9",
           "className": "Ta-end"
         },
         {
-          "text": "19",
+          "text": "25",
           "className": "Alt Ta-end"
         },
         {
-          "text": ".324",
+          "text": ".326",
           "className": "Ta-end"
         },
         {
-          "text": ".807",
+          "text": ".811",
           "className": "Alt Last Ta-end"
         },
         {
@@ -434,27 +536,31 @@
         },
         {
           "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=11221&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=11221&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
         },
         {
           "text": "Luis Arraez",
           "href": "https://sports.yahoo.com/mlb/players/11221"
         },
         {
-          "text": "Player Note",
+          "text": "Video Forecast",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/players#"
+        },
+        {
+          "text": "New Player Note",
           "href": "https://sports.yahoo.com/mlb/players/11221/news"
         },
         {
-          "text": "9:40 am @ AZ",
-          "href": "https://sports.yahoo.com/mlb/san-francisco-giants-arizona-diamondbacks-460629129/"
+          "text": "9:45 am vs MIL",
+          "href": "https://sports.yahoo.com/mlb/milwaukee-brewers-san-francisco-giants-460728126/"
         }
       ]
     },
     {
-      "name": "Paul GoldschmidtNew Player Note NYY - 1B",
+      "name": "Brandon MarshPlayer Note PHI - OF",
       "position": "",
-      "team": "Paul GoldschmidtNew Player Note NYY - 1B 7:05 am vs DET",
-      "raw": "  Paul GoldschmidtNew Player Note NYY - 1B 7:05 am vs DET DET FA 58 226 139 44% 59/204 31 14 41 1 17 .289 .900",
+      "team": "Brandon MarshPlayer Note PHI - OF 6:40 am @ MIA",
+      "raw": "  Brandon MarshPlayer Note PHI - OF 6:40 am @ MIA @ MIA FA 102 123 125 64% 106/374 55 16 47 9 22 .283 .787",
       "cells": [
         {
           "text": "",
@@ -465,11 +571,11 @@
           "className": "Ta-c Bdrend"
         },
         {
-          "text": "Paul GoldschmidtNew Player Note NYY - 1B 7:05 am vs DET",
+          "text": "Brandon MarshPlayer Note PHI - OF 6:40 am @ MIA",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "DET",
+          "text": "@ MIA",
           "className": "Bdrend"
         },
         {
@@ -477,337 +583,31 @@
           "className": "Alt Ta-start Nowrap Bdrend"
         },
         {
-          "text": "58",
+          "text": "102",
           "className": "F-faded Bdrend"
         },
         {
-          "text": "226",
+          "text": "123",
           "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "139",
+          "text": "125",
           "className": "Ta-end Selected Bdrend"
         },
         {
-          "text": "44%",
+          "text": "64%",
           "className": "Alt Ta-end Nowrap Bdrend"
         },
         {
-          "text": "59/204",
+          "text": "106/374",
           "className": "Ta-end F-faded"
         },
         {
-          "text": "31",
+          "text": "55",
           "className": "Alt Ta-end"
         },
         {
-          "text": "14",
-          "className": "Ta-end"
-        },
-        {
-          "text": "41",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "1",
-          "className": "Ta-end"
-        },
-        {
-          "text": "17",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".289",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".900",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=8967"
-        },
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=8967&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
-        },
-        {
-          "text": "Paul Goldschmidt",
-          "href": "https://sports.yahoo.com/mlb/players/8967"
-        },
-        {
-          "text": "New Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/8967/news"
-        },
-        {
-          "text": "7:05 am vs DET",
-          "href": "https://sports.yahoo.com/mlb/detroit-tigers-new-york-yankees-460629110/"
-        }
-      ]
-    },
-    {
-      "name": "Jake BurgerPlayer Note TEX - 1B",
-      "position": "",
-      "team": "Jake BurgerPlayer Note TEX - 1B 7:10 am @ CLE",
-      "raw": "  Jake BurgerPlayer Note TEX - 1B 7:10 am @ CLE @ CLE FA 81 228 149 28% 76/296 38 14 50 2 27 .257 .767",
-      "cells": [
-        {
-          "text": "",
-          "className": "Alt"
-        },
-        {
-          "text": "",
-          "className": "Ta-c Bdrend"
-        },
-        {
-          "text": "Jake BurgerPlayer Note TEX - 1B 7:10 am @ CLE",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "@ CLE",
-          "className": "Bdrend"
-        },
-        {
-          "text": "FA",
-          "className": "Alt Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "81",
-          "className": "F-faded Bdrend"
-        },
-        {
-          "text": "228",
-          "className": "Alt Ta-end Nowrap"
-        },
-        {
-          "text": "149",
-          "className": "Ta-end Selected Bdrend"
-        },
-        {
-          "text": "28%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "76/296",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "38",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "14",
-          "className": "Ta-end"
-        },
-        {
-          "text": "50",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "2",
-          "className": "Ta-end"
-        },
-        {
-          "text": "27",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".257",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".767",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=10877"
-        },
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=10877&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
-        },
-        {
-          "text": "Jake Burger",
-          "href": "https://sports.yahoo.com/mlb/players/10877"
-        },
-        {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/10877/news"
-        },
-        {
-          "text": "7:10 am @ CLE",
-          "href": "https://sports.yahoo.com/mlb/texas-rangers-cleveland-guardians-460629105/"
-        }
-      ]
-    },
-    {
-      "name": "Jake McCarthyNew Player Note COL - OF",
-      "position": "",
-      "team": "Jake McCarthyNew Player Note COL - OF 8:40 am vs MIA",
-      "raw": "  Jake McCarthyNew Player Note COL - OF 8:40 am vs MIA MIA W (Jun 30) 69 240 172 32% 68/224 31 6 34 13 14 .304 .834",
-      "cells": [
-        {
-          "text": "",
-          "className": "Alt"
-        },
-        {
-          "text": "",
-          "className": "Ta-c Bdrend"
-        },
-        {
-          "text": "Jake McCarthyNew Player Note COL - OF 8:40 am vs MIA",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "MIA",
-          "className": "Bdrend"
-        },
-        {
-          "text": "W (Jun 30)",
-          "className": "Alt Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "69",
-          "className": "F-faded Bdrend"
-        },
-        {
-          "text": "240",
-          "className": "Alt Ta-end Nowrap"
-        },
-        {
-          "text": "172",
-          "className": "Ta-end Selected Bdrend"
-        },
-        {
-          "text": "32%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "68/224",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "31",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "6",
-          "className": "Ta-end"
-        },
-        {
-          "text": "34",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "13",
-          "className": "Ta-end"
-        },
-        {
-          "text": "14",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".304",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".834",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=11265"
-        },
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=11265&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
-        },
-        {
-          "text": "Jake McCarthy",
-          "href": "https://sports.yahoo.com/mlb/players/11265"
-        },
-        {
-          "text": "New Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/11265/news"
-        },
-        {
-          "text": "8:40 am vs MIA",
-          "href": "https://sports.yahoo.com/mlb/miami-marlins-colorado-rockies-460629127/"
-        }
-      ]
-    },
-    {
-      "name": "Brooks LeePlayer Note MIN - 2B,3B,SS",
-      "position": "",
-      "team": "Brooks LeePlayer Note MIN - 2B,3B,SS 8:10 am @ HOU",
-      "raw": "  Brooks LeePlayer Note MIN - 2B,3B,SS 8:10 am @ HOU @ HOU FA 81 348 182 49% 73/294 40 14 47 5 22 .248 .750",
-      "cells": [
-        {
-          "text": "",
-          "className": "Alt"
-        },
-        {
-          "text": "",
-          "className": "Ta-c Bdrend"
-        },
-        {
-          "text": "Brooks LeePlayer Note MIN - 2B,3B,SS 8:10 am @ HOU",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "@ HOU",
-          "className": "Bdrend"
-        },
-        {
-          "text": "FA",
-          "className": "Alt Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "81",
-          "className": "F-faded Bdrend"
-        },
-        {
-          "text": "348",
-          "className": "Alt Ta-end Nowrap"
-        },
-        {
-          "text": "182",
-          "className": "Ta-end Selected Bdrend"
-        },
-        {
-          "text": "49%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "73/294",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "40",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "14",
+          "text": "16",
           "className": "Ta-end"
         },
         {
@@ -815,7 +615,7 @@
           "className": "Alt Ta-end"
         },
         {
-          "text": "5",
+          "text": "9",
           "className": "Ta-end"
         },
         {
@@ -823,11 +623,11 @@
           "className": "Alt Ta-end"
         },
         {
-          "text": ".248",
+          "text": ".283",
           "className": "Ta-end"
         },
         {
-          "text": ".750",
+          "text": ".787",
           "className": "Alt Last Ta-end"
         },
         {
@@ -838,31 +638,31 @@
       "links": [
         {
           "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=60266"
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=10499"
         },
         {
           "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=60266&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=10499&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
         },
         {
-          "text": "Brooks Lee",
-          "href": "https://sports.yahoo.com/mlb/players/60266"
+          "text": "Brandon Marsh",
+          "href": "https://sports.yahoo.com/mlb/players/10499"
         },
         {
           "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/60266/news"
+          "href": "https://sports.yahoo.com/mlb/players/10499/news"
         },
         {
-          "text": "8:10 am @ HOU",
-          "href": "https://sports.yahoo.com/mlb/minnesota-twins-houston-astros-460629118/"
+          "text": "6:40 am @ MIA",
+          "href": "https://sports.yahoo.com/mlb/philadelphia-phillies-miami-marlins-460728128/"
         }
       ]
     },
     {
-      "name": "JJ BledayPlayer Note CIN - OF",
+      "name": "Taylor WardNo new player Notes BAL - OF",
       "position": "",
-      "team": "JJ BledayPlayer Note CIN - OF 7:40 am @ MIL",
-      "raw": "  JJ BledayPlayer Note CIN - OF 7:40 am @ MIL @ MIL FA 54 290 183 39% 47/195 29 13 37 3 32 .241 .859",
+      "team": "Taylor WardNo new player Notes BAL - OF 6:40 am @ DET",
+      "raw": "  Taylor WardNo new player Notes BAL - OF 6:40 am @ DET @ DET FA 106 92 127 83% 99/395 63 7 28 4 83 .251 .740",
       "cells": [
         {
           "text": "",
@@ -873,11 +673,11 @@
           "className": "Ta-c Bdrend"
         },
         {
-          "text": "JJ BledayPlayer Note CIN - OF 7:40 am @ MIL",
+          "text": "Taylor WardNo new player Notes BAL - OF 6:40 am @ DET",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "@ MIL",
+          "text": "@ DET",
           "className": "Bdrend"
         },
         {
@@ -885,1137 +685,15 @@
           "className": "Alt Ta-start Nowrap Bdrend"
         },
         {
-          "text": "54",
+          "text": "106",
           "className": "F-faded Bdrend"
         },
         {
-          "text": "290",
+          "text": "92",
           "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "183",
-          "className": "Ta-end Selected Bdrend"
-        },
-        {
-          "text": "39%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "47/195",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "29",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "13",
-          "className": "Ta-end"
-        },
-        {
-          "text": "37",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "3",
-          "className": "Ta-end"
-        },
-        {
-          "text": "32",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".241",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".859",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=11782"
-        },
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=11782&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
-        },
-        {
-          "text": "JJ Bleday",
-          "href": "https://sports.yahoo.com/mlb/players/11782"
-        },
-        {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/11782/news"
-        },
-        {
-          "text": "7:40 am @ MIL",
-          "href": "https://sports.yahoo.com/mlb/cincinnati-reds-milwaukee-brewers-460629108/"
-        }
-      ]
-    },
-    {
-      "name": "Isaac ParedesNew Player Note HOU - 1B,3B",
-      "position": "",
-      "team": "Isaac ParedesNew Player Note HOU - 1B,3B 8:10 am vs MIN",
-      "raw": "  Isaac ParedesNew Player Note HOU - 1B,3B 8:10 am vs MIN MIN FA 79 163 191 54% 73/285 34 11 45 0 32 .256 .778",
-      "cells": [
-        {
-          "text": "",
-          "className": "Alt"
-        },
-        {
-          "text": "",
-          "className": "Ta-c Bdrend"
-        },
-        {
-          "text": "Isaac ParedesNew Player Note HOU - 1B,3B 8:10 am vs MIN",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "MIN",
-          "className": "Bdrend"
-        },
-        {
-          "text": "FA",
-          "className": "Alt Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "79",
-          "className": "F-faded Bdrend"
-        },
-        {
-          "text": "163",
-          "className": "Alt Ta-end Nowrap"
-        },
-        {
-          "text": "191",
-          "className": "Ta-end Selected Bdrend"
-        },
-        {
-          "text": "54%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "73/285",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "34",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "11",
-          "className": "Ta-end"
-        },
-        {
-          "text": "45",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "0",
-          "className": "Ta-end"
-        },
-        {
-          "text": "32",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".256",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".778",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=10881"
-        },
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=10881&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
-        },
-        {
-          "text": "Isaac Paredes",
-          "href": "https://sports.yahoo.com/mlb/players/10881"
-        },
-        {
-          "text": "New Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/10881/news"
-        },
-        {
-          "text": "8:10 am vs MIN",
-          "href": "https://sports.yahoo.com/mlb/minnesota-twins-houston-astros-460629118/"
-        }
-      ]
-    },
-    {
-      "name": "Trent GrishamIL10Player Note NYY - OF",
-      "position": "",
-      "team": "Trent GrishamIL10Player Note NYY - OF 7:05 am vs DET",
-      "raw": "  Trent GrishamIL10Player Note NYY - OF 7:05 am vs DET DET FA 66 182 214 44% 52/224 40 8 35 6 38 .232 .747",
-      "cells": [
-        {
-          "text": "",
-          "className": "Alt"
-        },
-        {
-          "text": "",
-          "className": "Ta-c Bdrend"
-        },
-        {
-          "text": "Trent GrishamIL10Player Note NYY - OF 7:05 am vs DET",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "DET",
-          "className": "Bdrend"
-        },
-        {
-          "text": "FA",
-          "className": "Alt Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "66",
-          "className": "F-faded Bdrend"
-        },
-        {
-          "text": "182",
-          "className": "Alt Ta-end Nowrap"
-        },
-        {
-          "text": "214",
-          "className": "Ta-end Selected Bdrend"
-        },
-        {
-          "text": "44%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "52/224",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "40",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "8",
-          "className": "Ta-end"
-        },
-        {
-          "text": "35",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "6",
-          "className": "Ta-end"
-        },
-        {
-          "text": "38",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".232",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".747",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=10522"
-        },
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=10522&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
-        },
-        {
-          "text": "Trent Grisham",
-          "href": "https://sports.yahoo.com/mlb/players/10522"
-        },
-        {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/10522/news"
-        },
-        {
-          "text": "7:05 am vs DET",
-          "href": "https://sports.yahoo.com/mlb/detroit-tigers-new-york-yankees-460629110/"
-        }
-      ]
-    },
-    {
-      "name": "Geraldo PerdomoPlayer Note AZ - SS",
-      "position": "",
-      "team": "Geraldo PerdomoPlayer Note AZ - SS 9:40 am vs SF",
-      "raw": "  Geraldo PerdomoPlayer Note AZ - SS 9:40 am vs SF SF FA 80 165 220 91% 68/277 37 5 28 11 49 .245 .718",
-      "cells": [
-        {
-          "text": "",
-          "className": "Alt"
-        },
-        {
-          "text": "",
-          "className": "Ta-c Bdrend"
-        },
-        {
-          "text": "Geraldo PerdomoPlayer Note AZ - SS 9:40 am vs SF",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "SF",
-          "className": "Bdrend"
-        },
-        {
-          "text": "FA",
-          "className": "Alt Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "80",
-          "className": "F-faded Bdrend"
-        },
-        {
-          "text": "165",
-          "className": "Alt Ta-end Nowrap"
-        },
-        {
-          "text": "220",
-          "className": "Ta-end Selected Bdrend"
-        },
-        {
-          "text": "91%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "68/277",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "37",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "5",
-          "className": "Ta-end"
-        },
-        {
-          "text": "28",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "11",
-          "className": "Ta-end"
-        },
-        {
-          "text": "49",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".245",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".718",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=11417"
-        },
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=11417&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
-        },
-        {
-          "text": "Geraldo Perdomo",
-          "href": "https://sports.yahoo.com/mlb/players/11417"
-        },
-        {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/11417/news"
-        },
-        {
-          "text": "9:40 am vs SF",
-          "href": "https://sports.yahoo.com/mlb/san-francisco-giants-arizona-diamondbacks-460629129/"
-        }
-      ]
-    },
-    {
-      "name": "Spencer SteerPlayer Note CIN - 1B,2B,OF",
-      "position": "",
-      "team": "Spencer SteerPlayer Note CIN - 1B,2B,OF 7:40 am @ MIL",
-      "raw": "  Spencer SteerPlayer Note CIN - 1B,2B,OF 7:40 am @ MIL @ MIL FA 79 218 221 40% 66/277 47 13 34 3 29 .238 .737",
-      "cells": [
-        {
-          "text": "",
-          "className": "Alt"
-        },
-        {
-          "text": "",
-          "className": "Ta-c Bdrend"
-        },
-        {
-          "text": "Spencer SteerPlayer Note CIN - 1B,2B,OF 7:40 am @ MIL",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "@ MIL",
-          "className": "Bdrend"
-        },
-        {
-          "text": "FA",
-          "className": "Alt Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "79",
-          "className": "F-faded Bdrend"
-        },
-        {
-          "text": "218",
-          "className": "Alt Ta-end Nowrap"
-        },
-        {
-          "text": "221",
-          "className": "Ta-end Selected Bdrend"
-        },
-        {
-          "text": "40%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "66/277",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "47",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "13",
-          "className": "Ta-end"
-        },
-        {
-          "text": "34",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "3",
-          "className": "Ta-end"
-        },
-        {
-          "text": "29",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".238",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".737",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=12688"
-        },
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=12688&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
-        },
-        {
-          "text": "Spencer Steer",
-          "href": "https://sports.yahoo.com/mlb/players/12688"
-        },
-        {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/12688/news"
-        },
-        {
-          "text": "7:40 am @ MIL",
-          "href": "https://sports.yahoo.com/mlb/cincinnati-reds-milwaukee-brewers-460629108/"
-        }
-      ]
-    },
-    {
-      "name": "Troy JohnstonPlayer Note COL - 1B,OF",
-      "position": "",
-      "team": "Troy JohnstonPlayer Note COL - 1B,OF 8:40 am vs MIA",
-      "raw": "  Troy JohnstonPlayer Note COL - 1B,OF 8:40 am vs MIA MIA FA 76 187 222 10% 79/251 30 3 36 4 22 .315 .814",
-      "cells": [
-        {
-          "text": "",
-          "className": "Alt"
-        },
-        {
-          "text": "",
-          "className": "Ta-c Bdrend"
-        },
-        {
-          "text": "Troy JohnstonPlayer Note COL - 1B,OF 8:40 am vs MIA",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "MIA",
-          "className": "Bdrend"
-        },
-        {
-          "text": "FA",
-          "className": "Alt Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "76",
-          "className": "F-faded Bdrend"
-        },
-        {
-          "text": "187",
-          "className": "Alt Ta-end Nowrap"
-        },
-        {
-          "text": "222",
-          "className": "Ta-end Selected Bdrend"
-        },
-        {
-          "text": "10%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "79/251",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "30",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "3",
-          "className": "Ta-end"
-        },
-        {
-          "text": "36",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "4",
-          "className": "Ta-end"
-        },
-        {
-          "text": "22",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".315",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".814",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=60622"
-        },
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=60622&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
-        },
-        {
-          "text": "Troy Johnston",
-          "href": "https://sports.yahoo.com/mlb/players/60622"
-        },
-        {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/60622/news"
-        },
-        {
-          "text": "8:40 am vs MIA",
-          "href": "https://sports.yahoo.com/mlb/miami-marlins-colorado-rockies-460629127/"
-        }
-      ]
-    },
-    {
-      "name": "Dominic CanzoneDTDNew Player Note SEA - OF",
-      "position": "",
-      "team": "Dominic CanzoneDTDNew Player Note SEA - OF 9:40 am vs LAA",
-      "raw": "  Dominic CanzoneDTDNew Player Note SEA - OF 9:40 am vs LAA LAA FA 74 462 227 17% 52/190 29 12 33 1 20 .274 .891",
-      "cells": [
-        {
-          "text": "",
-          "className": "Alt"
-        },
-        {
-          "text": "",
-          "className": "Ta-c Bdrend"
-        },
-        {
-          "text": "Dominic CanzoneDTDNew Player Note SEA - OF 9:40 am vs LAA",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "LAA",
-          "className": "Bdrend"
-        },
-        {
-          "text": "FA",
-          "className": "Alt Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "74",
-          "className": "F-faded Bdrend"
-        },
-        {
-          "text": "462",
-          "className": "Alt Ta-end Nowrap"
-        },
-        {
-          "text": "227",
-          "className": "Ta-end Selected Bdrend"
-        },
-        {
-          "text": "17%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "52/190",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "29",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "12",
-          "className": "Ta-end"
-        },
-        {
-          "text": "33",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "1",
-          "className": "Ta-end"
-        },
-        {
-          "text": "20",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".274",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".891",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=60061"
-        },
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=60061&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
-        },
-        {
-          "text": "Dominic Canzone",
-          "href": "https://sports.yahoo.com/mlb/players/60061"
-        },
-        {
-          "text": "New Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/60061/news"
-        },
-        {
-          "text": "9:40 am vs LAA",
-          "href": "https://sports.yahoo.com/mlb/los-angeles-angels-seattle-mariners-460629112/"
-        }
-      ]
-    },
-    {
-      "name": "Curtis MeadPlayer Note WSH - 1B,2B,3B",
-      "position": "",
-      "team": "Curtis MeadPlayer Note WSH - 1B,2B,3B 7:10 am @ BOS",
-      "raw": "  Curtis MeadPlayer Note WSH - 1B,2B,3B 7:10 am @ BOS @ BOS FA 69 263 235 19% 48/216 36 14 39 3 27 .222 .788",
-      "cells": [
-        {
-          "text": "",
-          "className": "Alt"
-        },
-        {
-          "text": "",
-          "className": "Ta-c Bdrend"
-        },
-        {
-          "text": "Curtis MeadPlayer Note WSH - 1B,2B,3B 7:10 am @ BOS",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "@ BOS",
-          "className": "Bdrend"
-        },
-        {
-          "text": "FA",
-          "className": "Alt Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "69",
-          "className": "F-faded Bdrend"
-        },
-        {
-          "text": "263",
-          "className": "Alt Ta-end Nowrap"
-        },
-        {
-          "text": "235",
-          "className": "Ta-end Selected Bdrend"
-        },
-        {
-          "text": "19%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "48/216",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "36",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "14",
-          "className": "Ta-end"
-        },
-        {
-          "text": "39",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "3",
-          "className": "Ta-end"
-        },
-        {
-          "text": "27",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".222",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".788",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=12558"
-        },
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=12558&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
-        },
-        {
-          "text": "Curtis Mead",
-          "href": "https://sports.yahoo.com/mlb/players/12558"
-        },
-        {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/12558/news"
-        },
-        {
-          "text": "7:10 am @ BOS",
-          "href": "https://sports.yahoo.com/mlb/washington-nationals-boston-red-sox-460629102/"
-        }
-      ]
-    },
-    {
-      "name": "Trevor LarnachPlayer Note MIN - OF",
-      "position": "",
-      "team": "Trevor LarnachPlayer Note MIN - OF 8:10 am @ HOU",
-      "raw": "  Trevor LarnachPlayer Note MIN - OF 8:10 am @ HOU @ HOU FA 69 424 242 8% 62/215 37 5 27 2 29 .288 .818",
-      "cells": [
-        {
-          "text": "",
-          "className": "Alt"
-        },
-        {
-          "text": "",
-          "className": "Ta-c Bdrend"
-        },
-        {
-          "text": "Trevor LarnachPlayer Note MIN - OF 8:10 am @ HOU",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "@ HOU",
-          "className": "Bdrend"
-        },
-        {
-          "text": "FA",
-          "className": "Alt Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "69",
-          "className": "F-faded Bdrend"
-        },
-        {
-          "text": "424",
-          "className": "Alt Ta-end Nowrap"
-        },
-        {
-          "text": "242",
-          "className": "Ta-end Selected Bdrend"
-        },
-        {
-          "text": "8%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "62/215",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "37",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "5",
-          "className": "Ta-end"
-        },
-        {
-          "text": "27",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "2",
-          "className": "Ta-end"
-        },
-        {
-          "text": "29",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".288",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".818",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=11347"
-        },
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=11347&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
-        },
-        {
-          "text": "Trevor Larnach",
-          "href": "https://sports.yahoo.com/mlb/players/11347"
-        },
-        {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/11347/news"
-        },
-        {
-          "text": "8:10 am @ HOU",
-          "href": "https://sports.yahoo.com/mlb/minnesota-twins-houston-astros-460629118/"
-        }
-      ]
-    },
-    {
-      "name": "Nick GonzalesPlayer Note PIT - 2B,3B,SS",
-      "position": "",
-      "team": "Nick GonzalesPlayer Note PIT - 2B,3B,SS 6:40 am @ PHI",
-      "raw": "  Nick GonzalesPlayer Note PIT - 2B,3B,SS 6:40 am @ PHI @ PHI FA 78 309 251 24% 86/290 44 3 35 4 20 .297 .725",
-      "cells": [
-        {
-          "text": "",
-          "className": "Alt"
-        },
-        {
-          "text": "",
-          "className": "Ta-c Bdrend"
-        },
-        {
-          "text": "Nick GonzalesPlayer Note PIT - 2B,3B,SS 6:40 am @ PHI",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "@ PHI",
-          "className": "Bdrend"
-        },
-        {
-          "text": "FA",
-          "className": "Alt Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "78",
-          "className": "F-faded Bdrend"
-        },
-        {
-          "text": "309",
-          "className": "Alt Ta-end Nowrap"
-        },
-        {
-          "text": "251",
-          "className": "Ta-end Selected Bdrend"
-        },
-        {
-          "text": "24%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "86/290",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "44",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "3",
-          "className": "Ta-end"
-        },
-        {
-          "text": "35",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "4",
-          "className": "Ta-end"
-        },
-        {
-          "text": "20",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".297",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".725",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=12049"
-        },
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=12049&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
-        },
-        {
-          "text": "Nick Gonzales",
-          "href": "https://sports.yahoo.com/mlb/players/12049"
-        },
-        {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/12049/news"
-        },
-        {
-          "text": "6:40 am @ PHI",
-          "href": "https://sports.yahoo.com/mlb/pittsburgh-pirates-philadelphia-phillies-460629122/"
-        }
-      ]
-    },
-    {
-      "name": "Garrett MitchellNew Player Note MIL - OF",
-      "position": "",
-      "team": "Garrett MitchellNew Player Note MIL - OF 7:40 am vs CIN",
-      "raw": "  Garrett MitchellNew Player Note MIL - OF 7:40 am vs CIN CIN FA 71 280 263 5% 54/219 33 6 37 6 32 .247 .757",
-      "cells": [
-        {
-          "text": "",
-          "className": "Alt"
-        },
-        {
-          "text": "",
-          "className": "Ta-c Bdrend"
-        },
-        {
-          "text": "Garrett MitchellNew Player Note MIL - OF 7:40 am vs CIN",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "CIN",
-          "className": "Bdrend"
-        },
-        {
-          "text": "FA",
-          "className": "Alt Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "71",
-          "className": "F-faded Bdrend"
-        },
-        {
-          "text": "280",
-          "className": "Alt Ta-end Nowrap"
-        },
-        {
-          "text": "263",
-          "className": "Ta-end Selected Bdrend"
-        },
-        {
-          "text": "5%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "54/219",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "33",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "6",
-          "className": "Ta-end"
-        },
-        {
-          "text": "37",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "6",
-          "className": "Ta-end"
-        },
-        {
-          "text": "32",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".247",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".757",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=12152"
-        },
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=12152&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
-        },
-        {
-          "text": "Garrett Mitchell",
-          "href": "https://sports.yahoo.com/mlb/players/12152"
-        },
-        {
-          "text": "New Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/12152/news"
-        },
-        {
-          "text": "7:40 am vs CIN",
-          "href": "https://sports.yahoo.com/mlb/cincinnati-reds-milwaukee-brewers-460629108/"
-        }
-      ]
-    },
-    {
-      "name": "Ceddanne RafaelaPlayer Note BOS - 2B,OF",
-      "position": "",
-      "team": "Ceddanne RafaelaPlayer Note BOS - 2B,OF 7:10 am vs WSH",
-      "raw": "  Ceddanne RafaelaPlayer Note BOS - 2B,OF 7:10 am vs WSH WSH FA 78 115 266 83% 81/289 34 7 35 10 15 .280 .765",
-      "cells": [
-        {
-          "text": "",
-          "className": "Alt"
-        },
-        {
-          "text": "",
-          "className": "Ta-c Bdrend"
-        },
-        {
-          "text": "Ceddanne RafaelaPlayer Note BOS - 2B,OF 7:10 am vs WSH",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "WSH",
-          "className": "Bdrend"
-        },
-        {
-          "text": "FA",
-          "className": "Alt Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "78",
-          "className": "F-faded Bdrend"
-        },
-        {
-          "text": "115",
-          "className": "Alt Ta-end Nowrap"
-        },
-        {
-          "text": "266",
+          "text": "127",
           "className": "Ta-end Selected Bdrend"
         },
         {
@@ -2023,11 +701,11 @@
           "className": "Alt Ta-end Nowrap Bdrend"
         },
         {
-          "text": "81/289",
+          "text": "99/395",
           "className": "Ta-end F-faded"
         },
         {
-          "text": "34",
+          "text": "63",
           "className": "Alt Ta-end"
         },
         {
@@ -2035,329 +713,23 @@
           "className": "Ta-end"
         },
         {
-          "text": "35",
+          "text": "28",
           "className": "Alt Ta-end"
         },
         {
-          "text": "10",
+          "text": "4",
           "className": "Ta-end"
-        },
-        {
-          "text": "15",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".280",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".765",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=12730"
-        },
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=12730&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
-        },
-        {
-          "text": "Ceddanne Rafaela",
-          "href": "https://sports.yahoo.com/mlb/players/12730"
-        },
-        {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/12730/news"
-        },
-        {
-          "text": "7:10 am vs WSH",
-          "href": "https://sports.yahoo.com/mlb/washington-nationals-boston-red-sox-460629102/"
-        }
-      ]
-    },
-    {
-      "name": "Brayan RocchioNo new player Notes CLE - 2B,SS",
-      "position": "",
-      "team": "Brayan RocchioNo new player Notes CLE - 2B,SS 7:10 am vs TEX",
-      "raw": "  Brayan RocchioNo new player Notes CLE - 2B,SS 7:10 am vs TEX TEX FA 81 272 268 29% 73/272 32 5 34 13 25 .268 .728",
-      "cells": [
-        {
-          "text": "",
-          "className": "Alt"
-        },
-        {
-          "text": "",
-          "className": "Ta-c Bdrend"
-        },
-        {
-          "text": "Brayan RocchioNo new player Notes CLE - 2B,SS 7:10 am vs TEX",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "TEX",
-          "className": "Bdrend"
-        },
-        {
-          "text": "FA",
-          "className": "Alt Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "81",
-          "className": "F-faded Bdrend"
-        },
-        {
-          "text": "272",
-          "className": "Alt Ta-end Nowrap"
-        },
-        {
-          "text": "268",
-          "className": "Ta-end Selected Bdrend"
-        },
-        {
-          "text": "29%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "73/272",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "32",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "5",
-          "className": "Ta-end"
-        },
-        {
-          "text": "34",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "13",
-          "className": "Ta-end"
-        },
-        {
-          "text": "25",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".268",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".728",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=11448"
-        },
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=11448&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
-        },
-        {
-          "text": "Brayan Rocchio",
-          "href": "https://sports.yahoo.com/mlb/players/11448"
-        },
-        {
-          "text": "No new player Notes",
-          "href": "https://sports.yahoo.com/mlb/players/11448/news"
-        },
-        {
-          "text": "7:10 am vs TEX",
-          "href": "https://sports.yahoo.com/mlb/texas-rangers-cleveland-guardians-460629105/"
-        }
-      ]
-    },
-    {
-      "name": "Joc PedersonNew Player Note TEX - Util",
-      "position": "",
-      "team": "Joc PedersonNew Player Note TEX - Util 7:10 am @ CLE",
-      "raw": "  Joc PedersonNew Player Note TEX - Util 7:10 am @ CLE @ CLE FA 78 288 269 4% 54/224 33 13 29 0 32 .241 .804",
-      "cells": [
-        {
-          "text": "",
-          "className": "Alt"
-        },
-        {
-          "text": "",
-          "className": "Ta-c Bdrend"
-        },
-        {
-          "text": "Joc PedersonNew Player Note TEX - Util 7:10 am @ CLE",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "@ CLE",
-          "className": "Bdrend"
-        },
-        {
-          "text": "FA",
-          "className": "Alt Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "78",
-          "className": "F-faded Bdrend"
-        },
-        {
-          "text": "288",
-          "className": "Alt Ta-end Nowrap"
-        },
-        {
-          "text": "269",
-          "className": "Ta-end Selected Bdrend"
-        },
-        {
-          "text": "4%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "54/224",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "33",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "13",
-          "className": "Ta-end"
-        },
-        {
-          "text": "29",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "0",
-          "className": "Ta-end"
-        },
-        {
-          "text": "32",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".241",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".804",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=9414"
-        },
-        {
-          "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=9414&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
-        },
-        {
-          "text": "Joc Pederson",
-          "href": "https://sports.yahoo.com/mlb/players/9414"
-        },
-        {
-          "text": "New Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/9414/news"
-        },
-        {
-          "text": "7:10 am @ CLE",
-          "href": "https://sports.yahoo.com/mlb/texas-rangers-cleveland-guardians-460629105/"
-        }
-      ]
-    },
-    {
-      "name": "Rafael DeversVideo ForecastPlayer Note SF - 1B",
-      "position": "",
-      "team": "Rafael DeversVideo ForecastPlayer Note SF - 1B 9:40 am @ AZ",
-      "raw": "  Rafael DeversVideo ForecastPlayer Note SF - 1B 9:40 am @ AZ @ AZ FA 83 116 271 94% 77/321 38 14 43 0 27 .240 .751",
-      "cells": [
-        {
-          "text": "",
-          "className": "Alt"
-        },
-        {
-          "text": "",
-          "className": "Ta-c Bdrend"
-        },
-        {
-          "text": "Rafael DeversVideo ForecastPlayer Note SF - 1B 9:40 am @ AZ",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "@ AZ",
-          "className": "Bdrend"
-        },
-        {
-          "text": "FA",
-          "className": "Alt Ta-start Nowrap Bdrend"
         },
         {
           "text": "83",
-          "className": "F-faded Bdrend"
-        },
-        {
-          "text": "116",
-          "className": "Alt Ta-end Nowrap"
-        },
-        {
-          "text": "271",
-          "className": "Ta-end Selected Bdrend"
-        },
-        {
-          "text": "94%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "77/321",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "38",
           "className": "Alt Ta-end"
         },
         {
-          "text": "14",
+          "text": ".251",
           "className": "Ta-end"
         },
         {
-          "text": "43",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "0",
-          "className": "Ta-end"
-        },
-        {
-          "text": "27",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".240",
-          "className": "Ta-end"
-        },
-        {
-          "text": ".751",
+          "text": ".740",
           "className": "Alt Last Ta-end"
         },
         {
@@ -2368,35 +740,31 @@
       "links": [
         {
           "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=10235"
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=10496"
         },
         {
           "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=10235&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=10496&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
         },
         {
-          "text": "Rafael Devers",
-          "href": "https://sports.yahoo.com/mlb/players/10235"
+          "text": "Taylor Ward",
+          "href": "https://sports.yahoo.com/mlb/players/10496"
         },
         {
-          "text": "Video Forecast",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/players#"
+          "text": "No new player Notes",
+          "href": "https://sports.yahoo.com/mlb/players/10496/news"
         },
         {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/10235/news"
-        },
-        {
-          "text": "9:40 am @ AZ",
-          "href": "https://sports.yahoo.com/mlb/san-francisco-giants-arizona-diamondbacks-460629129/"
+          "text": "6:40 am @ DET",
+          "href": "https://sports.yahoo.com/mlb/baltimore-orioles-detroit-tigers-460728106/"
         }
       ]
     },
     {
-      "name": "Ezequiel DuranPlayer Note TEX - 1B,2B,3B,SS,OF",
+      "name": "Ivan HerreraPlayer Note STL - C",
       "position": "",
-      "team": "Ezequiel DuranPlayer Note TEX - 1B,2B,3B,SS,OF 7:10 am @ CLE",
-      "raw": "  Ezequiel DuranPlayer Note TEX - 1B,2B,3B,SS,OF 7:10 am @ CLE @ CLE FA 75 275 273 37% 68/251 33 6 41 6 21 .271 .745",
+      "team": "Ivan HerreraPlayer Note STL - C 7:45 am vs CHC",
+      "raw": "  Ivan HerreraPlayer Note STL - C 7:45 am vs CHC CHC FA 105 268 128 90% 95/389 65 12 44 6 51 .244 .745",
       "cells": [
         {
           "text": "",
@@ -2407,11 +775,11 @@
           "className": "Ta-c Bdrend"
         },
         {
-          "text": "Ezequiel DuranPlayer Note TEX - 1B,2B,3B,SS,OF 7:10 am @ CLE",
+          "text": "Ivan HerreraPlayer Note STL - C 7:45 am vs CHC",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "@ CLE",
+          "text": "CHC",
           "className": "Bdrend"
         },
         {
@@ -2419,27 +787,35 @@
           "className": "Alt Ta-start Nowrap Bdrend"
         },
         {
-          "text": "75",
+          "text": "105",
           "className": "F-faded Bdrend"
         },
         {
-          "text": "275",
+          "text": "268",
           "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "273",
+          "text": "128",
           "className": "Ta-end Selected Bdrend"
         },
         {
-          "text": "37%",
+          "text": "90%",
           "className": "Alt Ta-end Nowrap Bdrend"
         },
         {
-          "text": "68/251",
+          "text": "95/389",
           "className": "Ta-end F-faded"
         },
         {
-          "text": "33",
+          "text": "65",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "12",
+          "className": "Ta-end"
+        },
+        {
+          "text": "44",
           "className": "Alt Ta-end"
         },
         {
@@ -2447,19 +823,11 @@
           "className": "Ta-end"
         },
         {
-          "text": "41",
+          "text": "51",
           "className": "Alt Ta-end"
         },
         {
-          "text": "6",
-          "className": "Ta-end"
-        },
-        {
-          "text": "21",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": ".271",
+          "text": ".244",
           "className": "Ta-end"
         },
         {
@@ -2474,31 +842,31 @@
       "links": [
         {
           "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=11886"
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=11836"
         },
         {
           "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=11886&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=11836&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
         },
         {
-          "text": "Ezequiel Duran",
-          "href": "https://sports.yahoo.com/mlb/players/11886"
+          "text": "Ivan Herrera",
+          "href": "https://sports.yahoo.com/mlb/players/11836"
         },
         {
           "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/11886/news"
+          "href": "https://sports.yahoo.com/mlb/players/11836/news"
         },
         {
-          "text": "7:10 am @ CLE",
-          "href": "https://sports.yahoo.com/mlb/texas-rangers-cleveland-guardians-460629105/"
+          "text": "7:45 am vs CHC",
+          "href": "https://sports.yahoo.com/mlb/chicago-cubs-st-louis-cardinals-460728124/"
         }
       ]
     },
     {
-      "name": "Chase MeidrothPlayer Note CWS - 2B,3B,SS",
+      "name": "Michael BuschPlayer Note CHC - 1B",
       "position": "",
-      "team": "Chase MeidrothPlayer Note CWS - 2B,3B,SS 6:35 am @ BAL",
-      "raw": "  Chase MeidrothPlayer Note CWS - 2B,3B,SS 6:35 am @ BAL @ BAL FA 80 231 274 30% 83/301 47 6 27 2 29 .276 .723",
+      "team": "Michael BuschPlayer Note CHC - 1B 7:45 am @ STL",
+      "raw": "  Michael BuschPlayer Note CHC - 1B 7:45 am @ STL @ STL FA 105 76 131 83% 96/393 47 13 56 2 66 .244 .763",
       "cells": [
         {
           "text": "",
@@ -2509,11 +877,11 @@
           "className": "Ta-c Bdrend"
         },
         {
-          "text": "Chase MeidrothPlayer Note CWS - 2B,3B,SS 6:35 am @ BAL",
+          "text": "Michael BuschPlayer Note CHC - 1B 7:45 am @ STL",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "@ BAL",
+          "text": "@ STL",
           "className": "Bdrend"
         },
         {
@@ -2521,23 +889,23 @@
           "className": "Alt Ta-start Nowrap Bdrend"
         },
         {
-          "text": "80",
+          "text": "105",
           "className": "F-faded Bdrend"
         },
         {
-          "text": "231",
+          "text": "76",
           "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "274",
+          "text": "131",
           "className": "Ta-end Selected Bdrend"
         },
         {
-          "text": "30%",
+          "text": "83%",
           "className": "Alt Ta-end Nowrap Bdrend"
         },
         {
-          "text": "83/301",
+          "text": "96/393",
           "className": "Ta-end F-faded"
         },
         {
@@ -2545,11 +913,11 @@
           "className": "Alt Ta-end"
         },
         {
-          "text": "6",
+          "text": "13",
           "className": "Ta-end"
         },
         {
-          "text": "27",
+          "text": "56",
           "className": "Alt Ta-end"
         },
         {
@@ -2557,7 +925,1129 @@
           "className": "Ta-end"
         },
         {
-          "text": "29",
+          "text": "66",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".244",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".763",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=11778"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=11778&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "Michael Busch",
+          "href": "https://sports.yahoo.com/mlb/players/11778"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/11778/news"
+        },
+        {
+          "text": "7:45 am @ STL",
+          "href": "https://sports.yahoo.com/mlb/chicago-cubs-st-louis-cardinals-460728124/"
+        }
+      ]
+    },
+    {
+      "name": "Casey SchmittDTDNew Player Note SF - 1B,2B,3B,OF",
+      "position": "",
+      "team": "Casey SchmittDTDNew Player Note SF - 1B,2B,3B,OF 9:45 am vs MIL",
+      "raw": "  Casey SchmittDTDNew Player Note SF - 1B,2B,3B,OF 9:45 am vs MIL MIL FA 98 82 154 81% 105/387 47 21 55 9 11 .271 .784",
+      "cells": [
+        {
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Casey SchmittDTDNew Player Note SF - 1B,2B,3B,OF 9:45 am vs MIL",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "MIL",
+          "className": "Bdrend"
+        },
+        {
+          "text": "FA",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "98",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "82",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "154",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "81%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "105/387",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "47",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "21",
+          "className": "Ta-end"
+        },
+        {
+          "text": "55",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "9",
+          "className": "Ta-end"
+        },
+        {
+          "text": "11",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".271",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".784",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=12544"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=12544&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "Casey Schmitt",
+          "href": "https://sports.yahoo.com/mlb/players/12544"
+        },
+        {
+          "text": "New Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/12544/news"
+        },
+        {
+          "text": "9:45 am vs MIL",
+          "href": "https://sports.yahoo.com/mlb/milwaukee-brewers-san-francisco-giants-460728126/"
+        }
+      ]
+    },
+    {
+      "name": "Kazuma OkamotoPlayer Note TOR - 1B,3B",
+      "position": "",
+      "team": "Kazuma OkamotoPlayer Note TOR - 1B,3B 6:45 am @ WSH",
+      "raw": "  Kazuma OkamotoPlayer Note TOR - 1B,3B 6:45 am @ WSH @ WSH FA 104 271 156 86% 85/379 53 23 65 1 38 .224 .745",
+      "cells": [
+        {
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Kazuma OkamotoPlayer Note TOR - 1B,3B 6:45 am @ WSH",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "@ WSH",
+          "className": "Bdrend"
+        },
+        {
+          "text": "FA",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "104",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "271",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "156",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "86%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "85/379",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "53",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "23",
+          "className": "Ta-end"
+        },
+        {
+          "text": "65",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "1",
+          "className": "Ta-end"
+        },
+        {
+          "text": "38",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".224",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".745",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=66491"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=66491&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "Kazuma Okamoto",
+          "href": "https://sports.yahoo.com/mlb/players/66491"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/66491/news"
+        },
+        {
+          "text": "6:45 am @ WSH",
+          "href": "https://sports.yahoo.com/mlb/toronto-blue-jays-washington-nationals-460728120/"
+        }
+      ]
+    },
+    {
+      "name": "Joc PedersonNew Player Note TEX - Util",
+      "position": "",
+      "team": "Joc PedersonNew Player Note TEX - Util 6:40 am @ TB",
+      "raw": "  Joc PedersonNew Player Note TEX - Util 6:40 am @ TB @ TB FA 95 292 169 5% 71/279 44 19 40 2 36 .254 .856",
+      "cells": [
+        {
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Joc PedersonNew Player Note TEX - Util 6:40 am @ TB",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "@ TB",
+          "className": "Bdrend"
+        },
+        {
+          "text": "FA",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "95",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "292",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "169",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "5%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "71/279",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "44",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "19",
+          "className": "Ta-end"
+        },
+        {
+          "text": "40",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "2",
+          "className": "Ta-end"
+        },
+        {
+          "text": "36",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".254",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".856",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=9414"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=9414&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "Joc Pederson",
+          "href": "https://sports.yahoo.com/mlb/players/9414"
+        },
+        {
+          "text": "New Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/9414/news"
+        },
+        {
+          "text": "6:40 am @ TB",
+          "href": "https://sports.yahoo.com/mlb/texas-rangers-tampa-bay-rays-460728130/"
+        }
+      ]
+    },
+    {
+      "name": "Garrett MitchellPlayer Note MIL - OF",
+      "position": "",
+      "team": "Garrett MitchellPlayer Note MIL - OF 9:45 am @ SF",
+      "raw": "  Garrett MitchellPlayer Note MIL - OF 9:45 am @ SF @ SF FA 95 283 171 21% 81/301 46 8 48 7 40 .269 .800",
+      "cells": [
+        {
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Garrett MitchellPlayer Note MIL - OF 9:45 am @ SF",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "@ SF",
+          "className": "Bdrend"
+        },
+        {
+          "text": "FA",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "95",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "283",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "171",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "21%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "81/301",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "46",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "8",
+          "className": "Ta-end"
+        },
+        {
+          "text": "48",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "7",
+          "className": "Ta-end"
+        },
+        {
+          "text": "40",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".269",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".800",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=12152"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=12152&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "Garrett Mitchell",
+          "href": "https://sports.yahoo.com/mlb/players/12152"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/12152/news"
+        },
+        {
+          "text": "9:45 am @ SF",
+          "href": "https://sports.yahoo.com/mlb/milwaukee-brewers-san-francisco-giants-460728126/"
+        }
+      ]
+    },
+    {
+      "name": "Colson MontgomeryNew Player Note CWS - 3B,SS",
+      "position": "",
+      "team": "Colson MontgomeryNew Player Note CWS - 3B,SS 7:40 am vs NYY",
+      "raw": "  Colson MontgomeryNew Player Note CWS - 3B,SS 7:40 am vs NYY NYY W (Jul 28) 99 130 180 89% 83/371 49 24 61 1 35 .224 .769",
+      "cells": [
+        {
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Colson MontgomeryNew Player Note CWS - 3B,SS 7:40 am vs NYY",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "NYY",
+          "className": "Bdrend"
+        },
+        {
+          "text": "W (Jul 28)",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "99",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "130",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "180",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "89%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "83/371",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "49",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "24",
+          "className": "Ta-end"
+        },
+        {
+          "text": "61",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "1",
+          "className": "Ta-end"
+        },
+        {
+          "text": "35",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".224",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".769",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=12413"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=12413&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "Colson Montgomery",
+          "href": "https://sports.yahoo.com/mlb/players/12413"
+        },
+        {
+          "text": "New Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/12413/news"
+        },
+        {
+          "text": "7:40 am vs NYY",
+          "href": "https://sports.yahoo.com/mlb/new-york-yankees-chicago-white-sox-460728104/"
+        }
+      ]
+    },
+    {
+      "name": "Ceddanne RafaelaNew Player Note BOS - 2B,OF",
+      "position": "",
+      "team": "Ceddanne RafaelaNew Player Note BOS - 2B,OF 9:40 am @ ATH",
+      "raw": "  Ceddanne RafaelaNew Player Note BOS - 2B,OF 9:40 am @ ATH @ ATH FA 101 114 182 87% 108/388 50 11 50 13 18 .278 .763",
+      "cells": [
+        {
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Ceddanne RafaelaNew Player Note BOS - 2B,OF 9:40 am @ ATH",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "@ ATH",
+          "className": "Bdrend"
+        },
+        {
+          "text": "FA",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "101",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "114",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "182",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "87%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "108/388",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "50",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "11",
+          "className": "Ta-end"
+        },
+        {
+          "text": "50",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "13",
+          "className": "Ta-end"
+        },
+        {
+          "text": "18",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".278",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".763",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=12730"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=12730&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "Ceddanne Rafaela",
+          "href": "https://sports.yahoo.com/mlb/players/12730"
+        },
+        {
+          "text": "New Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/12730/news"
+        },
+        {
+          "text": "9:40 am @ ATH",
+          "href": "https://sports.yahoo.com/mlb/boston-red-sox-athletics-460728111/"
+        }
+      ]
+    },
+    {
+      "name": "Isaac ParedesPlayer Note HOU - 1B,3B",
+      "position": "",
+      "team": "Isaac ParedesPlayer Note HOU - 1B,3B 9:38 am @ LAA",
+      "raw": "  Isaac ParedesPlayer Note HOU - 1B,3B 9:38 am @ LAA @ LAA FA 101 162 185 60% 95/369 43 14 58 0 40 .257 .775",
+      "cells": [
+        {
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Isaac ParedesPlayer Note HOU - 1B,3B 9:38 am @ LAA",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "@ LAA",
+          "className": "Bdrend"
+        },
+        {
+          "text": "FA",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "101",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "162",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "185",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "60%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "95/369",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "43",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "14",
+          "className": "Ta-end"
+        },
+        {
+          "text": "58",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "0",
+          "className": "Ta-end"
+        },
+        {
+          "text": "40",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".257",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".775",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=10881"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=10881&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "Isaac Paredes",
+          "href": "https://sports.yahoo.com/mlb/players/10881"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/10881/news"
+        },
+        {
+          "text": "9:38 am @ LAA",
+          "href": "https://sports.yahoo.com/mlb/houston-astros-los-angeles-angels-460728103/"
+        }
+      ]
+    },
+    {
+      "name": "Trevor LarnachPlayer Note MIN - OF",
+      "position": "",
+      "team": "Trevor LarnachPlayer Note MIN - OF 7:40 am vs KC",
+      "raw": "  Trevor LarnachPlayer Note MIN - OF 7:40 am vs KC KC FA 87 267 188 8% 81/276 47 8 38 2 36 .293 .838",
+      "cells": [
+        {
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Trevor LarnachPlayer Note MIN - OF 7:40 am vs KC",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "KC",
+          "className": "Bdrend"
+        },
+        {
+          "text": "FA",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "87",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "267",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "188",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "8%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "81/276",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "47",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "8",
+          "className": "Ta-end"
+        },
+        {
+          "text": "38",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "2",
+          "className": "Ta-end"
+        },
+        {
+          "text": "36",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".293",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".838",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=11347"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=11347&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "Trevor Larnach",
+          "href": "https://sports.yahoo.com/mlb/players/11347"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/11347/news"
+        },
+        {
+          "text": "7:40 am vs KC",
+          "href": "https://sports.yahoo.com/mlb/kansas-city-royals-minnesota-twins-460728109/"
+        }
+      ]
+    },
+    {
+      "name": "Christian WalkerPlayer Note HOU - 1B",
+      "position": "",
+      "team": "Christian WalkerPlayer Note HOU - 1B 9:38 am @ LAA",
+      "raw": "  Christian WalkerPlayer Note HOU - 1B 9:38 am @ LAA @ LAA FA 104 111 201 83% 89/383 51 20 61 0 35 .232 .755",
+      "cells": [
+        {
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Christian WalkerPlayer Note HOU - 1B 9:38 am @ LAA",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "@ LAA",
+          "className": "Bdrend"
+        },
+        {
+          "text": "FA",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "104",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "111",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "201",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "83%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "89/383",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "51",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "20",
+          "className": "Ta-end"
+        },
+        {
+          "text": "61",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "0",
+          "className": "Ta-end"
+        },
+        {
+          "text": "35",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".232",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".755",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=9846"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=9846&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "Christian Walker",
+          "href": "https://sports.yahoo.com/mlb/players/9846"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/9846/news"
+        },
+        {
+          "text": "9:38 am @ LAA",
+          "href": "https://sports.yahoo.com/mlb/houston-astros-los-angeles-angels-460728103/"
+        }
+      ]
+    },
+    {
+      "name": "Kyle KarrosPlayer Note COL - 3B",
+      "position": "",
+      "team": "Kyle KarrosPlayer Note COL - 3B 9:40 am @ SD",
+      "raw": "  Kyle KarrosPlayer Note COL - 3B 9:40 am @ SD @ SD FA 101 610 207 18% 80/305 51 9 37 3 45 .262 .788",
+      "cells": [
+        {
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Kyle KarrosPlayer Note COL - 3B 9:40 am @ SD",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "@ SD",
+          "className": "Bdrend"
+        },
+        {
+          "text": "FA",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "101",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "610",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "207",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "18%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "80/305",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "51",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "9",
+          "className": "Ta-end"
+        },
+        {
+          "text": "37",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "3",
+          "className": "Ta-end"
+        },
+        {
+          "text": "45",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".262",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".788",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=62831"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=62831&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "Kyle Karros",
+          "href": "https://sports.yahoo.com/mlb/players/62831"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/62831/news"
+        },
+        {
+          "text": "9:40 am @ SD",
+          "href": "https://sports.yahoo.com/mlb/colorado-rockies-san-diego-padres-460728125/"
+        }
+      ]
+    },
+    {
+      "name": "Chase MeidrothPlayer Note CWS - 2B,3B,SS",
+      "position": "",
+      "team": "Chase MeidrothPlayer Note CWS - 2B,3B,SS 7:40 am vs NYY",
+      "raw": "  Chase MeidrothPlayer Note CWS - 2B,3B,SS 7:40 am vs NYY NYY FA 102 231 216 28% 104/377 59 8 38 2 39 .276 .736",
+      "cells": [
+        {
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Chase MeidrothPlayer Note CWS - 2B,3B,SS 7:40 am vs NYY",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "NYY",
+          "className": "Bdrend"
+        },
+        {
+          "text": "FA",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "102",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "231",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "216",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "28%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "104/377",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "59",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "8",
+          "className": "Ta-end"
+        },
+        {
+          "text": "38",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "2",
+          "className": "Ta-end"
+        },
+        {
+          "text": "39",
           "className": "Alt Ta-end"
         },
         {
@@ -2565,7 +2055,7 @@
           "className": "Ta-end"
         },
         {
-          "text": ".723",
+          "text": ".736",
           "className": "Alt Last Ta-end"
         },
         {
@@ -2580,7 +2070,7 @@
         },
         {
           "text": "",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=62504&crumb=playerwatch|m8ZDEB7KRdY&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=62504&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
         },
         {
           "text": "Chase Meidroth",
@@ -2591,19 +2081,635 @@
           "href": "https://sports.yahoo.com/mlb/players/62504/news"
         },
         {
-          "text": "6:35 am @ BAL",
-          "href": "https://sports.yahoo.com/mlb/chicago-white-sox-baltimore-orioles-460629101/"
+          "text": "7:40 am vs NYY",
+          "href": "https://sports.yahoo.com/mlb/new-york-yankees-chicago-white-sox-460728104/"
         }
       ]
     },
     {
-      "name": "棒球隊棒球隊 101-89-6 | 4th Place | 小銘 Strengths Neutral Weaknesses Unlock your team's positional strengths and more! Subscribe now Research Assistant | Trade Hub Add/drop suggestions Trade suggestions Rafael Devers Jac Caglianone Compare Christian Yelich Jung Hoo Lee Compare Jackson Merrill Jac Caglianone Compare",
-      "position": "棒球隊棒球隊 101-89-6 | 4th Place | 小銘 Strengths Neutral Weaknesses Unlock your team's positional strengths and more! Subscribe now Research Assistant | Trade Hub Add/drop suggestions Trade suggestions Rafael Devers Jac Caglianone Compare Christian Yelich Jung Hoo Lee Compare Jackson Merrill Jac Caglianone Compare",
-      "team": "",
-      "raw": "棒球隊棒球隊 101-89-6 | 4th Place | 小銘 Strengths Neutral Weaknesses Unlock your team's positional strengths and more! Subscribe now Research Assistant | Trade Hub Add/drop suggestions Trade suggestions Rafael Devers Jac Caglianone Compare Christian Yelich Jung Hoo Lee Compare Jackson Merrill Jac Caglianone Compare",
+      "name": "Kody ClemensPlayer Note MIN - 1B,2B,OF",
+      "position": "",
+      "team": "Kody ClemensPlayer Note MIN - 1B,2B,OF 7:40 am vs KC",
+      "raw": "  Kody ClemensPlayer Note MIN - 1B,2B,OF 7:40 am vs KC KC FA 92 295 217 38% 82/338 49 18 49 7 23 .243 .787",
       "cells": [
         {
-          "text": "棒球隊棒球隊 101-89-6 | 4th Place | 小銘 Strengths Neutral Weaknesses Unlock your team's positional strengths and more! Subscribe now Research Assistant | Trade Hub Add/drop suggestions Trade suggestions Rafael Devers Jac Caglianone Compare Christian Yelich Jung Hoo Lee Compare Jackson Merrill Jac Caglianone Compare",
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Kody ClemensPlayer Note MIN - 1B,2B,OF 7:40 am vs KC",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "KC",
+          "className": "Bdrend"
+        },
+        {
+          "text": "FA",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "92",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "295",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "217",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "38%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "82/338",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "49",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "18",
+          "className": "Ta-end"
+        },
+        {
+          "text": "49",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "7",
+          "className": "Ta-end"
+        },
+        {
+          "text": "23",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".243",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".787",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=11309"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=11309&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "Kody Clemens",
+          "href": "https://sports.yahoo.com/mlb/players/11309"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/11309/news"
+        },
+        {
+          "text": "7:40 am vs KC",
+          "href": "https://sports.yahoo.com/mlb/kansas-city-royals-minnesota-twins-460728109/"
+        }
+      ]
+    },
+    {
+      "name": "Jake BurgerNew Player Note TEX - 1B",
+      "position": "",
+      "team": "Jake BurgerNew Player Note TEX - 1B 6:40 am @ TB",
+      "raw": "  Jake BurgerNew Player Note TEX - 1B 6:40 am @ TB @ TB FA 101 229 228 21% 89/374 45 19 66 2 31 .238 .730",
+      "cells": [
+        {
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Jake BurgerNew Player Note TEX - 1B 6:40 am @ TB",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "@ TB",
+          "className": "Bdrend"
+        },
+        {
+          "text": "FA",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "101",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "229",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "228",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "21%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "89/374",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "45",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "19",
+          "className": "Ta-end"
+        },
+        {
+          "text": "66",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "2",
+          "className": "Ta-end"
+        },
+        {
+          "text": "31",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".238",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".730",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=10877"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=10877&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "Jake Burger",
+          "href": "https://sports.yahoo.com/mlb/players/10877"
+        },
+        {
+          "text": "New Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/10877/news"
+        },
+        {
+          "text": "6:40 am @ TB",
+          "href": "https://sports.yahoo.com/mlb/texas-rangers-tampa-bay-rays-460728130/"
+        }
+      ]
+    },
+    {
+      "name": "Vladimir Guerrero Jr.Player Note TOR - 1B",
+      "position": "",
+      "team": "Vladimir Guerrero Jr.Player Note TOR - 1B 6:45 am @ WSH",
+      "raw": "  Vladimir Guerrero Jr.Player Note TOR - 1B 6:45 am @ WSH @ WSH FA 102 56 229 98% 100/379 54 6 44 7 45 .264 .700",
+      "cells": [
+        {
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Vladimir Guerrero Jr.Player Note TOR - 1B 6:45 am @ WSH",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "@ WSH",
+          "className": "Bdrend"
+        },
+        {
+          "text": "FA",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "102",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "56",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "229",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "98%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "100/379",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "54",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "6",
+          "className": "Ta-end"
+        },
+        {
+          "text": "44",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "7",
+          "className": "Ta-end"
+        },
+        {
+          "text": "45",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".264",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".700",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=10621"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=10621&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "Vladimir Guerrero Jr.",
+          "href": "https://sports.yahoo.com/mlb/players/10621"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/10621/news"
+        },
+        {
+          "text": "6:45 am @ WSH",
+          "href": "https://sports.yahoo.com/mlb/toronto-blue-jays-washington-nationals-460728120/"
+        }
+      ]
+    },
+    {
+      "name": "Josh JungIL10Player Note TEX - 3B",
+      "position": "",
+      "team": "Josh JungIL10Player Note TEX - 3B 6:40 am @ TB",
+      "raw": "  Josh JungIL10Player Note TEX - 3B 6:40 am @ TB @ TB FA 92 198 236 30% 104/354 46 9 35 1 33 .294 .802",
+      "cells": [
+        {
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Josh JungIL10Player Note TEX - 3B 6:40 am @ TB",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "@ TB",
+          "className": "Bdrend"
+        },
+        {
+          "text": "FA",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "92",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "198",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "236",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "30%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "104/354",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "46",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "9",
+          "className": "Ta-end"
+        },
+        {
+          "text": "35",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "1",
+          "className": "Ta-end"
+        },
+        {
+          "text": "33",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".294",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".802",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=11850"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/deleteplayerswatch?mid=5&dpids[]=11850&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "Josh Jung",
+          "href": "https://sports.yahoo.com/mlb/players/11850"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/11850/news"
+        },
+        {
+          "text": "6:40 am @ TB",
+          "href": "https://sports.yahoo.com/mlb/texas-rangers-tampa-bay-rays-460728130/"
+        }
+      ]
+    },
+    {
+      "name": "Brayan RocchioPlayer Note CLE - 2B,SS",
+      "position": "",
+      "team": "Brayan RocchioPlayer Note CLE - 2B,SS 1:40 am @ CIN; 7:10 am @ CIN",
+      "raw": "  Brayan RocchioPlayer Note CLE - 2B,SS 1:40 am @ CIN; 7:10 am @ CIN @ CIN,@ CIN FA 104 277 238 37% 97/362 43 9 49 15 27 .268 .726",
+      "cells": [
+        {
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Brayan RocchioPlayer Note CLE - 2B,SS 1:40 am @ CIN; 7:10 am @ CIN",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "@ CIN,@ CIN",
+          "className": "Bdrend"
+        },
+        {
+          "text": "FA",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "104",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "277",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "238",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "37%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "97/362",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "43",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "9",
+          "className": "Ta-end"
+        },
+        {
+          "text": "49",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "15",
+          "className": "Ta-end"
+        },
+        {
+          "text": "27",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".268",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".726",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=11448"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=11448&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "Brayan Rocchio",
+          "href": "https://sports.yahoo.com/mlb/players/11448"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/11448/news"
+        },
+        {
+          "text": "1:40 am @ CIN",
+          "href": "https://sports.yahoo.com/mlb/cleveland-guardians-cincinnati-reds-460728217/"
+        },
+        {
+          "text": "7:10 am @ CIN",
+          "href": "https://sports.yahoo.com/mlb/cleveland-guardians-cincinnati-reds-460728317/"
+        }
+      ]
+    },
+    {
+      "name": "Brooks LeePlayer Note MIN - 2B,3B,SS",
+      "position": "",
+      "team": "Brooks LeePlayer Note MIN - 2B,3B,SS 7:40 am vs KC",
+      "raw": "  Brooks LeePlayer Note MIN - 2B,3B,SS 7:40 am vs KC KC FA 102 350 245 49% 93/377 48 15 56 7 29 .247 .725",
+      "cells": [
+        {
+          "text": "",
+          "className": "Alt"
+        },
+        {
+          "text": "",
+          "className": "Ta-c Bdrend"
+        },
+        {
+          "text": "Brooks LeePlayer Note MIN - 2B,3B,SS 7:40 am vs KC",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "KC",
+          "className": "Bdrend"
+        },
+        {
+          "text": "FA",
+          "className": "Alt Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "102",
+          "className": "F-faded Bdrend"
+        },
+        {
+          "text": "350",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "245",
+          "className": "Ta-end Selected Bdrend"
+        },
+        {
+          "text": "49%",
+          "className": "Alt Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "93/377",
+          "className": "Ta-end F-faded"
+        },
+        {
+          "text": "48",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "15",
+          "className": "Ta-end"
+        },
+        {
+          "text": "56",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "7",
+          "className": "Ta-end"
+        },
+        {
+          "text": "29",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".247",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".725",
+          "className": "Alt Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayer?apid=60266"
+        },
+        {
+          "text": "",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/addplayerwatch?mid=5&apid=60266&crumb=playerwatch|unrfp.r5bhz&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2Fplayers%3F"
+        },
+        {
+          "text": "Brooks Lee",
+          "href": "https://sports.yahoo.com/mlb/players/60266"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/60266/news"
+        },
+        {
+          "text": "7:40 am vs KC",
+          "href": "https://sports.yahoo.com/mlb/kansas-city-royals-minnesota-twins-460728109/"
+        }
+      ]
+    },
+    {
+      "name": "棒球隊棒球隊 128-103-7 | 2nd Place | 小銘 Strengths Neutral Weaknesses Unlock your team's positional strengths and more! Subscribe now Research Assistant | Trade Hub Add/drop suggestions Trade suggestions Vladimir Guerrero Jr. Curtis Mead Compare Christian Yelich Wilyer Abreu Compare Jackson Merrill Curtis Mead Compare",
+      "position": "棒球隊棒球隊 128-103-7 | 2nd Place | 小銘 Strengths Neutral Weaknesses Unlock your team's positional strengths and more! Subscribe now Research Assistant | Trade Hub Add/drop suggestions Trade suggestions Vladimir Guerrero Jr. Curtis Mead Compare Christian Yelich Wilyer Abreu Compare Jackson Merrill Curtis Mead Compare",
+      "team": "",
+      "raw": "棒球隊棒球隊 128-103-7 | 2nd Place | 小銘 Strengths Neutral Weaknesses Unlock your team's positional strengths and more! Subscribe now Research Assistant | Trade Hub Add/drop suggestions Trade suggestions Vladimir Guerrero Jr. Curtis Mead Compare Christian Yelich Wilyer Abreu Compare Jackson Merrill Curtis Mead Compare",
+      "cells": [
+        {
+          "text": "棒球隊棒球隊 128-103-7 | 2nd Place | 小銘 Strengths Neutral Weaknesses Unlock your team's positional strengths and more! Subscribe now Research Assistant | Trade Hub Add/drop suggestions Trade suggestions Vladimir Guerrero Jr. Curtis Mead Compare Christian Yelich Wilyer Abreu Compare Jackson Merrill Curtis Mead Compare",
           "className": "D(f) Fz(14px) C(--ys-text-primary) W(100%)"
         }
       ],
@@ -2638,15 +2744,15 @@
         },
         {
           "text": "Compare",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/research_assistant?playerKeys=469.p.64312%2C469.p.10235&statFilter=RGP"
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/research_assistant?playerKeys=469.p.12558%2C469.p.10621&statFilter=RGP"
         },
         {
           "text": "Compare",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/research_assistant?playerKeys=469.p.63494%2C469.p.9320&statFilter=RGP"
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/research_assistant?playerKeys=469.p.12731%2C469.p.9320&statFilter=RGP"
         },
         {
           "text": "Compare",
-          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/research_assistant?playerKeys=469.p.64312%2C469.p.12522&statFilter=RGP"
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/research_assistant?playerKeys=469.p.12558%2C469.p.12522&statFilter=RGP"
         }
       ]
     }

@@ -17,7 +17,12 @@ const expectedKeys = [
   "status",
   "startTime",
   "newsLink",
-  "playerLink"
+  "playerLink",
+  "preSeasonRank",
+  "rank",
+  "percentStart",
+  "percentRostered",
+  "stats"
 ];
 
 const allPlayers = [
@@ -34,7 +39,7 @@ assert.deepStrictEqual(Object.keys(normalized), ["roster", "bench", "IL", "pitch
 
 // Junk rows (Rank Fantasy Batting/Pitching, Starting Lineup Totals, Team analysis,
 // team summary) must be dropped — only rows with a real player profile link survive.
-assert.strictEqual(allPlayers.length, 27);
+assert.strictEqual(allPlayers.length, 26);
 allPlayers.forEach((player) => {
   assert.deepStrictEqual(Object.keys(player), expectedKeys);
   assert.ok(player.name, "player has a name");
@@ -48,46 +53,74 @@ allPlayers.forEach((player) => {
 // Bucketing
 assert.strictEqual(normalized.roster.length, 10);
 assert.strictEqual(normalized.bench.length, 5);
-assert.strictEqual(normalized.IL.length, 4);
+assert.strictEqual(normalized.IL.length, 3);
 assert.strictEqual(normalized.pitchers.length, 8);
 
 // Multi-position hitter: team + all eligible positions from "TEAM - p,p,p"
-const castro = byName("Willi Castro");
-assert.ok(castro, "Willi Castro parsed");
-assert.strictEqual(castro.mlbTeam, "COL");
-assert.strictEqual(castro.slot, "3B");
-assert.deepStrictEqual(castro.eligiblePositions, ["1B", "2B", "3B", "SS", "OF"]);
+const gonzales = byName("Nick Gonzales");
+assert.ok(gonzales, "Nick Gonzales parsed");
+assert.strictEqual(gonzales.mlbTeam, "PIT");
+assert.strictEqual(gonzales.slot, "UTIL");
+assert.deepStrictEqual(gonzales.eligiblePositions, ["2B", "3B", "SS"]);
+
+// Season stats: same 7 batting categories as the free-agent list, read from
+// the Team page's "2026 Season" column layout (Pre-Season/Current rank,
+// %Start/%Ros, then H/AB, R, HR, RBI, SB, BB, AVG, OPS).
+assert.strictEqual(gonzales.preSeasonRank, 312);
+assert.strictEqual(gonzales.rank, 122);
+assert.strictEqual(gonzales.percentStart, 45);
+assert.strictEqual(gonzales.percentRostered, 50);
+assert.deepStrictEqual(gonzales.stats, {
+  hAb: "120/381",
+  R: 58,
+  HR: 6,
+  RBI: 47,
+  SB: 4,
+  BB: 28,
+  AVG: 0.315,
+  OPS: 0.782
+});
+
+// Pitcher rows share the same column positions, but those columns are
+// pitching stats there (IP/W/K/...) -- stats is deliberately {} for now.
+const imanaga = byName("Shota Imanaga");
+assert.ok(imanaga, "Shota Imanaga parsed");
+assert.deepStrictEqual(imanaga.stats, {});
+assert.strictEqual(imanaga.rank, 87);
 
 // Injury token glued into the name string
-const ramirez = byName("José Ramírez");
-assert.ok(ramirez, "José Ramírez parsed");
-assert.strictEqual(ramirez.slot, "IL");
-assert.strictEqual(ramirez.status, "IL10");
-assert.strictEqual(ramirez.mlbTeam, "CLE");
-assert.deepStrictEqual(ramirez.eligiblePositions, ["3B"]);
+const seager = byName("Corey Seager");
+assert.ok(seager, "Corey Seager parsed");
+assert.strictEqual(seager.slot, "IL");
+assert.strictEqual(seager.status, "IL10");
+assert.strictEqual(seager.mlbTeam, "TEX");
+assert.deepStrictEqual(seager.eligiblePositions, ["SS"]);
 
-const cag = byName("Jac Caglianone");
-assert.ok(cag, "Jac Caglianone parsed");
-assert.strictEqual(cag.slot, "BN");
-assert.strictEqual(cag.status, "DTD");
-assert.strictEqual(cag.mlbTeam, "KC");
-assert.deepStrictEqual(cag.eligiblePositions, ["1B", "OF"]);
+const mead = byName("Curtis Mead");
+assert.ok(mead, "Curtis Mead parsed");
+assert.strictEqual(mead.slot, "BN");
+assert.strictEqual(mead.status, "DTD");
+assert.strictEqual(mead.mlbTeam, "BOS");
+assert.deepStrictEqual(mead.eligiblePositions, ["1B", "2B", "3B"]);
 
 // Pitcher with game info parsed from the game link (now on the bench)
-const rodon = byName("Carlos Rodón");
-assert.ok(rodon, "Carlos Rodón parsed");
-assert.strictEqual(rodon.slot, "BN");
-assert.strictEqual(rodon.mlbTeam, "NYY");
-assert.deepStrictEqual(rodon.eligiblePositions, ["SP"]);
-assert.strictEqual(rodon.startTime, "7:05 am");
-assert.strictEqual(rodon.opponent, "vs DET");
+const mcclean = byName("Nolan McLean");
+assert.ok(mcclean, "Nolan McLean parsed");
+assert.strictEqual(mcclean.slot, "BN");
+assert.strictEqual(mcclean.mlbTeam, "NYM");
+assert.deepStrictEqual(mcclean.eligiblePositions, ["SP"]);
+assert.strictEqual(mcclean.startTime, "7:10 am");
+assert.strictEqual(mcclean.opponent, "vs ATL");
 
-// Player with no game today: no game link -> empty time/opponent
-const harris = byName("Michael Harris II");
-assert.ok(harris, "Michael Harris II parsed");
-assert.strictEqual(harris.startTime, "");
-assert.strictEqual(harris.opponent, "");
-assert.strictEqual(harris.mlbTeam, "ATL");
+// Player with no game today: no game link -> empty time/opponent (synthetic;
+// every rostered player in the current fixture has a game scheduled)
+const { normalizePlayer } = require("./parser");
+const noGame = normalizePlayer({
+  cells: [{ className: "player", text: "No Game Player NYY - OF" }],
+  links: [{ href: "https://sports.yahoo.com/mlb/players/1", text: "No Game Player" }]
+});
+assert.strictEqual(noGame.startTime, "");
+assert.strictEqual(noGame.opponent, "");
 
 // Sprint 15.2 — Free Agent hardening: non-player sidebar rows (Trade suggestions,
 // Research Assistant, Compare) carry no profile link, so they never become FAs.

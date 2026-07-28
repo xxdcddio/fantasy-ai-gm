@@ -1,17 +1,17 @@
 {
   "source": "fantasy-mlb-ai-yahoo-extractor",
-  "extractedAt": "2026-06-29T15:04:57.481Z",
+  "extractedAt": "2026-07-28T09:07:09.629Z",
   "page": {
     "kind": "team",
     "title": "Funny MLB League - 棒球隊棒球隊 | Fantasy Baseball | Yahoo! Sports",
-    "url": "https://baseball.fantasysports.yahoo.com/b1/95435/5?date=2026-06-29&_global_alerts=1xHbs4q5CFc6F6h8Uv4gMiAO4cDSn0V5QHMyNZzlmNE%3D%7C%5B%7B%22errno%22%3A933,%22status%22%3A0,%22params%22%3A%5B%22added+Christian+Walker+and+dropped+Kyle+Bradish%22%5D%7D%5D"
+    "url": "https://baseball.fantasysports.yahoo.com/b1/95435/5"
   },
   "roster": [
     {
-      "name": "Rank Fantasy Batting",
+      "name": "Rankings Fantasy Batting",
       "position": "",
       "team": "",
-      "raw": "Rank Fantasy Batting",
+      "raw": "Rankings Fantasy Batting",
       "cells": [
         {
           "text": "",
@@ -30,29 +30,29 @@
           "className": ""
         },
         {
-          "text": "Rank",
-          "className": "Alt"
+          "text": "Rankings",
+          "className": "Alt Ta-end Bdrend"
         },
         {
           "text": "Fantasy",
-          "className": ""
+          "className": "Alt Last"
         },
         {
           "text": "Batting",
-          "className": ""
+          "className": "Alt"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": []
     },
     {
-      "name": "Dalton RushingNew Player Note LAD - C",
+      "name": "Gabriel MorenoNew Player Note AZ - C",
       "position": "C",
-      "team": "Dalton RushingNew Player Note LAD - C 9:40 am @ ATH",
-      "raw": "C Dalton RushingNew Player Note LAD - C 9:40 am @ ATH @ ATH 264 10% 14% -/- - - - - - - -",
+      "team": "Gabriel MorenoNew Player Note AZ - C 6:40 am @ PIT",
+      "raw": "C Gabriel MorenoNew Player Note AZ - C 6:40 am @ PIT @ PIT 334 137 63% 68% 86/277 43 7 41 4 39 .310 .844",
       "cells": [
         {
           "text": "C",
@@ -63,82 +63,86 @@
           "className": "Ta-start edit Js-hidden Bdrend"
         },
         {
-          "text": "Dalton RushingNew Player Note LAD - C 9:40 am @ ATH",
+          "text": "Gabriel MorenoNew Player Note AZ - C 6:40 am @ PIT",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "@ ATH",
+          "text": "@ PIT",
           "className": "Ta-start Nowrap Bdrend"
         },
         {
-          "text": "264",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "334",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "10%",
-          "className": "Ta-end Nowrap"
+          "text": "137",
+          "className": "Ta-end Bdrend"
         },
         {
-          "text": "14%",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "63%",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "-/-",
-          "className": "Ta-end F-faded"
+          "text": "68%",
+          "className": "Ta-end Nowrap Bdrend"
         },
         {
-          "text": "-",
-          "className": "Alt Ta-end"
+          "text": "86/277",
+          "className": "Alt Ta-end F-faded"
         },
         {
-          "text": "-",
+          "text": "43",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "7",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "41",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "4",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "39",
           "className": "Ta-end"
         },
         {
-          "text": "-",
-          "className": "Alt Last Ta-end"
+          "text": ".310",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".844",
+          "className": "Last Ta-end"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": [
         {
-          "text": "Dalton Rushing",
-          "href": "https://sports.yahoo.com/mlb/players/60232"
+          "text": "Gabriel Moreno",
+          "href": "https://sports.yahoo.com/mlb/players/11855"
         },
         {
           "text": "New Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/60232/news"
+          "href": "https://sports.yahoo.com/mlb/players/11855/news"
         },
         {
-          "text": "9:40 am @ ATH",
-          "href": "https://sports.yahoo.com/mlb/los-angeles-dodgers-athletics-460629111/"
+          "text": "6:40 am @ PIT",
+          "href": "https://sports.yahoo.com/mlb/arizona-diamondbacks-pittsburgh-pirates-460728123/"
         }
       ]
     },
     {
       "name": "Freddie FreemanPlayer Note LAD - 1B",
       "position": "1B",
-      "team": "Freddie FreemanPlayer Note LAD - 1B 9:40 am @ ATH",
-      "raw": "1B Freddie FreemanPlayer Note LAD - 1B 9:40 am @ ATH @ ATH 37 93% 99% -/- - - - - - - -",
+      "team": "Freddie FreemanPlayer Note LAD - 1B 10:10 am vs SEA",
+      "raw": "1B Freddie FreemanPlayer Note LAD - 1B 10:10 am vs SEA SEA 35 38 74% 99% 117/389 56 15 52 5 50 .301 .872",
       "cells": [
         {
           "text": "1B",
@@ -149,60 +153,64 @@
           "className": "Ta-start edit Js-hidden Bdrend"
         },
         {
-          "text": "Freddie FreemanPlayer Note LAD - 1B 9:40 am @ ATH",
+          "text": "Freddie FreemanPlayer Note LAD - 1B 10:10 am vs SEA",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "@ ATH",
+          "text": "SEA",
           "className": "Ta-start Nowrap Bdrend"
         },
         {
-          "text": "37",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "35",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "93%",
-          "className": "Ta-end Nowrap"
+          "text": "38",
+          "className": "Ta-end Bdrend"
+        },
+        {
+          "text": "74%",
+          "className": "Alt Ta-end Nowrap"
         },
         {
           "text": "99%",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "className": "Ta-end Nowrap Bdrend"
         },
         {
-          "text": "-/-",
-          "className": "Ta-end F-faded"
+          "text": "117/389",
+          "className": "Alt Ta-end F-faded"
         },
         {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
+          "text": "56",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "15",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "52",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "5",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "50",
           "className": "Ta-end"
         },
         {
-          "text": "-",
-          "className": "Alt Last Ta-end"
+          "text": ".301",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".872",
+          "className": "Last Ta-end"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": [
@@ -215,16 +223,16 @@
           "href": "https://sports.yahoo.com/mlb/players/8658/news"
         },
         {
-          "text": "9:40 am @ ATH",
-          "href": "https://sports.yahoo.com/mlb/los-angeles-dodgers-athletics-460629111/"
+          "text": "10:10 am vs SEA",
+          "href": "https://sports.yahoo.com/mlb/seattle-mariners-los-angeles-dodgers-460728119/"
         }
       ]
     },
     {
-      "name": "Ketel MarteNew Player Note AZ - 2B",
+      "name": "Ketel MartePlayer Note AZ - 2B",
       "position": "2B",
-      "team": "Ketel MarteNew Player Note AZ - 2B 9:40 am vs SF",
-      "raw": "2B Ketel MarteNew Player Note AZ - 2B 9:40 am vs SF SF 28 96% 99% -/- - - - - - - -",
+      "team": "Ketel MartePlayer Note AZ - 2B 6:40 am @ PIT",
+      "raw": "2B Ketel MartePlayer Note AZ - 2B 6:40 am @ PIT @ PIT 29 120 96% 99% 105/413 58 19 61 4 32 .254 .763",
       "cells": [
         {
           "text": "2B",
@@ -235,60 +243,64 @@
           "className": "Ta-start edit Js-hidden Bdrend"
         },
         {
-          "text": "Ketel MarteNew Player Note AZ - 2B 9:40 am vs SF",
+          "text": "Ketel MartePlayer Note AZ - 2B 6:40 am @ PIT",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "SF",
+          "text": "@ PIT",
           "className": "Ta-start Nowrap Bdrend"
         },
         {
-          "text": "28",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "29",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "120",
+          "className": "Ta-end Bdrend"
         },
         {
           "text": "96%",
-          "className": "Ta-end Nowrap"
+          "className": "Alt Ta-end Nowrap"
         },
         {
           "text": "99%",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "className": "Ta-end Nowrap Bdrend"
         },
         {
-          "text": "-/-",
-          "className": "Ta-end F-faded"
+          "text": "105/413",
+          "className": "Alt Ta-end F-faded"
         },
         {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
+          "text": "58",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "19",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "61",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "4",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "32",
           "className": "Ta-end"
         },
         {
-          "text": "-",
-          "className": "Alt Last Ta-end"
+          "text": ".254",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".763",
+          "className": "Last Ta-end"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": [
@@ -297,106 +309,114 @@
           "href": "https://sports.yahoo.com/mlb/players/10036"
         },
         {
-          "text": "New Player Note",
+          "text": "Player Note",
           "href": "https://sports.yahoo.com/mlb/players/10036/news"
         },
         {
-          "text": "9:40 am vs SF",
-          "href": "https://sports.yahoo.com/mlb/san-francisco-giants-arizona-diamondbacks-460629129/"
+          "text": "6:40 am @ PIT",
+          "href": "https://sports.yahoo.com/mlb/arizona-diamondbacks-pittsburgh-pirates-460728123/"
         }
       ]
     },
     {
-      "name": "Willi CastroPlayer Note COL - 1B,2B,3B,SS,OF",
+      "name": "José RamírezPlayer Note CLE - 3B",
       "position": "3B",
-      "team": "Willi CastroPlayer Note COL - 1B,2B,3B,SS,OF 8:40 am vs MIA",
-      "raw": "3B Willi CastroPlayer Note COL - 1B,2B,3B,SS,OF 8:40 am vs MIA MIA 230 50% 56% -/- - - - - - - -",
+      "team": "José RamírezPlayer Note CLE - 3B 1:40 am @ CIN; 7:10 am @ CIN",
+      "raw": "3B José RamírezPlayer Note CLE - 3B 1:40 am @ CIN; 7:10 am @ CIN @ CIN,@ CIN 101 195 83% 99% 67/284 43 10 35 24 43 .236 .740",
       "cells": [
         {
           "text": "3B",
           "className": "Alt Ta-c pos Bdrend headcol"
         },
         {
-          "text": "1B2B3BSSOFUtilBN",
+          "text": "3BUtilBN",
           "className": "Ta-start edit Js-hidden Bdrend"
         },
         {
-          "text": "Willi CastroPlayer Note COL - 1B,2B,3B,SS,OF 8:40 am vs MIA",
+          "text": "José RamírezPlayer Note CLE - 3B 1:40 am @ CIN; 7:10 am @ CIN",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "MIA",
+          "text": "@ CIN,@ CIN",
           "className": "Ta-start Nowrap Bdrend"
         },
         {
-          "text": "230",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "101",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "50%",
-          "className": "Ta-end Nowrap"
+          "text": "195",
+          "className": "Ta-end Bdrend"
         },
         {
-          "text": "56%",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "83%",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "-/-",
-          "className": "Ta-end F-faded"
+          "text": "99%",
+          "className": "Ta-end Nowrap Bdrend"
         },
         {
-          "text": "-",
-          "className": "Alt Ta-end"
+          "text": "67/284",
+          "className": "Alt Ta-end F-faded"
         },
         {
-          "text": "-",
+          "text": "43",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "10",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "35",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "24",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "43",
           "className": "Ta-end"
         },
         {
-          "text": "-",
-          "className": "Alt Last Ta-end"
+          "text": ".236",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".740",
+          "className": "Last Ta-end"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": [
         {
-          "text": "Willi Castro",
-          "href": "https://sports.yahoo.com/mlb/players/10868"
+          "text": "José Ramírez",
+          "href": "https://sports.yahoo.com/mlb/players/9507"
         },
         {
           "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/10868/news"
+          "href": "https://sports.yahoo.com/mlb/players/9507/news"
         },
         {
-          "text": "8:40 am vs MIA",
-          "href": "https://sports.yahoo.com/mlb/miami-marlins-colorado-rockies-460629127/"
+          "text": "1:40 am @ CIN",
+          "href": "https://sports.yahoo.com/mlb/cleveland-guardians-cincinnati-reds-460728217/"
+        },
+        {
+          "text": "7:10 am @ CIN",
+          "href": "https://sports.yahoo.com/mlb/cleveland-guardians-cincinnati-reds-460728317/"
         }
       ]
     },
     {
-      "name": "Corey SeagerPlayer Note TEX - SS",
+      "name": "Geraldo PerdomoNew Player Note AZ - SS",
       "position": "SS",
-      "team": "Corey SeagerPlayer Note TEX - SS 7:10 am @ CLE",
-      "raw": "SS Corey SeagerPlayer Note TEX - SS 7:10 am @ CLE @ CLE 79 61% 87% -/- - - - - - - -",
+      "team": "Geraldo PerdomoNew Player Note AZ - SS 6:40 am @ PIT",
+      "raw": "SS Geraldo PerdomoNew Player Note AZ - SS 6:40 am @ PIT @ PIT 164 155 80% 91% 84/361 51 8 37 17 68 .233 .711",
       "cells": [
         {
           "text": "SS",
@@ -407,82 +427,86 @@
           "className": "Ta-start edit Js-hidden Bdrend"
         },
         {
-          "text": "Corey SeagerPlayer Note TEX - SS 7:10 am @ CLE",
+          "text": "Geraldo PerdomoNew Player Note AZ - SS 6:40 am @ PIT",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "@ CLE",
+          "text": "@ PIT",
           "className": "Ta-start Nowrap Bdrend"
         },
         {
-          "text": "79",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "164",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "61%",
-          "className": "Ta-end Nowrap"
+          "text": "155",
+          "className": "Ta-end Bdrend"
         },
         {
-          "text": "87%",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "80%",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "-/-",
-          "className": "Ta-end F-faded"
+          "text": "91%",
+          "className": "Ta-end Nowrap Bdrend"
         },
         {
-          "text": "-",
-          "className": "Alt Ta-end"
+          "text": "84/361",
+          "className": "Alt Ta-end F-faded"
         },
         {
-          "text": "-",
+          "text": "51",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "8",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "37",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "17",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "68",
           "className": "Ta-end"
         },
         {
-          "text": "-",
-          "className": "Alt Last Ta-end"
+          "text": ".233",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".711",
+          "className": "Last Ta-end"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": [
         {
-          "text": "Corey Seager",
-          "href": "https://sports.yahoo.com/mlb/players/9584"
+          "text": "Geraldo Perdomo",
+          "href": "https://sports.yahoo.com/mlb/players/11417"
         },
         {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/9584/news"
+          "text": "New Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/11417/news"
         },
         {
-          "text": "7:10 am @ CLE",
-          "href": "https://sports.yahoo.com/mlb/texas-rangers-cleveland-guardians-460629105/"
+          "text": "6:40 am @ PIT",
+          "href": "https://sports.yahoo.com/mlb/arizona-diamondbacks-pittsburgh-pirates-460728123/"
         }
       ]
     },
     {
-      "name": "Yordan AlvarezPlayer Note HOU - OF",
+      "name": "Yordan AlvarezVideo ForecastPlayer Note HOU - OF",
       "position": "OF",
-      "team": "Yordan AlvarezPlayer Note HOU - OF 8:10 am vs MIN",
-      "raw": "OF Yordan AlvarezPlayer Note HOU - OF 8:10 am vs MIN MIN 3 96% 99% -/- - - - - - - -",
+      "team": "Yordan AlvarezVideo ForecastPlayer Note HOU - OF 9:38 am @ LAA",
+      "raw": "OF Yordan AlvarezVideo ForecastPlayer Note HOU - OF 9:38 am @ LAA @ LAA 2 2 97% 99% 124/384 73 34 78 1 71 .323 1.074",
       "cells": [
         {
           "text": "OF",
@@ -493,60 +517,64 @@
           "className": "Ta-start edit Js-hidden Bdrend"
         },
         {
-          "text": "Yordan AlvarezPlayer Note HOU - OF 8:10 am vs MIN",
+          "text": "Yordan AlvarezVideo ForecastPlayer Note HOU - OF 9:38 am @ LAA",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "MIN",
+          "text": "@ LAA",
           "className": "Ta-start Nowrap Bdrend"
         },
         {
-          "text": "3",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "2",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "96%",
-          "className": "Ta-end Nowrap"
+          "text": "2",
+          "className": "Ta-end Bdrend"
+        },
+        {
+          "text": "97%",
+          "className": "Alt Ta-end Nowrap"
         },
         {
           "text": "99%",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "className": "Ta-end Nowrap Bdrend"
         },
         {
-          "text": "-/-",
-          "className": "Ta-end F-faded"
+          "text": "124/384",
+          "className": "Alt Ta-end F-faded"
         },
         {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
+          "text": "73",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "34",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "78",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "1",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "71",
           "className": "Ta-end"
         },
         {
-          "text": "-",
-          "className": "Alt Last Ta-end"
+          "text": ".323",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "1.074",
+          "className": "Last Ta-end"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": [
@@ -555,367 +583,27 @@
           "href": "https://sports.yahoo.com/mlb/players/10883"
         },
         {
+          "text": "Video Forecast",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/5#"
+        },
+        {
           "text": "Player Note",
           "href": "https://sports.yahoo.com/mlb/players/10883/news"
         },
         {
-          "text": "8:10 am vs MIN",
-          "href": "https://sports.yahoo.com/mlb/minnesota-twins-houston-astros-460629118/"
-        }
-      ]
-    },
-    {
-      "name": "Seiya SuzukiPlayer Note CHC - OF",
-      "position": "OF",
-      "team": "Seiya SuzukiPlayer Note CHC - OF 8:05 am vs SD",
-      "raw": "OF Seiya SuzukiPlayer Note CHC - OF 8:05 am vs SD SD 88 79% 90% -/- - - - - - - -",
-      "cells": [
-        {
-          "text": "OF",
-          "className": "Alt Ta-c pos Bdrend headcol"
-        },
-        {
-          "text": "OFUtilBN",
-          "className": "Ta-start edit Js-hidden Bdrend"
-        },
-        {
-          "text": "Seiya SuzukiPlayer Note CHC - OF 8:05 am vs SD",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "SD",
-          "className": "Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "88",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "79%",
-          "className": "Ta-end Nowrap"
-        },
-        {
-          "text": "90%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "-/-",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "Seiya Suzuki",
-          "href": "https://sports.yahoo.com/mlb/players/12588"
-        },
-        {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/12588/news"
-        },
-        {
-          "text": "8:05 am vs SD",
-          "href": "https://sports.yahoo.com/mlb/san-diego-padres-chicago-cubs-460629116/"
-        }
-      ]
-    },
-    {
-      "name": "Jung Hoo LeeNew Player Note SF - OF",
-      "position": "OF",
-      "team": "Jung Hoo LeeNew Player Note SF - OF 9:40 am @ AZ",
-      "raw": "OF Jung Hoo LeeNew Player Note SF - OF 9:40 am @ AZ @ AZ 260 47% 53% -/- - - - - - - -",
-      "cells": [
-        {
-          "text": "OF",
-          "className": "Alt Ta-c pos Bdrend headcol"
-        },
-        {
-          "text": "OFUtilBN",
-          "className": "Ta-start edit Js-hidden Bdrend"
-        },
-        {
-          "text": "Jung Hoo LeeNew Player Note SF - OF 9:40 am @ AZ",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "@ AZ",
-          "className": "Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "260",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "47%",
-          "className": "Ta-end Nowrap"
-        },
-        {
-          "text": "53%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "-/-",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "Jung Hoo Lee",
-          "href": "https://sports.yahoo.com/mlb/players/63494"
-        },
-        {
-          "text": "New Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/63494/news"
-        },
-        {
-          "text": "9:40 am @ AZ",
-          "href": "https://sports.yahoo.com/mlb/san-francisco-giants-arizona-diamondbacks-460629129/"
-        }
-      ]
-    },
-    {
-      "name": "Jeremy PeñaPlayer Note HOU - SS",
-      "position": "Util",
-      "team": "Jeremy PeñaPlayer Note HOU - SS 8:10 am vs MIN",
-      "raw": "Util Jeremy PeñaPlayer Note HOU - SS 8:10 am vs MIN MIN 138 74% 88% -/- - - - - - - -",
-      "cells": [
-        {
-          "text": "Util",
-          "className": "Alt Ta-c pos Bdrend headcol"
-        },
-        {
-          "text": "SSUtilBN",
-          "className": "Ta-start edit Js-hidden Bdrend"
-        },
-        {
-          "text": "Jeremy PeñaPlayer Note HOU - SS 8:10 am vs MIN",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "MIN",
-          "className": "Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "138",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "74%",
-          "className": "Ta-end Nowrap"
-        },
-        {
-          "text": "88%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "-/-",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "Jeremy Peña",
-          "href": "https://sports.yahoo.com/mlb/players/11768"
-        },
-        {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/11768/news"
-        },
-        {
-          "text": "8:10 am vs MIN",
-          "href": "https://sports.yahoo.com/mlb/minnesota-twins-houston-astros-460629118/"
-        }
-      ]
-    },
-    {
-      "name": "Christian WalkerNew Player Note HOU - 1B",
-      "position": "Util",
-      "team": "Christian WalkerNew Player Note HOU - 1B 8:10 am vs MIN",
-      "raw": "Util Christian WalkerNew Player Note HOU - 1B 8:10 am vs MIN MIN 113 68% 90% -/- - - - - - - -",
-      "cells": [
-        {
-          "text": "Util",
-          "className": "Alt Ta-c pos Bdrend headcol"
-        },
-        {
-          "text": "1BUtilBN",
-          "className": "Ta-start edit Js-hidden Bdrend"
-        },
-        {
-          "text": "Christian WalkerNew Player Note HOU - 1B 8:10 am vs MIN",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "MIN",
-          "className": "Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "113",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "68%",
-          "className": "Ta-end Nowrap"
-        },
-        {
-          "text": "90%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "-/-",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "Christian Walker",
-          "href": "https://sports.yahoo.com/mlb/players/9846"
-        },
-        {
-          "text": "New Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/9846/news"
-        },
-        {
-          "text": "8:10 am vs MIN",
-          "href": "https://sports.yahoo.com/mlb/minnesota-twins-houston-astros-460629118/"
+          "text": "9:38 am @ LAA",
+          "href": "https://sports.yahoo.com/mlb/houston-astros-los-angeles-angels-460728103/"
         }
       ]
     },
     {
       "name": "Michael Harris IIPlayer Note ATL - OF",
-      "position": "BN",
-      "team": "Michael Harris IIPlayer Note ATL - OF",
-      "raw": "BN Michael Harris IIPlayer Note ATL - OF 39 64% 95% -/- - - - - - - -",
+      "position": "OF",
+      "team": "Michael Harris IIPlayer Note ATL - OF 7:10 am @ NYM",
+      "raw": "OF Michael Harris IIPlayer Note ATL - OF 7:10 am @ NYM @ NYM 37 79 90% 96% 114/382 53 19 61 6 15 .298 .829",
       "cells": [
         {
-          "text": "BN",
+          "text": "OF",
           "className": "Alt Ta-c pos Bdrend headcol"
         },
         {
@@ -923,60 +611,64 @@
           "className": "Ta-start edit Js-hidden Bdrend"
         },
         {
-          "text": "Michael Harris IIPlayer Note ATL - OF",
+          "text": "Michael Harris IIPlayer Note ATL - OF 7:10 am @ NYM",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "",
+          "text": "@ NYM",
           "className": "Ta-start Nowrap Bdrend"
         },
         {
-          "text": "39",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "37",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "64%",
-          "className": "Ta-end Nowrap"
+          "text": "79",
+          "className": "Ta-end Bdrend"
         },
         {
-          "text": "95%",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "90%",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "-/-",
-          "className": "Ta-end F-faded"
+          "text": "96%",
+          "className": "Ta-end Nowrap Bdrend"
         },
         {
-          "text": "-",
-          "className": "Alt Ta-end"
+          "text": "114/382",
+          "className": "Alt Ta-end F-faded"
         },
         {
-          "text": "-",
+          "text": "53",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "19",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "61",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "6",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "15",
           "className": "Ta-end"
         },
         {
-          "text": "-",
-          "className": "Alt Last Ta-end"
+          "text": ".298",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".829",
+          "className": "Last Ta-end"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": [
@@ -987,268 +679,472 @@
         {
           "text": "Player Note",
           "href": "https://sports.yahoo.com/mlb/players/12056/news"
+        },
+        {
+          "text": "7:10 am @ NYM",
+          "href": "https://sports.yahoo.com/mlb/atlanta-braves-new-york-mets-460728121/"
         }
       ]
     },
     {
-      "name": "Jac CaglianoneDTDNew Player Note KC - 1B,OF",
+      "name": "Wilyer AbreuPlayer Note BOS - OF",
+      "position": "OF",
+      "team": "Wilyer AbreuPlayer Note BOS - OF 9:40 am @ ATH",
+      "raw": "OF Wilyer AbreuPlayer Note BOS - OF 9:40 am @ ATH @ ATH 90 146 66% 84% 99/394 53 15 51 6 43 .251 .761",
+      "cells": [
+        {
+          "text": "OF",
+          "className": "Alt Ta-c pos Bdrend headcol"
+        },
+        {
+          "text": "OFUtilBN",
+          "className": "Ta-start edit Js-hidden Bdrend"
+        },
+        {
+          "text": "Wilyer AbreuPlayer Note BOS - OF 9:40 am @ ATH",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "@ ATH",
+          "className": "Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "90",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "146",
+          "className": "Ta-end Bdrend"
+        },
+        {
+          "text": "66%",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "84%",
+          "className": "Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "99/394",
+          "className": "Alt Ta-end F-faded"
+        },
+        {
+          "text": "53",
+          "className": "Ta-end"
+        },
+        {
+          "text": "15",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "51",
+          "className": "Ta-end"
+        },
+        {
+          "text": "6",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "43",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".251",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".761",
+          "className": "Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "Alt No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "Wilyer Abreu",
+          "href": "https://sports.yahoo.com/mlb/players/12731"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/12731/news"
+        },
+        {
+          "text": "9:40 am @ ATH",
+          "href": "https://sports.yahoo.com/mlb/boston-red-sox-athletics-460728111/"
+        }
+      ]
+    },
+    {
+      "name": "Ian HappPlayer Note CHC - OF",
+      "position": "Util",
+      "team": "Ian HappPlayer Note CHC - OF 7:45 am @ STL",
+      "raw": "Util Ian HappPlayer Note CHC - OF 7:45 am @ STL @ STL 110 139 70% 86% 82/376 64 18 45 4 58 .218 .751",
+      "cells": [
+        {
+          "text": "Util",
+          "className": "Alt Ta-c pos Bdrend headcol"
+        },
+        {
+          "text": "OFUtilBN",
+          "className": "Ta-start edit Js-hidden Bdrend"
+        },
+        {
+          "text": "Ian HappPlayer Note CHC - OF 7:45 am @ STL",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "@ STL",
+          "className": "Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "110",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "139",
+          "className": "Ta-end Bdrend"
+        },
+        {
+          "text": "70%",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "86%",
+          "className": "Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "82/376",
+          "className": "Alt Ta-end F-faded"
+        },
+        {
+          "text": "64",
+          "className": "Ta-end"
+        },
+        {
+          "text": "18",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "45",
+          "className": "Ta-end"
+        },
+        {
+          "text": "4",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "58",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".218",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".751",
+          "className": "Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "Alt No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "Ian Happ",
+          "href": "https://sports.yahoo.com/mlb/players/10440"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/10440/news"
+        },
+        {
+          "text": "7:45 am @ STL",
+          "href": "https://sports.yahoo.com/mlb/chicago-cubs-st-louis-cardinals-460728124/"
+        }
+      ]
+    },
+    {
+      "name": "Nick GonzalesPlayer Note PIT - 2B,3B,SS",
+      "position": "Util",
+      "team": "Nick GonzalesPlayer Note PIT - 2B,3B,SS 6:40 am vs AZ",
+      "raw": "Util Nick GonzalesPlayer Note PIT - 2B,3B,SS 6:40 am vs AZ AZ 312 122 45% 50% 120/381 58 6 47 4 28 .315 .782",
+      "cells": [
+        {
+          "text": "Util",
+          "className": "Alt Ta-c pos Bdrend headcol"
+        },
+        {
+          "text": "2B3BSSUtilBN",
+          "className": "Ta-start edit Js-hidden Bdrend"
+        },
+        {
+          "text": "Nick GonzalesPlayer Note PIT - 2B,3B,SS 6:40 am vs AZ",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "AZ",
+          "className": "Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "312",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "122",
+          "className": "Ta-end Bdrend"
+        },
+        {
+          "text": "45%",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "50%",
+          "className": "Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "120/381",
+          "className": "Alt Ta-end F-faded"
+        },
+        {
+          "text": "58",
+          "className": "Ta-end"
+        },
+        {
+          "text": "6",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "47",
+          "className": "Ta-end"
+        },
+        {
+          "text": "4",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "28",
+          "className": "Ta-end"
+        },
+        {
+          "text": ".315",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".782",
+          "className": "Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "Alt No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "Nick Gonzales",
+          "href": "https://sports.yahoo.com/mlb/players/12049"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/12049/news"
+        },
+        {
+          "text": "6:40 am vs AZ",
+          "href": "https://sports.yahoo.com/mlb/arizona-diamondbacks-pittsburgh-pirates-460728123/"
+        }
+      ]
+    },
+    {
+      "name": "Curtis MeadDTDVideo ForecastNew Player Note BOS - 1B,2B,3B",
       "position": "BN",
-      "team": "Jac CaglianoneDTDNew Player Note KC - 1B,OF",
-      "raw": "BN Jac CaglianoneDTDNew Player Note KC - 1B,OF 158 33% 80% -/- - - - - - - -",
+      "team": "Curtis MeadDTDVideo ForecastNew Player Note BOS - 1B,2B,3B 9:40 am @ ATH",
+      "raw": "BN Curtis MeadDTDVideo ForecastNew Player Note BOS - 1B,2B,3B 9:40 am @ ATH @ ATH 266 119 35% 51% 72/285 49 17 48 6 39 .253 .851",
       "cells": [
         {
           "text": "BN",
           "className": "Alt Ta-c pos Bdrend headcol"
         },
         {
-          "text": "1BOFUtilBN",
+          "text": "1B2B3BUtilBN",
           "className": "Ta-start edit Js-hidden Bdrend"
         },
         {
-          "text": "Jac CaglianoneDTDNew Player Note KC - 1B,OF",
+          "text": "Curtis MeadDTDVideo ForecastNew Player Note BOS - 1B,2B,3B 9:40 am @ ATH",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "",
+          "text": "@ ATH",
           "className": "Ta-start Nowrap Bdrend"
         },
         {
-          "text": "158",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "266",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "33%",
-          "className": "Ta-end Nowrap"
+          "text": "119",
+          "className": "Ta-end Bdrend"
         },
         {
-          "text": "80%",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "35%",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "-/-",
-          "className": "Ta-end F-faded"
+          "text": "51%",
+          "className": "Ta-end Nowrap Bdrend"
         },
         {
-          "text": "-",
-          "className": "Alt Ta-end"
+          "text": "72/285",
+          "className": "Alt Ta-end F-faded"
         },
         {
-          "text": "-",
+          "text": "49",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "17",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "48",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "6",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "39",
           "className": "Ta-end"
         },
         {
-          "text": "-",
-          "className": "Alt Last Ta-end"
+          "text": ".253",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".851",
+          "className": "Last Ta-end"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": [
         {
-          "text": "Jac Caglianone",
-          "href": "https://sports.yahoo.com/mlb/players/64312"
+          "text": "Curtis Mead",
+          "href": "https://sports.yahoo.com/mlb/players/12558"
+        },
+        {
+          "text": "Video Forecast",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/5#"
         },
         {
           "text": "New Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/64312/news"
+          "href": "https://sports.yahoo.com/mlb/players/12558/news"
+        },
+        {
+          "text": "9:40 am @ ATH",
+          "href": "https://sports.yahoo.com/mlb/boston-red-sox-athletics-460728111/"
         }
       ]
     },
     {
-      "name": "Zack GelofIL10Player Note ATH - 2B,3B,OF",
+      "name": "Corey SeagerIL10New Player Note TEX - SS",
       "position": "IL",
-      "team": "Zack GelofIL10Player Note ATH - 2B,3B,OF 9:40 am vs LAD",
-      "raw": "IL Zack GelofIL10Player Note ATH - 2B,3B,OF 9:40 am vs LAD LAD 248 4% 56% -/- - - - - - - -",
+      "team": "Corey SeagerIL10New Player Note TEX - SS 6:40 am @ TB",
+      "raw": "IL Corey SeagerIL10New Player Note TEX - SS 6:40 am @ TB @ TB 78 936 23% 80% 34/187 28 10 25 1 28 .182 .666",
       "cells": [
         {
           "text": "IL",
           "className": "Alt Ta-c pos Bdrend headcol"
         },
         {
-          "text": "2B3BOFUtilBNIL",
+          "text": "SSUtilBNIL",
           "className": "Ta-start edit Js-hidden Bdrend"
         },
         {
-          "text": "Zack GelofIL10Player Note ATH - 2B,3B,OF 9:40 am vs LAD",
+          "text": "Corey SeagerIL10New Player Note TEX - SS 6:40 am @ TB",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "LAD",
+          "text": "@ TB",
           "className": "Ta-start Nowrap Bdrend"
         },
         {
-          "text": "248",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "78",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "4%",
-          "className": "Ta-end Nowrap"
+          "text": "936",
+          "className": "Ta-end Bdrend"
         },
         {
-          "text": "56%",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "23%",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "-/-",
-          "className": "Ta-end F-faded"
+          "text": "80%",
+          "className": "Ta-end Nowrap Bdrend"
         },
         {
-          "text": "-",
-          "className": "Alt Ta-end"
+          "text": "34/187",
+          "className": "Alt Ta-end F-faded"
         },
         {
-          "text": "-",
+          "text": "28",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "10",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "25",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "1",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "28",
           "className": "Ta-end"
         },
         {
-          "text": "-",
-          "className": "Alt Last Ta-end"
+          "text": ".182",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".666",
+          "className": "Last Ta-end"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": [
         {
-          "text": "Zack Gelof",
-          "href": "https://sports.yahoo.com/mlb/players/12503"
+          "text": "Corey Seager",
+          "href": "https://sports.yahoo.com/mlb/players/9584"
         },
         {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/12503/news"
+          "text": "New Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/9584/news"
         },
         {
-          "text": "9:40 am vs LAD",
-          "href": "https://sports.yahoo.com/mlb/los-angeles-dodgers-athletics-460629111/"
+          "text": "6:40 am @ TB",
+          "href": "https://sports.yahoo.com/mlb/texas-rangers-tampa-bay-rays-460728130/"
         }
       ]
     },
     {
-      "name": "José RamírezIL10No new player Notes CLE - 3B",
+      "name": "Will SmithIL60Player Note LAD - C",
       "position": "IL",
-      "team": "José RamírezIL10No new player Notes CLE - 3B 7:10 am vs TEX",
-      "raw": "IL José RamírezIL10No new player Notes CLE - 3B 7:10 am vs TEX TEX 103 28% 99% -/- - - - - - - -",
-      "cells": [
-        {
-          "text": "IL",
-          "className": "Alt Ta-c pos Bdrend headcol"
-        },
-        {
-          "text": "3BUtilBNIL",
-          "className": "Ta-start edit Js-hidden Bdrend"
-        },
-        {
-          "text": "José RamírezIL10No new player Notes CLE - 3B 7:10 am vs TEX",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "TEX",
-          "className": "Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "103",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "28%",
-          "className": "Ta-end Nowrap"
-        },
-        {
-          "text": "99%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "-/-",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "José Ramírez",
-          "href": "https://sports.yahoo.com/mlb/players/9507"
-        },
-        {
-          "text": "No new player Notes",
-          "href": "https://sports.yahoo.com/mlb/players/9507/news"
-        },
-        {
-          "text": "7:10 am vs TEX",
-          "href": "https://sports.yahoo.com/mlb/texas-rangers-cleveland-guardians-460629105/"
-        }
-      ]
-    },
-    {
-      "name": "Will SmithIL10Player Note LAD - C",
-      "position": "IL",
-      "team": "Will SmithIL10Player Note LAD - C 9:40 am @ ATH",
-      "raw": "IL Will SmithIL10Player Note LAD - C 9:40 am @ ATH @ ATH 220 25% 81% -/- - - - - - - -",
+      "team": "Will SmithIL60Player Note LAD - C 10:10 am vs SEA",
+      "raw": "IL Will SmithIL60Player Note LAD - C 10:10 am vs SEA SEA 221 909 21% 72% 43/173 23 6 23 0 23 .249 .720",
       "cells": [
         {
           "text": "IL",
@@ -1259,60 +1155,64 @@
           "className": "Ta-start edit Js-hidden Bdrend"
         },
         {
-          "text": "Will SmithIL10Player Note LAD - C 9:40 am @ ATH",
+          "text": "Will SmithIL60Player Note LAD - C 10:10 am vs SEA",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "@ ATH",
+          "text": "SEA",
           "className": "Ta-start Nowrap Bdrend"
         },
         {
-          "text": "220",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "221",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "25%",
-          "className": "Ta-end Nowrap"
+          "text": "909",
+          "className": "Ta-end Bdrend"
         },
         {
-          "text": "81%",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "21%",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "-/-",
-          "className": "Ta-end F-faded"
+          "text": "72%",
+          "className": "Ta-end Nowrap Bdrend"
         },
         {
-          "text": "-",
-          "className": "Alt Ta-end"
+          "text": "43/173",
+          "className": "Alt Ta-end F-faded"
         },
         {
-          "text": "-",
+          "text": "23",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "6",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "23",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "0",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "23",
           "className": "Ta-end"
         },
         {
-          "text": "-",
-          "className": "Alt Last Ta-end"
+          "text": ".249",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".720",
+          "className": "Last Ta-end"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": [
@@ -1325,16 +1225,16 @@
           "href": "https://sports.yahoo.com/mlb/players/10642/news"
         },
         {
-          "text": "9:40 am @ ATH",
-          "href": "https://sports.yahoo.com/mlb/los-angeles-dodgers-athletics-460629111/"
+          "text": "10:10 am vs SEA",
+          "href": "https://sports.yahoo.com/mlb/seattle-mariners-los-angeles-dodgers-460728119/"
         }
       ]
     },
     {
-      "name": "Oneil CruzIL10New Player Note PIT - OF",
+      "name": "Oneil CruzIL60Video ForecastPlayer Note PIT - OF",
       "position": "IL",
-      "team": "Oneil CruzIL10New Player Note PIT - OF 6:40 am @ PHI",
-      "raw": "IL Oneil CruzIL10New Player Note PIT - OF 6:40 am @ PHI @ PHI 62 27% 97% -/- - - - - - - -",
+      "team": "Oneil CruzIL60Video ForecastPlayer Note PIT - OF 6:40 am vs AZ",
+      "raw": "IL Oneil CruzIL60Video ForecastPlayer Note PIT - OF 6:40 am vs AZ AZ 61 110 24% 95% 66/250 45 14 44 21 30 .264 .822",
       "cells": [
         {
           "text": "IL",
@@ -1345,60 +1245,64 @@
           "className": "Ta-start edit Js-hidden Bdrend"
         },
         {
-          "text": "Oneil CruzIL10New Player Note PIT - OF 6:40 am @ PHI",
+          "text": "Oneil CruzIL60Video ForecastPlayer Note PIT - OF 6:40 am vs AZ",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "@ PHI",
+          "text": "AZ",
           "className": "Ta-start Nowrap Bdrend"
         },
         {
-          "text": "62",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "61",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "27%",
-          "className": "Ta-end Nowrap"
+          "text": "110",
+          "className": "Ta-end Bdrend"
         },
         {
-          "text": "97%",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "24%",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "-/-",
-          "className": "Ta-end F-faded"
+          "text": "95%",
+          "className": "Ta-end Nowrap Bdrend"
         },
         {
-          "text": "-",
-          "className": "Alt Ta-end"
+          "text": "66/250",
+          "className": "Alt Ta-end F-faded"
         },
         {
-          "text": "-",
+          "text": "45",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "14",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "44",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "21",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "30",
           "className": "Ta-end"
         },
         {
-          "text": "-",
-          "className": "Alt Last Ta-end"
+          "text": ".264",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": ".822",
+          "className": "Last Ta-end"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": [
@@ -1407,93 +1311,24 @@
           "href": "https://sports.yahoo.com/mlb/players/11370"
         },
         {
-          "text": "New Player Note",
+          "text": "Video Forecast",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/5#"
+        },
+        {
+          "text": "Player Note",
           "href": "https://sports.yahoo.com/mlb/players/11370/news"
         },
         {
-          "text": "6:40 am @ PHI",
-          "href": "https://sports.yahoo.com/mlb/pittsburgh-pirates-philadelphia-phillies-460629122/"
+          "text": "6:40 am vs AZ",
+          "href": "https://sports.yahoo.com/mlb/arizona-diamondbacks-pittsburgh-pirates-460728123/"
         }
       ]
     },
     {
-      "name": "Starting Lineup Totals",
-      "position": "",
-      "team": "Starting Lineup Totals",
-      "raw": "Starting Lineup Totals - - - - - - - -",
-      "cells": [
-        {
-          "text": "",
-          "className": "Js-hidden"
-        },
-        {
-          "text": "",
-          "className": ""
-        },
-        {
-          "text": "Starting Lineup Totals",
-          "className": "sum"
-        },
-        {
-          "text": "",
-          "className": ""
-        },
-        {
-          "text": "",
-          "className": ""
-        },
-        {
-          "text": "",
-          "className": ""
-        },
-        {
-          "text": "",
-          "className": ""
-        },
-        {
-          "text": "-",
-          "className": "Ta-end Px-med"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end Px-med Fw-b"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end Px-med Fw-b"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end Px-med Fw-b"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end Px-med Fw-b"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end Px-med Fw-b"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end Px-med Fw-b"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end Px-med Fw-b"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": []
-    },
-    {
-      "name": "Rank Fantasy Pitching",
+      "name": "Rankings Fantasy Pitching",
       "position": "",
       "team": "",
-      "raw": "Rank Fantasy Pitching",
+      "raw": "Rankings Fantasy Pitching",
       "cells": [
         {
           "text": "",
@@ -1512,376 +1347,32 @@
           "className": ""
         },
         {
-          "text": "Rank",
-          "className": "Alt"
+          "text": "Rankings",
+          "className": "Alt Ta-end Bdrend"
         },
         {
           "text": "Fantasy",
-          "className": ""
+          "className": "Alt Last"
         },
         {
           "text": "Pitching",
-          "className": ""
+          "className": "Alt"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": []
     },
     {
-      "name": "Joe RyanPlayer Note MIN - SP",
-      "position": "SP",
-      "team": "Joe RyanPlayer Note MIN - SP 8:10 am @ HOU",
-      "raw": "SP Joe RyanPlayer Note MIN - SP 8:10 am @ HOU @ HOU 40 67% 99% - - - - - - - -",
-      "cells": [
-        {
-          "text": "SP",
-          "className": "Alt Ta-c pos Bdrend headcol"
-        },
-        {
-          "text": "SPPBN",
-          "className": "Ta-start edit Js-hidden Bdrend"
-        },
-        {
-          "text": "Joe RyanPlayer Note MIN - SP 8:10 am @ HOU",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "@ HOU",
-          "className": "Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "40",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "67%",
-          "className": "Ta-end Nowrap"
-        },
-        {
-          "text": "99%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "Joe Ryan",
-          "href": "https://sports.yahoo.com/mlb/players/11847"
-        },
-        {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/11847/news"
-        },
-        {
-          "text": "8:10 am @ HOU",
-          "href": "https://sports.yahoo.com/mlb/minnesota-twins-houston-astros-460629118/"
-        }
-      ]
-    },
-    {
-      "name": "Nolan McLeanPlayer Note NYM - SP",
-      "position": "SP",
-      "team": "Nolan McLeanPlayer Note NYM - SP 7:07 am @ TOR",
-      "raw": "SP Nolan McLeanPlayer Note NYM - SP 7:07 am @ TOR @ TOR 86 70% 97% - - - - - - - -",
-      "cells": [
-        {
-          "text": "SP",
-          "className": "Alt Ta-c pos Bdrend headcol"
-        },
-        {
-          "text": "SPPBN",
-          "className": "Ta-start edit Js-hidden Bdrend"
-        },
-        {
-          "text": "Nolan McLeanPlayer Note NYM - SP 7:07 am @ TOR",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "@ TOR",
-          "className": "Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "86",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "70%",
-          "className": "Ta-end Nowrap"
-        },
-        {
-          "text": "97%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "Nolan McLean",
-          "href": "https://sports.yahoo.com/mlb/players/62935"
-        },
-        {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/62935/news"
-        },
-        {
-          "text": "7:07 am @ TOR",
-          "href": "https://sports.yahoo.com/mlb/new-york-mets-toronto-blue-jays-460629114/"
-        }
-      ]
-    },
-    {
-      "name": "Chase BurnsPlayer Note CIN - SP,RP",
-      "position": "RP",
-      "team": "Chase BurnsPlayer Note CIN - SP,RP 7:40 am @ MIL",
-      "raw": "RP Chase BurnsPlayer Note CIN - SP,RP 7:40 am @ MIL @ MIL 17 82% 98% - - - - - - - -",
-      "cells": [
-        {
-          "text": "RP",
-          "className": "Alt Ta-c pos Bdrend headcol"
-        },
-        {
-          "text": "SPRPPBN",
-          "className": "Ta-start edit Js-hidden Bdrend"
-        },
-        {
-          "text": "Chase BurnsPlayer Note CIN - SP,RP 7:40 am @ MIL",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "@ MIL",
-          "className": "Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "17",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "82%",
-          "className": "Ta-end Nowrap"
-        },
-        {
-          "text": "98%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "Chase Burns",
-          "href": "https://sports.yahoo.com/mlb/players/64316"
-        },
-        {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/64316/news"
-        },
-        {
-          "text": "7:40 am @ MIL",
-          "href": "https://sports.yahoo.com/mlb/cincinnati-reds-milwaukee-brewers-460629108/"
-        }
-      ]
-    },
-    {
-      "name": "Tanner ScottPlayer Note LAD - RP",
-      "position": "RP",
-      "team": "Tanner ScottPlayer Note LAD - RP 9:40 am @ ATH",
-      "raw": "RP Tanner ScottPlayer Note LAD - RP 9:40 am @ ATH @ ATH 217 51% 52% - - - - - - - -",
-      "cells": [
-        {
-          "text": "RP",
-          "className": "Alt Ta-c pos Bdrend headcol"
-        },
-        {
-          "text": "RPPBN",
-          "className": "Ta-start edit Js-hidden Bdrend"
-        },
-        {
-          "text": "Tanner ScottPlayer Note LAD - RP 9:40 am @ ATH",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "@ ATH",
-          "className": "Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "217",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "51%",
-          "className": "Ta-end Nowrap"
-        },
-        {
-          "text": "52%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "Tanner Scott",
-          "href": "https://sports.yahoo.com/mlb/players/10432"
-        },
-        {
-          "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/10432/news"
-        },
-        {
-          "text": "9:40 am @ ATH",
-          "href": "https://sports.yahoo.com/mlb/los-angeles-dodgers-athletics-460629111/"
-        }
-      ]
-    },
-    {
       "name": "Shota ImanagaPlayer Note CHC - SP",
-      "position": "P",
-      "team": "Shota ImanagaPlayer Note CHC - SP  8:05 am vs SD",
-      "raw": "P Shota ImanagaPlayer Note CHC - SP  8:05 am vs SD SD 89 75% 89% - - - - - - - -",
+      "position": "SP",
+      "team": "Shota ImanagaPlayer Note CHC - SP 7:45 am @ STL",
+      "raw": "SP Shota ImanagaPlayer Note CHC - SP 7:45 am @ STL @ STL 87 87 63% 91% 121.0 7 113 3.72 1.10 3.90 9 0",
       "cells": [
         {
-          "text": "P",
+          "text": "SP",
           "className": "Alt Ta-c pos Bdrend headcol"
         },
         {
@@ -1889,60 +1380,64 @@
           "className": "Ta-start edit Js-hidden Bdrend"
         },
         {
-          "text": "Shota ImanagaPlayer Note CHC - SP  8:05 am vs SD",
+          "text": "Shota ImanagaPlayer Note CHC - SP 7:45 am @ STL",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "SD",
+          "text": "@ STL",
           "className": "Ta-start Nowrap Bdrend"
         },
         {
-          "text": "89",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "87",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "75%",
-          "className": "Ta-end Nowrap"
+          "text": "87",
+          "className": "Ta-end Bdrend"
         },
         {
-          "text": "89%",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "63%",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "-",
-          "className": "Ta-end F-faded"
+          "text": "91%",
+          "className": "Ta-end Nowrap Bdrend"
         },
         {
-          "text": "-",
-          "className": "Alt Ta-end"
+          "text": "121.0",
+          "className": "Alt Ta-end F-faded"
         },
         {
-          "text": "-",
+          "text": "7",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "113",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "3.72",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "1.10",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "3.90",
           "className": "Ta-end"
         },
         {
-          "text": "-",
-          "className": "Alt Last Ta-end"
+          "text": "9",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "0",
+          "className": "Last Ta-end"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": [
@@ -1955,16 +1450,290 @@
           "href": "https://sports.yahoo.com/mlb/players/63640/news"
         },
         {
-          "text": " 8:05 am vs SD",
-          "href": "https://sports.yahoo.com/mlb/san-diego-padres-chicago-cubs-460629116/"
+          "text": "7:45 am @ STL",
+          "href": "https://sports.yahoo.com/mlb/chicago-cubs-st-louis-cardinals-460728124/"
         }
       ]
     },
     {
-      "name": "Shane McClanahanPlayer Note TB - SP",
+      "name": "Joe RyanPlayer Note MIN - SP",
+      "position": "SP",
+      "team": "Joe RyanPlayer Note MIN - SP 7:40 am vs KC",
+      "raw": "SP Joe RyanPlayer Note MIN - SP 7:40 am vs KC KC 40 48 60% 98% 114.1 6 131 3.38 1.10 5.24 11 0",
+      "cells": [
+        {
+          "text": "SP",
+          "className": "Alt Ta-c pos Bdrend headcol"
+        },
+        {
+          "text": "SPPBN",
+          "className": "Ta-start edit Js-hidden Bdrend"
+        },
+        {
+          "text": "Joe RyanPlayer Note MIN - SP 7:40 am vs KC",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "KC",
+          "className": "Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "40",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "48",
+          "className": "Ta-end Bdrend"
+        },
+        {
+          "text": "60%",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "98%",
+          "className": "Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "114.1",
+          "className": "Alt Ta-end F-faded"
+        },
+        {
+          "text": "6",
+          "className": "Ta-end"
+        },
+        {
+          "text": "131",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "3.38",
+          "className": "Ta-end"
+        },
+        {
+          "text": "1.10",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "5.24",
+          "className": "Ta-end"
+        },
+        {
+          "text": "11",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "0",
+          "className": "Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "Alt No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "Joe Ryan",
+          "href": "https://sports.yahoo.com/mlb/players/11847"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/11847/news"
+        },
+        {
+          "text": "7:40 am vs KC",
+          "href": "https://sports.yahoo.com/mlb/kansas-city-royals-minnesota-twins-460728109/"
+        }
+      ]
+    },
+    {
+      "name": "Chase BurnsNew Player Note CIN - SP,RP",
+      "position": "RP",
+      "team": "Chase BurnsNew Player Note CIN - SP,RP  1:40 am vs CLE; 7:10 am vs CLE",
+      "raw": "RP Chase BurnsNew Player Note CIN - SP,RP  1:40 am vs CLE; 7:10 am vs CLE CLE,CLE 20 34 91% 98% 107.2 12 124 2.42 1.11 3.18 9 0",
+      "cells": [
+        {
+          "text": "RP",
+          "className": "Alt Ta-c pos Bdrend headcol"
+        },
+        {
+          "text": "SPRPPBN",
+          "className": "Ta-start edit Js-hidden Bdrend"
+        },
+        {
+          "text": "Chase BurnsNew Player Note CIN - SP,RP  1:40 am vs CLE; 7:10 am vs CLE",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "CLE,CLE",
+          "className": "Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "20",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "34",
+          "className": "Ta-end Bdrend"
+        },
+        {
+          "text": "91%",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "98%",
+          "className": "Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "107.2",
+          "className": "Alt Ta-end F-faded"
+        },
+        {
+          "text": "12",
+          "className": "Ta-end"
+        },
+        {
+          "text": "124",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "2.42",
+          "className": "Ta-end"
+        },
+        {
+          "text": "1.11",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "3.18",
+          "className": "Ta-end"
+        },
+        {
+          "text": "9",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "0",
+          "className": "Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "Alt No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "Chase Burns",
+          "href": "https://sports.yahoo.com/mlb/players/64316"
+        },
+        {
+          "text": "New Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/64316/news"
+        },
+        {
+          "text": " 1:40 am vs CLE",
+          "href": "https://sports.yahoo.com/mlb/cleveland-guardians-cincinnati-reds-460728217/"
+        },
+        {
+          "text": "7:10 am vs CLE",
+          "href": "https://sports.yahoo.com/mlb/cleveland-guardians-cincinnati-reds-460728317/"
+        }
+      ]
+    },
+    {
+      "name": "Tanner ScottPlayer Note LAD - RP",
+      "position": "RP",
+      "team": "Tanner ScottPlayer Note LAD - RP 10:10 am vs SEA",
+      "raw": "RP Tanner ScottPlayer Note LAD - RP 10:10 am vs SEA SEA 213 74 50% 54% 42.2 1 55 2.32 0.80 9.17 0 23",
+      "cells": [
+        {
+          "text": "RP",
+          "className": "Alt Ta-c pos Bdrend headcol"
+        },
+        {
+          "text": "RPPBN",
+          "className": "Ta-start edit Js-hidden Bdrend"
+        },
+        {
+          "text": "Tanner ScottPlayer Note LAD - RP 10:10 am vs SEA",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "SEA",
+          "className": "Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "213",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "74",
+          "className": "Ta-end Bdrend"
+        },
+        {
+          "text": "50%",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "54%",
+          "className": "Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "42.2",
+          "className": "Alt Ta-end F-faded"
+        },
+        {
+          "text": "1",
+          "className": "Ta-end"
+        },
+        {
+          "text": "55",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "2.32",
+          "className": "Ta-end"
+        },
+        {
+          "text": "0.80",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "9.17",
+          "className": "Ta-end"
+        },
+        {
+          "text": "0",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "23",
+          "className": "Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "Alt No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "Tanner Scott",
+          "href": "https://sports.yahoo.com/mlb/players/10432"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/10432/news"
+        },
+        {
+          "text": "10:10 am vs SEA",
+          "href": "https://sports.yahoo.com/mlb/seattle-mariners-los-angeles-dodgers-460728119/"
+        }
+      ]
+    },
+    {
+      "name": "Trevor RogersPlayer Note BAL - SP",
       "position": "P",
-      "team": "Shane McClanahanPlayer Note TB - SP",
-      "raw": "P Shane McClanahanPlayer Note TB - SP 105 36% 83% - - - - - - - -",
+      "team": "Trevor RogersPlayer Note BAL - SP 6:40 am @ DET",
+      "raw": "P Trevor RogersPlayer Note BAL - SP 6:40 am @ DET @ DET 215 282 50% 78% 103.2 6 83 4.17 1.27 2.59 9 0",
       "cells": [
         {
           "text": "P",
@@ -1975,78 +1744,270 @@
           "className": "Ta-start edit Js-hidden Bdrend"
         },
         {
-          "text": "Shane McClanahanPlayer Note TB - SP",
+          "text": "Trevor RogersPlayer Note BAL - SP 6:40 am @ DET",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "",
+          "text": "@ DET",
           "className": "Ta-start Nowrap Bdrend"
         },
         {
-          "text": "105",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "215",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "36%",
-          "className": "Ta-end Nowrap"
+          "text": "282",
+          "className": "Ta-end Bdrend"
         },
         {
-          "text": "83%",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "50%",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "-",
-          "className": "Ta-end F-faded"
+          "text": "78%",
+          "className": "Ta-end Nowrap Bdrend"
         },
         {
-          "text": "-",
-          "className": "Alt Ta-end"
+          "text": "103.2",
+          "className": "Alt Ta-end F-faded"
         },
         {
-          "text": "-",
+          "text": "6",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "83",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "4.17",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "1.27",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "2.59",
           "className": "Ta-end"
         },
         {
-          "text": "-",
-          "className": "Alt Last Ta-end"
+          "text": "9",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "0",
+          "className": "Last Ta-end"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": [
         {
-          "text": "Shane McClanahan",
-          "href": "https://sports.yahoo.com/mlb/players/11398"
+          "text": "Trevor Rogers",
+          "href": "https://sports.yahoo.com/mlb/players/10909"
         },
         {
           "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/11398/news"
+          "href": "https://sports.yahoo.com/mlb/players/10909/news"
+        },
+        {
+          "text": "6:40 am @ DET",
+          "href": "https://sports.yahoo.com/mlb/baltimore-orioles-detroit-tigers-460728106/"
+        }
+      ]
+    },
+    {
+      "name": "Foster GriffinVideo ForecastPlayer Note WSH - SP,RP",
+      "position": "P",
+      "team": "Foster GriffinVideo ForecastPlayer Note WSH - SP,RP 6:45 am vs TOR",
+      "raw": "P Foster GriffinVideo ForecastPlayer Note WSH - SP,RP 6:45 am vs TOR TOR 254 18 57% 86% 124.0 12 113 2.76 1.03 4.04 12 0",
+      "cells": [
+        {
+          "text": "P",
+          "className": "Alt Ta-c pos Bdrend headcol"
+        },
+        {
+          "text": "SPRPPBN",
+          "className": "Ta-start edit Js-hidden Bdrend"
+        },
+        {
+          "text": "Foster GriffinVideo ForecastPlayer Note WSH - SP,RP 6:45 am vs TOR",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "TOR",
+          "className": "Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "254",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "18",
+          "className": "Ta-end Bdrend"
+        },
+        {
+          "text": "57%",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "86%",
+          "className": "Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "124.0",
+          "className": "Alt Ta-end F-faded"
+        },
+        {
+          "text": "12",
+          "className": "Ta-end"
+        },
+        {
+          "text": "113",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "2.76",
+          "className": "Ta-end"
+        },
+        {
+          "text": "1.03",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "4.04",
+          "className": "Ta-end"
+        },
+        {
+          "text": "12",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "0",
+          "className": "Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "Alt No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "Foster Griffin",
+          "href": "https://sports.yahoo.com/mlb/players/10489"
+        },
+        {
+          "text": "Video Forecast",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/5#"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/10489/news"
+        },
+        {
+          "text": "6:45 am vs TOR",
+          "href": "https://sports.yahoo.com/mlb/toronto-blue-jays-washington-nationals-460728120/"
+        }
+      ]
+    },
+    {
+      "name": "Jesús LuzardoPlayer Note PHI - SP",
+      "position": "P",
+      "team": "Jesús LuzardoPlayer Note PHI - SP 6:40 am @ MIA",
+      "raw": "P Jesús LuzardoPlayer Note PHI - SP 6:40 am @ MIA @ MIA 66 46 68% 98% 122.1 9 152 3.31 1.17 4.00 11 0",
+      "cells": [
+        {
+          "text": "P",
+          "className": "Alt Ta-c pos Bdrend headcol"
+        },
+        {
+          "text": "SPPBN",
+          "className": "Ta-start edit Js-hidden Bdrend"
+        },
+        {
+          "text": "Jesús LuzardoPlayer Note PHI - SP 6:40 am @ MIA",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "@ MIA",
+          "className": "Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "66",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "46",
+          "className": "Ta-end Bdrend"
+        },
+        {
+          "text": "68%",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "98%",
+          "className": "Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "122.1",
+          "className": "Alt Ta-end F-faded"
+        },
+        {
+          "text": "9",
+          "className": "Ta-end"
+        },
+        {
+          "text": "152",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "3.31",
+          "className": "Ta-end"
+        },
+        {
+          "text": "1.17",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "4.00",
+          "className": "Ta-end"
+        },
+        {
+          "text": "11",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "0",
+          "className": "Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "Alt No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "Jesús Luzardo",
+          "href": "https://sports.yahoo.com/mlb/players/10627"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/10627/news"
+        },
+        {
+          "text": "6:40 am @ MIA",
+          "href": "https://sports.yahoo.com/mlb/philadelphia-phillies-miami-marlins-460728128/"
         }
       ]
     },
     {
       "name": "Tanner BibeePlayer Note CLE - SP",
       "position": "P",
-      "team": "Tanner BibeePlayer Note CLE - SP 7:10 am vs TEX",
-      "raw": "P Tanner BibeePlayer Note CLE - SP 7:10 am vs TEX TEX 204 51% 80% - - - - - - - -",
+      "team": "Tanner BibeePlayer Note CLE - SP 1:40 am @ CIN; 7:10 am @ CIN",
+      "raw": "P Tanner BibeePlayer Note CLE - SP 1:40 am @ CIN; 7:10 am @ CIN @ CIN,@ CIN 203 213 58% 80% 125.0 4 97 3.89 1.18 2.62 13 0",
       "cells": [
         {
           "text": "P",
@@ -2057,60 +2018,64 @@
           "className": "Ta-start edit Js-hidden Bdrend"
         },
         {
-          "text": "Tanner BibeePlayer Note CLE - SP 7:10 am vs TEX",
+          "text": "Tanner BibeePlayer Note CLE - SP 1:40 am @ CIN; 7:10 am @ CIN",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "TEX",
+          "text": "@ CIN,@ CIN",
           "className": "Ta-start Nowrap Bdrend"
         },
         {
-          "text": "204",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "203",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "51%",
-          "className": "Ta-end Nowrap"
+          "text": "213",
+          "className": "Ta-end Bdrend"
+        },
+        {
+          "text": "58%",
+          "className": "Alt Ta-end Nowrap"
         },
         {
           "text": "80%",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "className": "Ta-end Nowrap Bdrend"
         },
         {
-          "text": "-",
-          "className": "Ta-end F-faded"
+          "text": "125.0",
+          "className": "Alt Ta-end F-faded"
         },
         {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
+          "text": "4",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "97",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "3.89",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "1.18",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "2.62",
           "className": "Ta-end"
         },
         {
-          "text": "-",
-          "className": "Alt Last Ta-end"
+          "text": "13",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "0",
+          "className": "Last Ta-end"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": [
@@ -2123,19 +2088,23 @@
           "href": "https://sports.yahoo.com/mlb/players/60137/news"
         },
         {
-          "text": "7:10 am vs TEX",
-          "href": "https://sports.yahoo.com/mlb/texas-rangers-cleveland-guardians-460629105/"
+          "text": "1:40 am @ CIN",
+          "href": "https://sports.yahoo.com/mlb/cleveland-guardians-cincinnati-reds-460728217/"
+        },
+        {
+          "text": "7:10 am @ CIN",
+          "href": "https://sports.yahoo.com/mlb/cleveland-guardians-cincinnati-reds-460728317/"
         }
       ]
     },
     {
-      "name": "Tarik SkubalPlayer Note DET - SP",
-      "position": "P",
-      "team": "Tarik SkubalPlayer Note DET - SP 7:05 am @ NYY",
-      "raw": "P Tarik SkubalPlayer Note DET - SP 7:05 am @ NYY @ NYY 18 68% 99% - - - - - - - -",
+      "name": "Nolan McLeanPlayer Note NYM - SP",
+      "position": "BN",
+      "team": "Nolan McLeanPlayer Note NYM - SP 7:10 am vs ATL",
+      "raw": "BN Nolan McLeanPlayer Note NYM - SP 7:10 am vs ATL ATL 84 59 70% 97% 119.1 7 142 3.32 1.11 3.30 12 0",
       "cells": [
         {
-          "text": "P",
+          "text": "BN",
           "className": "Alt Ta-c pos Bdrend headcol"
         },
         {
@@ -2143,60 +2112,154 @@
           "className": "Ta-start edit Js-hidden Bdrend"
         },
         {
-          "text": "Tarik SkubalPlayer Note DET - SP 7:05 am @ NYY",
+          "text": "Nolan McLeanPlayer Note NYM - SP 7:10 am vs ATL",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "@ NYY",
+          "text": "ATL",
           "className": "Ta-start Nowrap Bdrend"
         },
         {
-          "text": "18",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "84",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "68%",
-          "className": "Ta-end Nowrap"
+          "text": "59",
+          "className": "Ta-end Bdrend"
         },
         {
-          "text": "99%",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "70%",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "-",
-          "className": "Ta-end F-faded"
+          "text": "97%",
+          "className": "Ta-end Nowrap Bdrend"
         },
         {
-          "text": "-",
-          "className": "Alt Ta-end"
+          "text": "119.1",
+          "className": "Alt Ta-end F-faded"
         },
         {
-          "text": "-",
+          "text": "7",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "142",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "3.32",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "1.11",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "3.30",
           "className": "Ta-end"
         },
         {
-          "text": "-",
-          "className": "Alt Last Ta-end"
+          "text": "12",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "0",
+          "className": "Last Ta-end"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
+        }
+      ],
+      "links": [
+        {
+          "text": "Nolan McLean",
+          "href": "https://sports.yahoo.com/mlb/players/62935"
+        },
+        {
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/62935/news"
+        },
+        {
+          "text": "7:10 am vs ATL",
+          "href": "https://sports.yahoo.com/mlb/atlanta-braves-new-york-mets-460728121/"
+        }
+      ]
+    },
+    {
+      "name": "Tarik SkubalVideo ForecastPlayer Note DET - SP",
+      "position": "BN",
+      "team": "Tarik SkubalVideo ForecastPlayer Note DET - SP 6:40 am vs BAL",
+      "raw": "BN Tarik SkubalVideo ForecastPlayer Note DET - SP 6:40 am vs BAL BAL 23 20 71% 99% 90.0 7 110 2.70 0.92 8.46 8 0",
+      "cells": [
+        {
+          "text": "BN",
+          "className": "Alt Ta-c pos Bdrend headcol"
+        },
+        {
+          "text": "SPPBN",
+          "className": "Ta-start edit Js-hidden Bdrend"
+        },
+        {
+          "text": "Tarik SkubalVideo ForecastPlayer Note DET - SP 6:40 am vs BAL",
+          "className": "Alt Ta-start player Bdrend"
+        },
+        {
+          "text": "BAL",
+          "className": "Ta-start Nowrap Bdrend"
+        },
+        {
+          "text": "23",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "20",
+          "className": "Ta-end Bdrend"
+        },
+        {
+          "text": "71%",
+          "className": "Alt Ta-end Nowrap"
+        },
+        {
+          "text": "99%",
+          "className": "Ta-end Nowrap Bdrend"
+        },
+        {
+          "text": "90.0",
+          "className": "Alt Ta-end F-faded"
+        },
+        {
+          "text": "7",
+          "className": "Ta-end"
+        },
+        {
+          "text": "110",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "2.70",
+          "className": "Ta-end"
+        },
+        {
+          "text": "0.92",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "8.46",
+          "className": "Ta-end"
+        },
+        {
+          "text": "8",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "0",
+          "className": "Last Ta-end"
+        },
+        {
+          "text": "",
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": [
@@ -2205,106 +2268,114 @@
           "href": "https://sports.yahoo.com/mlb/players/11763"
         },
         {
+          "text": "Video Forecast",
+          "href": "https://baseball.fantasysports.yahoo.com/b1/95435/5#"
+        },
+        {
           "text": "Player Note",
           "href": "https://sports.yahoo.com/mlb/players/11763/news"
         },
         {
-          "text": "7:05 am @ NYY",
-          "href": "https://sports.yahoo.com/mlb/detroit-tigers-new-york-yankees-460629110/"
+          "text": "6:40 am vs BAL",
+          "href": "https://sports.yahoo.com/mlb/baltimore-orioles-detroit-tigers-460728106/"
         }
       ]
     },
     {
-      "name": "Foster GriffinPlayer Note WSH - SP,RP",
+      "name": "Shane McClanahanPlayer Note TB - SP",
       "position": "BN",
-      "team": "Foster GriffinPlayer Note WSH - SP,RP 7:10 am @ BOS",
-      "raw": "BN Foster GriffinPlayer Note WSH - SP,RP 7:10 am @ BOS @ BOS 251 54% 75% - - - - - - - -",
+      "team": "Shane McClanahanPlayer Note TB - SP 6:40 am vs TEX",
+      "raw": "BN Shane McClanahanPlayer Note TB - SP 6:40 am vs TEX TEX 103 135 40% 87% 96.0 9 88 3.09 1.14 2.67 4 0",
       "cells": [
         {
           "text": "BN",
           "className": "Alt Ta-c pos Bdrend headcol"
         },
         {
-          "text": "SPRPPBN",
+          "text": "SPPBN",
           "className": "Ta-start edit Js-hidden Bdrend"
         },
         {
-          "text": "Foster GriffinPlayer Note WSH - SP,RP 7:10 am @ BOS",
+          "text": "Shane McClanahanPlayer Note TB - SP 6:40 am vs TEX",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "@ BOS",
+          "text": "TEX",
           "className": "Ta-start Nowrap Bdrend"
         },
         {
-          "text": "251",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "103",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "54%",
-          "className": "Ta-end Nowrap"
+          "text": "135",
+          "className": "Ta-end Bdrend"
         },
         {
-          "text": "75%",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "40%",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "-",
-          "className": "Ta-end F-faded"
+          "text": "87%",
+          "className": "Ta-end Nowrap Bdrend"
         },
         {
-          "text": "-",
-          "className": "Alt Ta-end"
+          "text": "96.0",
+          "className": "Alt Ta-end F-faded"
         },
         {
-          "text": "-",
+          "text": "9",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "88",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "3.09",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "1.14",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "2.67",
           "className": "Ta-end"
         },
         {
-          "text": "-",
-          "className": "Alt Last Ta-end"
+          "text": "4",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "0",
+          "className": "Last Ta-end"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": [
         {
-          "text": "Foster Griffin",
-          "href": "https://sports.yahoo.com/mlb/players/10489"
+          "text": "Shane McClanahan",
+          "href": "https://sports.yahoo.com/mlb/players/11398"
         },
         {
           "text": "Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/10489/news"
+          "href": "https://sports.yahoo.com/mlb/players/11398/news"
         },
         {
-          "text": "7:10 am @ BOS",
-          "href": "https://sports.yahoo.com/mlb/washington-nationals-boston-red-sox-460629102/"
+          "text": "6:40 am vs TEX",
+          "href": "https://sports.yahoo.com/mlb/texas-rangers-tampa-bay-rays-460728130/"
         }
       ]
     },
     {
-      "name": "Carlos RodónNew Player Note NYY - SP",
+      "name": "José SorianoPlayer Note LAA - SP",
       "position": "BN",
-      "team": "Carlos RodónNew Player Note NYY - SP 7:05 am vs DET",
-      "raw": "BN Carlos RodónNew Player Note NYY - SP 7:05 am vs DET DET 142 63% 89% - - - - - - - -",
+      "team": "José SorianoPlayer Note LAA - SP 9:38 am vs HOU",
+      "raw": "BN José SorianoPlayer Note LAA - SP 9:38 am vs HOU HOU 150 173 61% 85% 123.0 9 127 3.29 1.25 2.23 8 0",
       "cells": [
         {
           "text": "BN",
@@ -2315,235 +2386,80 @@
           "className": "Ta-start edit Js-hidden Bdrend"
         },
         {
-          "text": "Carlos RodónNew Player Note NYY - SP 7:05 am vs DET",
+          "text": "José SorianoPlayer Note LAA - SP 9:38 am vs HOU",
           "className": "Alt Ta-start player Bdrend"
         },
         {
-          "text": "DET",
+          "text": "HOU",
           "className": "Ta-start Nowrap Bdrend"
         },
         {
-          "text": "142",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "150",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "63%",
-          "className": "Ta-end Nowrap"
+          "text": "173",
+          "className": "Ta-end Bdrend"
         },
         {
-          "text": "89%",
-          "className": "Alt Ta-end Nowrap Bdrend"
+          "text": "61%",
+          "className": "Alt Ta-end Nowrap"
         },
         {
-          "text": "-",
-          "className": "Ta-end F-faded"
+          "text": "85%",
+          "className": "Ta-end Nowrap Bdrend"
         },
         {
-          "text": "-",
-          "className": "Alt Ta-end"
+          "text": "123.0",
+          "className": "Alt Ta-end F-faded"
         },
         {
-          "text": "-",
+          "text": "9",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "127",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "3.29",
           "className": "Ta-end"
         },
         {
-          "text": "-",
+          "text": "1.25",
           "className": "Alt Ta-end"
         },
         {
-          "text": "-",
+          "text": "2.23",
           "className": "Ta-end"
         },
         {
-          "text": "-",
-          "className": "Alt Last Ta-end"
+          "text": "8",
+          "className": "Alt Ta-end"
+        },
+        {
+          "text": "0",
+          "className": "Last Ta-end"
         },
         {
           "text": "",
-          "className": "No-p Spacer"
+          "className": "Alt No-p Spacer"
         }
       ],
       "links": [
         {
-          "text": "Carlos Rodón",
-          "href": "https://sports.yahoo.com/mlb/players/9823"
+          "text": "José Soriano",
+          "href": "https://sports.yahoo.com/mlb/players/11327"
         },
         {
-          "text": "New Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/9823/news"
+          "text": "Player Note",
+          "href": "https://sports.yahoo.com/mlb/players/11327/news"
         },
         {
-          "text": "7:05 am vs DET",
-          "href": "https://sports.yahoo.com/mlb/detroit-tigers-new-york-yankees-460629110/"
+          "text": "9:38 am vs HOU",
+          "href": "https://sports.yahoo.com/mlb/houston-astros-los-angeles-angels-460728103/"
         }
       ]
-    },
-    {
-      "name": "Jesús LuzardoNew Player Note PHI - SP",
-      "position": "BN",
-      "team": "Jesús LuzardoNew Player Note PHI - SP 6:40 am vs PIT",
-      "raw": "BN Jesús LuzardoNew Player Note PHI - SP 6:40 am vs PIT PIT 66 82% 97% - - - - - - - -",
-      "cells": [
-        {
-          "text": "BN",
-          "className": "Alt Ta-c pos Bdrend headcol"
-        },
-        {
-          "text": "SPPBN",
-          "className": "Ta-start edit Js-hidden Bdrend"
-        },
-        {
-          "text": "Jesús LuzardoNew Player Note PHI - SP 6:40 am vs PIT",
-          "className": "Alt Ta-start player Bdrend"
-        },
-        {
-          "text": "PIT",
-          "className": "Ta-start Nowrap Bdrend"
-        },
-        {
-          "text": "66",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "82%",
-          "className": "Ta-end Nowrap"
-        },
-        {
-          "text": "97%",
-          "className": "Alt Ta-end Nowrap Bdrend"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end F-faded"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end"
-        },
-        {
-          "text": "-",
-          "className": "Alt Last Ta-end"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": [
-        {
-          "text": "Jesús Luzardo",
-          "href": "https://sports.yahoo.com/mlb/players/10627"
-        },
-        {
-          "text": "New Player Note",
-          "href": "https://sports.yahoo.com/mlb/players/10627/news"
-        },
-        {
-          "text": "6:40 am vs PIT",
-          "href": "https://sports.yahoo.com/mlb/pittsburgh-pirates-philadelphia-phillies-460629122/"
-        }
-      ]
-    },
-    {
-      "name": "Starting Lineup Totals",
-      "position": "",
-      "team": "Starting Lineup Totals",
-      "raw": "Starting Lineup Totals - - - - - - - -",
-      "cells": [
-        {
-          "text": "",
-          "className": "Js-hidden"
-        },
-        {
-          "text": "",
-          "className": ""
-        },
-        {
-          "text": "Starting Lineup Totals",
-          "className": "sum"
-        },
-        {
-          "text": "",
-          "className": ""
-        },
-        {
-          "text": "",
-          "className": ""
-        },
-        {
-          "text": "",
-          "className": ""
-        },
-        {
-          "text": "",
-          "className": ""
-        },
-        {
-          "text": "-",
-          "className": "Ta-end Px-med"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end Px-med Fw-b"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end Px-med Fw-b"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end Px-med Fw-b"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end Px-med Fw-b"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end Px-med Fw-b"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end Px-med Fw-b"
-        },
-        {
-          "text": "-",
-          "className": "Ta-end Px-med Fw-b"
-        },
-        {
-          "text": "",
-          "className": "No-p Spacer"
-        }
-      ],
-      "links": []
     },
     {
       "name": "Team analysis Find the best moves for your team | Hide",
@@ -2559,13 +2475,13 @@
       "links": []
     },
     {
-      "name": "棒球隊棒球隊 101-89-6 | 4th Place | 小銘 Strengths Neutral Weaknesses Unlock your team's positional strengths and more! Subscribe now Research Assistant | Trade Hub Sit/start suggestions Add/drop suggestions Trade suggestions Start Player Sit Player Compare Start Player Sit Player Compare Start Player Sit Player Compare There are no sit/start suggestions available right now. Check back later!",
-      "position": "棒球隊棒球隊 101-89-6 | 4th Place | 小銘 Strengths Neutral Weaknesses Unlock your team's positional strengths and more! Subscribe now Research Assistant | Trade Hub Sit/start suggestions Add/drop suggestions Trade suggestions Start Player Sit Player Compare Start Player Sit Player Compare Start Player Sit Player Compare There are no sit/start suggestions available right now. Check back later!",
+      "name": "棒球隊棒球隊 128-103-7 | 2nd Place | 小銘 Strengths Neutral Weaknesses Unlock your team's positional strengths and more! Subscribe now Research Assistant | Trade Hub Sit/start suggestions Add/drop suggestions Trade suggestions Start Player Sit Player Compare Start Player Sit Player Compare Start Player Sit Player Compare There are no sit/start suggestions available right now. Check back later!",
+      "position": "棒球隊棒球隊 128-103-7 | 2nd Place | 小銘 Strengths Neutral Weaknesses Unlock your team's positional strengths and more! Subscribe now Research Assistant | Trade Hub Sit/start suggestions Add/drop suggestions Trade suggestions Start Player Sit Player Compare Start Player Sit Player Compare Start Player Sit Player Compare There are no sit/start suggestions available right now. Check back later!",
       "team": "",
-      "raw": "棒球隊棒球隊 101-89-6 | 4th Place | 小銘 Strengths Neutral Weaknesses Unlock your team's positional strengths and more! Subscribe now Research Assistant | Trade Hub Sit/start suggestions Add/drop suggestions Trade suggestions Start Player Sit Player Compare Start Player Sit Player Compare Start Player Sit Player Compare There are no sit/start suggestions available right now. Check back later!",
+      "raw": "棒球隊棒球隊 128-103-7 | 2nd Place | 小銘 Strengths Neutral Weaknesses Unlock your team's positional strengths and more! Subscribe now Research Assistant | Trade Hub Sit/start suggestions Add/drop suggestions Trade suggestions Start Player Sit Player Compare Start Player Sit Player Compare Start Player Sit Player Compare There are no sit/start suggestions available right now. Check back later!",
       "cells": [
         {
-          "text": "棒球隊棒球隊 101-89-6 | 4th Place | 小銘 Strengths Neutral Weaknesses Unlock your team's positional strengths and more! Subscribe now Research Assistant | Trade Hub Sit/start suggestions Add/drop suggestions Trade suggestions Start Player Sit Player Compare Start Player Sit Player Compare Start Player Sit Player Compare There are no sit/start suggestions available right now. Check back later!",
+          "text": "棒球隊棒球隊 128-103-7 | 2nd Place | 小銘 Strengths Neutral Weaknesses Unlock your team's positional strengths and more! Subscribe now Research Assistant | Trade Hub Sit/start suggestions Add/drop suggestions Trade suggestions Start Player Sit Player Compare Start Player Sit Player Compare Start Player Sit Player Compare There are no sit/start suggestions available right now. Check back later!",
           "className": "D(f) Fz(14px) C(--ys-text-primary) W(100%)"
         }
       ],
@@ -2576,19 +2492,19 @@
         },
         {
           "text": "",
-          "href": "https://fantasysports.yahoo.com/lp/plus?ncid=dcm_315761015_464742004_0_suggest-mlb&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2F5%3Fdate%3D2026-06-29%26_global_alerts%3D1xHbs4q5CFc6F6h8Uv4gMiAO4cDSn0V5QHMyNZzlmNE%253D%257C%255B%257B%2522errno%2522%253A933%252C%2522status%2522%253A0%252C%2522params%2522%253A%255B%2522added%2520Christian%2520Walker%2520and%2520dropped%2520Kyle%2520Bradish%2522%255D%257D%255D&leagueId=95435&clientUpsellID=tradeSuggestions&analyticsSuffix=mlb"
+          "href": "https://fantasysports.yahoo.com/lp/plus?ncid=dcm_315761015_464742004_0_suggest-mlb&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2F5%3F&leagueId=95435&clientUpsellID=tradeSuggestions&analyticsSuffix=mlb"
         },
         {
           "text": "",
-          "href": "https://fantasysports.yahoo.com/lp/plus?ncid=dcm_315761015_464742004_0_suggest-mlb&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2F5%3Fdate%3D2026-06-29%26_global_alerts%3D1xHbs4q5CFc6F6h8Uv4gMiAO4cDSn0V5QHMyNZzlmNE%253D%257C%255B%257B%2522errno%2522%253A933%252C%2522status%2522%253A0%252C%2522params%2522%253A%255B%2522added%2520Christian%2520Walker%2520and%2520dropped%2520Kyle%2520Bradish%2522%255D%257D%255D&leagueId=95435&clientUpsellID=tradeSuggestions&analyticsSuffix=mlb"
+          "href": "https://fantasysports.yahoo.com/lp/plus?ncid=dcm_315761015_464742004_0_suggest-mlb&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2F5%3F&leagueId=95435&clientUpsellID=tradeSuggestions&analyticsSuffix=mlb"
         },
         {
           "text": "",
-          "href": "https://fantasysports.yahoo.com/lp/plus?ncid=dcm_315761015_464742004_0_suggest-mlb&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2F5%3Fdate%3D2026-06-29%26_global_alerts%3D1xHbs4q5CFc6F6h8Uv4gMiAO4cDSn0V5QHMyNZzlmNE%253D%257C%255B%257B%2522errno%2522%253A933%252C%2522status%2522%253A0%252C%2522params%2522%253A%255B%2522added%2520Christian%2520Walker%2520and%2520dropped%2520Kyle%2520Bradish%2522%255D%257D%255D&leagueId=95435&clientUpsellID=tradeSuggestions&analyticsSuffix=mlb"
+          "href": "https://fantasysports.yahoo.com/lp/plus?ncid=dcm_315761015_464742004_0_suggest-mlb&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2F5%3F&leagueId=95435&clientUpsellID=tradeSuggestions&analyticsSuffix=mlb"
         },
         {
           "text": "Subscribe now",
-          "href": "https://fantasysports.yahoo.com/lp/plus?ncid=dcm_315761015_464742004_0_suggest-mlb&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2F5%3Fdate%3D2026-06-29%26_global_alerts%3D1xHbs4q5CFc6F6h8Uv4gMiAO4cDSn0V5QHMyNZzlmNE%253D%257C%255B%257B%2522errno%2522%253A933%252C%2522status%2522%253A0%252C%2522params%2522%253A%255B%2522added%2520Christian%2520Walker%2520and%2520dropped%2520Kyle%2520Bradish%2522%255D%257D%255D&leagueId=95435&clientUpsellID=tradeSuggestions&analyticsSuffix=mlb"
+          "href": "https://fantasysports.yahoo.com/lp/plus?ncid=dcm_315761015_464742004_0_suggest-mlb&done=https%3A%2F%2Fbaseball.fantasysports.yahoo.com%2Fb1%2F95435%2F5%3F&leagueId=95435&clientUpsellID=tradeSuggestions&analyticsSuffix=mlb"
         },
         {
           "text": "Research Assistant",

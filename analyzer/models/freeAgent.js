@@ -8,11 +8,7 @@ class FreeAgent extends Player {
   constructor(normalized = {}) {
     super(normalized);
     this.rosterStatus = String(normalized.rosterStatus ?? "").trim();
-    this.rank = normalized.rank ?? null;
-    this.preSeasonRank = normalized.preSeasonRank ?? null;
     this.gamesPlayed = normalized.gamesPlayed ?? null;
-    this.percentRostered = normalized.percentRostered ?? null;
-    this.stats = normalized.stats ?? {};
   }
 }
 

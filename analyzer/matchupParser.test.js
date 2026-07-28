@@ -10,17 +10,17 @@ const fixture = JSON.parse(
 const m = parseMatchup(fixture);
 
 // Week + teams come from the extension's matchupHeader
-assert.strictEqual(m.week, "Week 15");
+assert.strictEqual(m.week, "Week 18");
 assert.strictEqual(m.teams.mine.name, "棒球隊棒球隊");
-assert.strictEqual(m.teams.mine.record, "101-89-6");
-assert.strictEqual(m.teams.mine.gamesPlayed, 17);
-assert.strictEqual(m.teams.mine.remainingGames, 92);
-assert.strictEqual(m.teams.opponent.name, "台鋼雄鷹MLB分隊");
-assert.strictEqual(m.teams.opponent.gamesPlayed, 15);
-assert.strictEqual(m.teams.opponent.remainingGames, 96);
+assert.strictEqual(m.teams.mine.record, "128-103-7");
+assert.strictEqual(m.teams.mine.gamesPlayed, 13);
+assert.strictEqual(m.teams.mine.remainingGames, 103);
+assert.strictEqual(m.teams.opponent.name, "我們是富邦悍將你又是誰");
+assert.strictEqual(m.teams.opponent.gamesPlayed, 12);
+assert.strictEqual(m.teams.opponent.remainingGames, 85);
 
-// Score parsed from the "6 vs 6" summary row
-assert.deepStrictEqual(m.score, { mine: 6, opponent: 6 });
+// Score parsed from the "1 vs 10" summary row
+assert.deepStrictEqual(m.score, { mine: 1, opponent: 10 });
 
 // 14 scoring categories (7 hitting + 7 pitching); non-scoring H/AB* and IP* dropped
 assert.strictEqual(m.categories.length, 14);
@@ -40,14 +40,15 @@ const hr = m.categories.find((c) => c.name === "HR");
 assert.strictEqual(hr.type, "hitting");
 assert.ok(!("lowerIsBetter" in hr));
 
-// Week is underway in this fixture: categories carry real numeric values
-// (regression guard — the previous fixture was a not-yet-started week, all null).
+// Week is underway in this fixture: hitting categories carry real numeric
+// values; my pitching stats haven't posted yet this week (genuinely "-").
 const cat = (name) => m.categories.find((c) => c.name === name);
-assert.deepStrictEqual([cat("HR").mine, cat("HR").opponent, cat("HR").leader], [1, 2, "opponent"]);
-assert.deepStrictEqual([cat("R").mine, cat("R").opponent, cat("R").leader], [5, 3, "mine"]);
-assert.deepStrictEqual([cat("AVG").mine, cat("AVG").opponent], [0.292, 0.132]);
-assert.strictEqual(cat("ERA").leader, "mine"); // 2.84 < 5.06, lower wins
-assert.strictEqual(cat("WHIP").leader, "opponent"); // 1.42 > 1.41, lower wins
+assert.deepStrictEqual([cat("HR").mine, cat("HR").opponent, cat("HR").leader], [0, 0, "tied"]);
+assert.deepStrictEqual([cat("R").mine, cat("R").opponent, cat("R").leader], [3, 5, "opponent"]);
+assert.deepStrictEqual([cat("AVG").mine, cat("AVG").opponent], [0.194, 0.241]);
+assert.strictEqual(cat("ERA").mine, null); // my pitching hasn't posted this week
+assert.strictEqual(cat("ERA").leader, "none");
+assert.strictEqual(cat("WHIP").leader, "none");
 assert.strictEqual(cat("K/BB").mine, null); // genuinely "-" in this export
 
 // --- leader logic on synthetic data with real numbers ---

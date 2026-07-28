@@ -5,7 +5,7 @@ const path = require("path");
 const { analyzeCategories } = require("./categoryAnalyzer");
 const { parseMatchup } = require("./matchupParser");
 
-// --- real Week 15 fixture: week is underway -> real category statuses ---
+// --- real Week 18 fixture: week is underway -> real category statuses ---
 const fixture = JSON.parse(
   fs.readFileSync(path.join(__dirname, "..", "data", "samples", "matchup.json"), "utf8")
 );
@@ -13,9 +13,12 @@ const real = analyzeCategories(parseMatchup(fixture));
 
 assert.strictEqual(real.categories.length, 14);
 // no longer an empty week: real buckets derived from the started-week values
-assert.deepStrictEqual(real.strategy.attack, ["HR", "SB", "BB", "W", "WHIP", "SV+H"]);
-assert.deepStrictEqual(real.strategy.protect, ["R", "RBI", "QS"]);
-assert.deepStrictEqual(real.strategy.ignore, ["AVG", "OPS", "K", "ERA", "K/BB"]);
+assert.deepStrictEqual(real.strategy.attack, ["R", "HR", "RBI", "SB"]);
+assert.deepStrictEqual(real.strategy.protect, ["BB"]);
+assert.deepStrictEqual(
+  real.strategy.ignore,
+  ["AVG", "OPS", "W", "K", "ERA", "WHIP", "K/BB", "QS", "SV+H"]
+);
 assert.strictEqual(
   real.strategy.attack.length + real.strategy.protect.length + real.strategy.ignore.length,
   14

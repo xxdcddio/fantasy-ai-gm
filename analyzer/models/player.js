@@ -19,6 +19,11 @@ class Player {
     this.status = clean(normalizedPlayer.status);
     this.newsLink = clean(normalizedPlayer.newsLink);
     this.playerLink = clean(normalizedPlayer.playerLink);
+    this.preSeasonRank = normalizedPlayer.preSeasonRank ?? null;
+    this.rank = normalizedPlayer.rank ?? null;
+    this.percentStart = normalizedPlayer.percentStart ?? null;
+    this.percentRostered = normalizedPlayer.percentRostered ?? null;
+    this.stats = normalizedPlayer.stats ?? {};
   }
 
   isPitcher() {
@@ -51,7 +56,12 @@ class Player {
       gameTime: this.gameTime,
       status: this.status,
       newsLink: this.newsLink,
-      playerLink: this.playerLink
+      playerLink: this.playerLink,
+      preSeasonRank: this.preSeasonRank,
+      rank: this.rank,
+      percentStart: this.percentStart,
+      percentRostered: this.percentRostered,
+      stats: { ...this.stats }
     };
   }
 }
