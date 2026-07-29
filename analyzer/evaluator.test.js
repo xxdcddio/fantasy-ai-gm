@@ -95,4 +95,24 @@ assert.strictEqual(delta.perCategory.SB.marker, "-"); // giving up Arraez's 9 SB
 assert.strictEqual(delta.perCategory.SB.delta, -9);
 assert.strictEqual(delta.perCategory.AVG.marker, "-");
 
+// P3 — Breakout Bonus: rank far ahead of preseason expectation, on a real
+// AB sample, adds +10 to categoryScore. Herrera #268 preseason -> #128 now
+// (gap 140, AB 389); Arraez #328 -> #117 (gap 211, AB 399).
+assert.strictEqual(ev("Ivan Herrera").categoryScore, 43); // 33 base + 10 breakout
+assert.ok(ev("Ivan Herrera").reasons.includes("Breakout (#268 preseason -> #128)"));
+assert.strictEqual(ev("Luis Arraez").categoryScore, 42); // 32 base + 10 breakout
+assert.ok(ev("Luis Arraez").reasons.includes("Breakout (#328 preseason -> #117)"));
+
+// P3 — Established Star Protection: no real fixture star is currently
+// slumping, so this uses a synthetic player (same pattern as the PRD bug
+// regression) -- a preseason top-50 pick with a cold stat line still floors
+// to categoryScore 30 instead of reading as fully replaceable.
+const slumpingStar = {
+  name: "Slumping Star", eligiblePositions: ["OF"], status: "",
+  preSeasonRank: 10, rank: 300, stats: { HR: 1, RBI: 5, OPS: 0.5 }
+};
+const starEval = evaluatePlayer(slumpingStar, { attack: ["HR", "RBI", "OPS"], protect: [], ignore: [] }, null);
+assert.strictEqual(starEval.categoryScore, 30);
+assert.ok(starEval.reasons.includes("Established star (floor applied)"));
+
 console.log("evaluator.test.js OK");

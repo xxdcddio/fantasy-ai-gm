@@ -43,6 +43,26 @@ const strengthOf = (cat, value) => {
   return clamp01((value - scale[0]) / (scale[1] - scale[0]));
 };
 
+// P3 — Established Star Protection: a preseason top-tier pick in a slump
+// still projects better than a bad stretch of stats alone implies -- floor
+// their category score instead of letting it read as fully replaceable.
+const STAR_PRESEASON_RANK = 50;
+const STAR_CATEGORY_FLOOR = 30;
+
+// P3 — Breakout Bonus: reward a rank far ahead of preseason expectation --
+// a real performance change worth chasing, not rank noise. Gated on a
+// meaningful at-bat sample (from stats.hAb, "H/AB") so a tiny-sample hot
+// streak doesn't qualify; players with no hAb (pitchers -- no innings data
+// yet) simply don't qualify.
+const BREAKOUT_RANK_GAP = 100;
+const BREAKOUT_MIN_AB = 100;
+const BREAKOUT_BONUS = 10;
+
+const atBatsOf = (player) => {
+  const ab = Number(String(player.stats?.hAb || "").split("/")[1]);
+  return Number.isFinite(ab) ? ab : null;
+};
+
 // Move Evaluator (PRD v2, P1) — what ADDing this player instead of DROPping the
 // other one actually does per category, not just the add's own absolute
 // strength. Fixes the "recommends a zero-SB bat over a real SB source and
@@ -92,9 +112,25 @@ const categoryComponent = (player, strategy) => {
   const avg = strengthOf("AVG", stats.AVG);
   if (avg != null && avg < 0.3) risks.push("Lower AVG");
 
-  const score = strengths.length
+  let score = strengths.length
     ? Math.round((strengths.reduce((a, b) => a + b.s, 0) / strengths.length) * 60)
     : 0;
+
+  if (player.preSeasonRank != null && player.preSeasonRank <= STAR_PRESEASON_RANK && score < STAR_CATEGORY_FLOOR) {
+    score = STAR_CATEGORY_FLOOR;
+    reasons.push("Established star (floor applied)");
+  }
+
+  const rankGap = player.preSeasonRank != null && player.rank != null
+    ? player.preSeasonRank - player.rank
+    : null;
+  const ab = atBatsOf(player);
+  if (rankGap != null && rankGap >= BREAKOUT_RANK_GAP && ab != null && ab >= BREAKOUT_MIN_AB) {
+    score += BREAKOUT_BONUS;
+    reasons.push(`Breakout (#${player.preSeasonRank} preseason -> #${player.rank})`);
+  }
+
+  score = Math.min(60, score);
 
   return { score, reasons, risks };
 };

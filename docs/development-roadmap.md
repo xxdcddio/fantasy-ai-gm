@@ -1,6 +1,6 @@
 # Fantasy AI GM Development Roadmap
 
-> Last Updated: 2026-07-28
+> Last Updated: 2026-07-29
 
 ## Architecture Flow
 
@@ -302,6 +302,37 @@ marker (Explain Score). No new plumbing needed in `coach.js`: it already
 serializes the full move object to the LLM prompt, so `categoryBreakdown`
 reaches the Coach for free; `weeklyReport.js`'s text summary stays
 deliberately terse (full Coach output reformat is P4/Sprint 26).
+
+### ✅ Sprint 24 — Established Star Protection + Breakout Bonus (P3, partial)
+P3's "Long-term Value" (70% current week / 30% ROS blend) is deferred: the
+fixtures only carry cumulative season-to-date stats, no weekly split and no
+ROS projection column, and inventing a proxy (e.g. off `%Start`/`%Rostered`)
+would misrepresent real production — pick this up once a real weekly or ROS
+data source exists. The other two P3 items use data already on hand
+(`preSeasonRank`/`rank`/at-bats/IL status) and are implemented in
+`evaluator.js`'s `categoryComponent`:
+- **Established Star Protection** — a preseason top-50 pick (`preSeasonRank
+  <= 50`) never reads with a categoryScore below 30, even mid-slump; no real
+  fixture player currently qualifies (none are slumping), so this is covered
+  by a synthetic regression test, same pattern as the P1 bug-reproduction
+  test.
+- **Breakout Bonus** — `preSeasonRank - rank >= 100` (current rank far ahead
+  of preseason expectation) on a real at-bat sample (`>= 100` AB, parsed from
+  `stats.hAb`) adds +10 to categoryScore. Gated on AB so a small-sample hot
+  streak doesn't qualify; pitchers have no `hAb` yet (no innings-pitched data
+  source), so they're excluded until one exists — not a bug, a known gap.
+  categoryScore is clamped to its documented max (60) after both adjustments.
+
+Also fixed two regressions found while re-running the *full* suite for the
+first time in several sprints: `kkGateway.test.js`'s "missing key" case fell
+back to a real `KK_LLM_API_KEY` from the dev shell's env instead of the
+empty string under test, crashing the whole `node` process on a live network
+call to the fixture's fake gateway URL — silently masking every test file
+that runs after it alphabetically (`scripts/*.test.js`). That's how two
+earlier bugs went unnoticed: `scripts/player.test.js`'s mock `team` predated
+Sprint 23's `classifyWeakSlots(team)` (needs `team.getIL()`), and
+`scripts/analyze.test.js` still asserted the pre-Sprint-21 fixture's week
+number and opponent name.
 
 ---
 

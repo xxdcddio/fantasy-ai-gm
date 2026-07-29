@@ -28,11 +28,19 @@ const base = { apiKey: SECRET, baseUrl: "https://gw.example.com", model: "kk-mod
   // creation -> a function
   assert.strictEqual(typeof createKKGatewayProvider(base), "function");
 
-  // missing key -> clear error, no network
-  await assert.rejects(
-    () => createKKGatewayProvider({ ...base, apiKey: "" })({ system: "s", user: "u" }),
-    /KK_LLM_API_KEY is not set/
-  );
+  // missing key -> clear error, no network. Force-clear the env fallback: a
+  // dev shell with a real KK_LLM_API_KEY exported would otherwise mask
+  // apiKey: "" and let this attempt a real network call instead of throwing.
+  const savedEnvKey = process.env.KK_LLM_API_KEY;
+  delete process.env.KK_LLM_API_KEY;
+  try {
+    await assert.rejects(
+      () => createKKGatewayProvider({ ...base, apiKey: "" })({ system: "s", user: "u" }),
+      /KK_LLM_API_KEY is not set/
+    );
+  } finally {
+    if (savedEnvKey !== undefined) process.env.KK_LLM_API_KEY = savedEnvKey;
+  }
 
   // Responses API: { output_text }
   let f = fakeFetch({ output_text: "from output_text" });

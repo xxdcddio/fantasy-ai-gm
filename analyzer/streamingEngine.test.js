@@ -39,11 +39,12 @@ assert.strictEqual(recs[0].score, Math.max(...recs.map((r) => r.score)));
 // Herrera (HR/RBI, fills weak C) ranks above the AVG-first bat Arraez
 assert.ok(rank("Ivan Herrera") < rank("Luis Arraez"));
 
-// Score is the internal Streaming Score, not Yahoo rank: the top pick is not
-// simply the best Yahoo current rank.
-const ohearnRank = fa.find("Ryan O'Hearn").rank; // Yahoo #91 (best rank in pool)
-assert.notStrictEqual(recs[0].player, "Ryan O'Hearn"); // Christian Walker's Stability Score outranks him here
-assert.ok(typeof ohearnRank === "number");
+// Score is the internal Streaming Score, not Yahoo rank: overall order is
+// not simply Yahoo current-rank order (TJ Rumfield has the best Yahoo rank
+// in the pool but doesn't top our internal ranking).
+const byYahooRank = [...fa.players].sort((a, b) => a.rank - b.rank).map((p) => p.name);
+assert.notStrictEqual(recs[0].player, byYahooRank[0]);
+assert.notDeepStrictEqual(recs.map((r) => r.player), byYahooRank);
 
 // Deterministic
 assert.strictEqual(JSON.stringify(recommend(fa, strategy, team)), JSON.stringify(out));

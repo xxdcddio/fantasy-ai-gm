@@ -11,8 +11,8 @@ const out = runAnalysis(SAMPLES);
 
 // Weekly Report was produced and is grounded in the matchup fixture.
 assert.ok(out.report, "report missing");
-assert.strictEqual(out.report.summary.week, "Week 15");
-assert.strictEqual(out.report.summary.opponent, "台鋼雄鷹MLB分隊");
+assert.strictEqual(out.report.summary.week, "Week 18");
+assert.strictEqual(out.report.summary.opponent, "我們是富邦悍將你又是誰");
 
 // Strategy buckets exist (a not-yet-started week is legitimately all-ignore);
 // streaming + a recommendation have content.
@@ -26,7 +26,7 @@ assert.ok(typeof top.drop === "string" && top.drop);
 // Console formatter is a string with the headline info.
 const text = formatAnalysis(out);
 assert.strictEqual(typeof text, "string");
-assert.ok(text.includes("Fantasy AI GM") && text.includes("Week 15"));
+assert.ok(text.includes("Fantasy AI GM") && text.includes("Week 18"));
 assert.ok(text.includes("Top 5 Streaming") && text.includes("Finished"));
 // P6: waiver band shown for the top recommendation
 assert.ok(text.includes(top.waiverBand.emoji) && text.includes(top.waiverBand.label));
