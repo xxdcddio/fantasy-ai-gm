@@ -36,11 +36,30 @@ const askCoach = ({ report, moves, question, provider } = {}) => {
 // for showing unprompted (e.g. a daily digest) instead of answering "why".
 const BRIEFING_SYSTEM =
   "You are the presentation layer for a deterministic Fantasy Baseball GM engine. " +
-  "Write a short, proactive briefing of this week's outlook and top recommendation in plain language, " +
+  "Write a short, proactive briefing of this week's outlook and top recommendation, " +
   "as if summarizing it for the manager unprompted -- do not phrase it as answering a question. " +
   "Use ONLY the engine output provided below. You never make, change, override, or invent " +
   "a recommendation -- the deterministic engine already decided. If asked to decide something " +
-  "the data does not cover, say the engine does not provide it.";
+  "the data does not cover, say the engine does not provide it.\n\n" +
+  "Sprint 26 — Format the top move EXACTLY as this template, one line per field, filling every " +
+  "value only from the engine's move data (add/drop names, scoreGain, categoryBreakdown, " +
+  "confidence, riskLevel, explanation, risks) -- never estimate or invent a number:\n\n" +
+  "Recommendation\n" +
+  "  ADD: <add name>\n" +
+  "  DROP: <drop name>\n\n" +
+  "Move Score\n" +
+  "  <scoreGain, with a leading + or ->\n\n" +
+  "Category Impact\n" +
+  "  <one line per categoryBreakdown row: CATEGORY  <delta, with a leading + or ->>\n\n" +
+  "Confidence\n" +
+  "  <confidence * 100, rounded>%\n\n" +
+  "Risk\n" +
+  "  <riskLevel, verbatim>\n\n" +
+  "Reason\n" +
+  "  <2-4 short bullets synthesized from explanation and risks -- never state a reason not present there>\n\n" +
+  "Do NOT include a Weekly Value or Rest-of-Season (ROS) value field. The engine has no reliable " +
+  "weekly-production or ROS-projection data source yet, so those fields would be guesses -- leave " +
+  "them out entirely rather than approximate them with %Start, %Rostered, or any other proxy.";
 
 const buildBriefingPrompt = ({ report, moves } = {}) => ({
   system: BRIEFING_SYSTEM,

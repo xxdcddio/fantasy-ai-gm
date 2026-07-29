@@ -54,6 +54,12 @@ assert.ok(!/Mike Trout|Shohei/.test(p.user)); // no fabricated players
   assert.ok(!/Mike Trout|Shohei/.test(b.user)); // no fabricated players
   assert.ok(!/QUESTION:/.test(b.user)); // proactive, not Q&A framed
 
+  // Sprint 26 — Coach output reformat: fixed template, and an explicit ban
+  // on placeholder Weekly Value / ROS Value fields (no real data source yet).
+  ["Recommendation", "Move Score", "Category Impact", "Confidence", "Risk", "Reason"]
+    .forEach((section) => assert.ok(b.system.includes(section), `missing ${section} in template`));
+  assert.ok(/Weekly Value/.test(b.system) && /ROS/.test(b.system) && /Do NOT include/.test(b.system));
+
   const briefingCalls = [];
   const fakeBriefing = async (prompt) => { briefingCalls.push(prompt); return "This week: attack HR/RBI, add Isaac Paredes."; };
   const briefing = await askBriefing({ report, moves, provider: fakeBriefing });

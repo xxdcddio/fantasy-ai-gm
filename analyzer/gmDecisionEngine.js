@@ -29,6 +29,12 @@ const playersOf = (freeAgents) =>
 const confidenceFor = (gain) =>
   gain >= 20 ? 0.9 : gain >= 10 ? 0.75 : gain >= 5 ? 0.6 : 0.4;
 
+// Sprint 26 — Risk Level for the Coach's fixed-template output. Reuses the
+// existing confidence ladder rather than a new signal: low confidence in the
+// gain IS the risk.
+const riskLevelFor = (confidence) =>
+  confidence >= 0.75 ? "Low" : confidence >= 0.6 ? "Medium" : "High";
+
 // P10 — Confidence Reasons: expose the Evaluator components behind the add
 // candidate's score, plus a one-line human-readable summary of why the
 // confidence % is what it is. Additive only; confidenceFor's scale/thresholds
@@ -124,6 +130,7 @@ const recommendMoves = ({ team, freeAgents, matchup, strategy } = {}) => {
         confidence,
         scoreGain,
         recommendation: recommendationFor(scoreGain),
+        riskLevel: riskLevelFor(confidence),
         categoryImpact,
         categoryBreakdown,
         explanation: [...reasons, `Higher Evaluator score than ${worst.name}`],

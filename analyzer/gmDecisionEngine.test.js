@@ -149,4 +149,9 @@ const streamingMove = recommendMoves({
 assert.deepStrictEqual(Object.keys(streamingMove.categoryImpact), ["HR"]);
 assert.deepStrictEqual(streamingMove.categoryBreakdown.map((r) => r.cat), ["HR"]);
 
+// Sprint 26 — Risk Level: derived from the existing confidence ladder (no
+// new signal), for the Coach's fixed-template output.
+const riskLevel = (conf) => (conf >= 0.75 ? "Low" : conf >= 0.6 ? "Medium" : "High");
+moves.forEach((m) => assert.strictEqual(m.riskLevel, riskLevel(m.confidence)));
+
 console.log("gmDecisionEngine.test.js OK");

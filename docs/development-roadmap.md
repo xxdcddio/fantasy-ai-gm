@@ -350,6 +350,27 @@ carries only the targeted category. No signature changes: `mode`/
 already threaded through every caller, so omitting them (all current call
 sites) is 100% backward compatible.
 
+### ✅ Sprint 26 — Coach Output Reformat
+The Coach's proactive briefing (`buildBriefingPrompt`'s `BRIEFING_SYSTEM`)
+now mandates a fixed plain-text template for the top move — Recommendation
+(ADD/DROP), Move Score, Category Impact, Confidence, Risk, Reason — filled
+only from fields the engine already computes: `scoreGain`, `categoryBreakdown`,
+`confidence`, the new `riskLevel`, and `explanation`/`risks`. Q&A (`askCoach`)
+is unchanged — free-form prose answering a specific question doesn't fit a
+fixed card format.
+
+`riskLevel` (`gmDecisionEngine.js`) is a new field on every move — `"Low"` /
+`"Medium"` / `"High"`, bucketed off the existing confidence ladder
+(`>= 0.75` / `>= 0.6` / else) rather than a new signal: low confidence in the
+gain already *is* the risk.
+
+No Weekly Value or ROS Value field was added — the engine has no reliable
+weekly-production or rest-of-season projection data source, and approximating
+one with `%Start`/`%Rostered` would misrepresent real production (same
+reasoning as Sprint 24's deferred Long-term Value). The template explicitly
+forbids both fields; add them once a real projection source exists, without
+changing the rest of the format.
+
 ---
 
 ## Known Issues / Tech Debt
