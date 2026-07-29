@@ -115,4 +115,16 @@ const starEval = evaluatePlayer(slumpingStar, { attack: ["HR", "RBI", "OPS"], pr
 assert.strictEqual(starEval.categoryScore, 30);
 assert.ok(starEval.reasons.includes("Established star (floor applied)"));
 
+// P4 — Streaming Mode: strategy.mode "streaming" scores only
+// targetCategories, ignoring strategy.attack's weekly blend entirely. Walker
+// (SB 0) and Arraez (SB 9) score identically under the balanced HR/RBI/OPS
+// attack list, but diverge sharply once streaming targets SB alone.
+const streamingSB = { mode: "streaming", targetCategories: ["SB"] };
+assert.strictEqual(evaluatePlayer(fa.find("Christian Walker"), streamingSB, null).categoryScore, 0);
+assert.strictEqual(evaluatePlayer(fa.find("Luis Arraez"), streamingSB, null).categoryScore, 37);
+
+const streamingDelta = categoryDelta(fa.find("Christian Walker").stats, fa.find("Luis Arraez").stats, streamingSB);
+assert.deepStrictEqual(Object.keys(streamingDelta.perCategory), ["SB"]); // attack (HR/RBI/OPS) ignored
+assert.strictEqual(streamingDelta.score, -27);
+
 console.log("evaluator.test.js OK");

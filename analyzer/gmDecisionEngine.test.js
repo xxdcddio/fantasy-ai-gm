@@ -138,4 +138,15 @@ moves.forEach((m) => {
   });
 });
 
+// P4 — Streaming Mode: strategy.mode "streaming" scores only
+// targetCategories -- categoryImpact/categoryBreakdown carry only the
+// targeted category, ignoring strategy.attack entirely.
+const streamingMove = recommendMoves({
+  team: syntheticTeam,
+  freeAgents: syntheticFA,
+  strategy: { mode: "streaming", targetCategories: ["HR"], attack: ["RBI"], protect: [], ignore: [] }
+}).moves[0];
+assert.deepStrictEqual(Object.keys(streamingMove.categoryImpact), ["HR"]);
+assert.deepStrictEqual(streamingMove.categoryBreakdown.map((r) => r.cat), ["HR"]);
+
 console.log("gmDecisionEngine.test.js OK");

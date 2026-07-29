@@ -334,6 +334,22 @@ Sprint 23's `classifyWeakSlots(team)` (needs `team.getIL()`), and
 `scripts/analyze.test.js` still asserted the pre-Sprint-21 fixture's week
 number and opponent name.
 
+### ✅ Sprint 25 — Streaming Mode (P4)
+`strategy` gains two optional fields, honored in `evaluator.js`'s
+`categoryComponent` and `categoryDelta`: `mode` (`"balanced"` — the default,
+today's existing weekly-blend behavior — or `"streaming"`) and
+`targetCategories`. In streaming mode, scoring ignores `strategy.attack`
+entirely and evaluates only `targetCategories` — a streaming pickup is a
+narrow, explicit short-term play (e.g. "just need SB this week"), not the
+week's blended strategy, and the engine should never infer that from
+`attack.length` alone. Both `evaluatePlayer`'s `categoryScore` and
+`gmDecisionEngine`'s `categoryDelta`-driven `categoryImpact`/
+`categoryBreakdown` respect it — a streaming move's per-category output
+carries only the targeted category. No signature changes: `mode`/
+`targetCategories` are additive fields on the existing `strategy` object
+already threaded through every caller, so omitting them (all current call
+sites) is 100% backward compatible.
+
 ---
 
 ## Known Issues / Tech Debt

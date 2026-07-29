@@ -70,13 +70,24 @@ const atBatsOf = (player) => {
 // drop, not against an implicit empty roster spot.
 const CATEGORY_DELTA_CATS = ["R", "HR", "RBI", "SB", "BB", "AVG", "OPS"];
 
+// P4 — Streaming Mode: strategy.mode === "streaming" means this candidate is
+// being evaluated for a narrow, short-term category need (e.g. "just need
+// SB this week"), not the week's full blended strategy -- so it scores only
+// strategy.targetCategories, ignoring strategy.attack entirely. Default
+// ("balanced", or mode omitted) is today's existing blended behavior.
+const isStreaming = (strategy) => strategy?.mode === "streaming";
+
 const categoryDelta = (addStats = {}, dropStats = {}, strategy = {}) => {
+  const streaming = isStreaming(strategy);
+  const targetCats = streaming ? new Set(strategy.targetCategories || []) : null;
   const attack = new Set(strategy?.attack || []);
   const perCategory = {};
   let weightedSum = 0;
   let weightTotal = 0;
 
   CATEGORY_DELTA_CATS.forEach((cat) => {
+    if (streaming && !targetCats.has(cat)) return;
+
     const scale = STAT_SCALE[cat];
     const addValue = addStats[cat];
     const dropValue = dropStats[cat];
@@ -88,7 +99,7 @@ const categoryDelta = (addStats = {}, dropStats = {}, strategy = {}) => {
     const marker = normalized > 0.15 ? "+" : normalized < -0.15 ? "-" : "=";
     perCategory[cat] = { add: addValue, drop: dropValue, delta, marker };
 
-    const weight = attack.has(cat) ? 2 : 1;
+    const weight = streaming ? 1 : attack.has(cat) ? 2 : 1;
     weightedSum += normalized * weight;
     weightTotal += weight;
   });
@@ -102,7 +113,8 @@ const categoryComponent = (player, strategy) => {
   const reasons = [];
   const risks = [];
 
-  const strengths = (strategy?.attack || [])
+  const targetCats = isStreaming(strategy) ? strategy.targetCategories || [] : strategy?.attack || [];
+  const strengths = targetCats
     .map((cat) => ({ cat, s: strengthOf(cat, stats[cat]) }))
     .filter((x) => x.s != null);
 
