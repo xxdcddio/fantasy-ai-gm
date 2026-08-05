@@ -42,26 +42,33 @@ const base = { apiKey: SECRET, baseUrl: "https://gw.example.com", model: "kk-mod
     if (savedEnvKey !== undefined) process.env.KK_LLM_API_KEY = savedEnvKey;
   }
 
-  // Responses API: { output_text }
-  let f = fakeFetch({ output_text: "from output_text" });
+  // Chat Completions: { choices:[{ message:{ content } }] }
+  let f = fakeFetch({ choices: [{ message: { content: "chat reply" } }] });
   assert.strictEqual(
     await createKKGatewayProvider({ ...base, fetchImpl: f })({ system: "S", user: "U" }),
-    "from output_text"
+    "chat reply"
   );
-  // hits /v1/responses with Bearer auth and model+input body
-  assert.ok(f.calls[0].url.endsWith("/v1/responses"));
+  // hits /v1/chat/completions with Bearer auth and model+messages body
+  assert.ok(f.calls[0].url.endsWith("/v1/chat/completions"));
   assert.strictEqual(f.calls[0].opts.headers.authorization, `Bearer ${SECRET}`);
   const sent = JSON.parse(f.calls[0].opts.body);
   assert.strictEqual(sent.model, "kk-model");
-  assert.ok(sent.input.includes("U"));
+  assert.deepStrictEqual(sent.messages, [
+    { role: "system", content: "S" },
+    { role: "user", content: "U" }
+  ]);
 
-  // Responses content: { output:[{ content:[{ text }] }] }
+  // no system prompt -> messages has only the user turn
+  f = fakeFetch({ choices: [{ message: { content: "chat reply" } }] });
+  await createKKGatewayProvider({ ...base, fetchImpl: f })({ user: "U" });
+  assert.deepStrictEqual(JSON.parse(f.calls[0].opts.body).messages, [{ role: "user", content: "U" }]);
+
+  // Responses API shapes still accepted (gateway may switch backends later)
+  f = fakeFetch({ output_text: "from output_text" });
+  assert.strictEqual(await createKKGatewayProvider({ ...base, fetchImpl: f })({ user: "U" }), "from output_text");
+
   f = fakeFetch({ output: [{ content: [{ text: "a" }, { text: "b" }] }] });
   assert.strictEqual(await createKKGatewayProvider({ ...base, fetchImpl: f })({ user: "U" }), "ab");
-
-  // Chat Completions: { choices:[{ message:{ content } }] }
-  f = fakeFetch({ choices: [{ message: { content: "chat reply" } }] });
-  assert.strictEqual(await createKKGatewayProvider({ ...base, fetchImpl: f })({ user: "U" }), "chat reply");
 
   // unrecognized shape -> clear throw
   f = fakeFetch({ something: "else" });

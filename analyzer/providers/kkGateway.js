@@ -3,7 +3,7 @@
 // company gateway's Responses API; key read from KK_LLM_API_KEY at call time,
 // never stored. fetchImpl is injectable for tests (defaults to global fetch).
 
-const DEFAULT_PATH = "/v1/responses";
+const DEFAULT_PATH = "/v1/chat/completions";
 
 // The gateway may answer in any of three shapes; accept whichever is present.
 const extractText = (data) => {
@@ -29,12 +29,15 @@ const createKKGatewayProvider = ({ apiKey, baseUrl, model, fetchImpl } = {}) =>
 
     const url = (baseUrl || process.env.KK_LLM_GATEWAY_URL || "").replace(/\/+$/, "") + DEFAULT_PATH;
     const doFetch = fetchImpl || fetch;
-    const input = system ? `${system}\n\n${user}` : user;
+    const messages = [
+      ...(system ? [{ role: "system", content: system }] : []),
+      { role: "user", content: user }
+    ];
 
     const res = await doFetch(url, {
       method: "POST",
       headers: { "content-type": "application/json", authorization: `Bearer ${key}` },
-      body: JSON.stringify({ model: model || process.env.KK_LLM_MODEL, input })
+      body: JSON.stringify({ model: model || process.env.KK_LLM_MODEL, messages })
     });
 
     // Never echo the key in errors. The response body (gateway's error detail)
